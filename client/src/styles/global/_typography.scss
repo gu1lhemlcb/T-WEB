@@ -1,0 +1,160 @@
+// ########## TYPOGRAPHIE ########### //
+
+html {
+  color: clr(primary);
+  font-family: $font-renogare;
+  font-weight: normal;
+  font-size: 62.5%;
+}
+
+.a-h1, h1 {
+  font-size: 3rem;
+  line-height: 1.33;
+}
+
+.a-h2, h2 {
+  font-size: 2.6rem;
+  line-height: 1.19;
+}
+
+.a-h3, h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.a-h4, h4 {
+  font-size: 1.6rem;
+  line-height: 1.19;
+  text-transform: uppercase;
+}
+
+.a-h4-light {
+  font-size: 1.6rem;
+  line-height: 1.19;
+  text-transform: none;
+}
+
+.a-p, p {
+  font-size: 1.4rem;
+  line-height: 1.43;
+  color: clr(black);
+  font-family: $font-helvetica;
+}
+
+.a-menu {
+  font-size: 1.4rem;
+  line-height: 1.21;
+  text-transform: uppercase;
+  .icon {
+    width: 1.4rem;
+    height: 0.7rem;
+    // margin-left: 1rem;
+  }
+}
+
+.a-ul {
+  list-style: inside;
+  list-style-type: disc;
+  .a-li {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    font-family: $font-helvetica;
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 2.3rem;
+    font-weight: 700;
+    .a-sub-ul {
+      list-style: none;
+      .a-sub-li {
+        font-size: 1.4rem;
+        line-height: 1.43;
+        font-family: $font-helvetica;
+        position: relative;
+        padding-left: 2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.a-ul-light {
+  list-style: outside;
+  list-style-type: disc;
+
+  .a-li-light {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    font-family: $font-helvetica;
+    position: relative;
+    margin: 1.3rem 4.3rem;
+  }
+}
+
+.a-hr, hr {
+  height: 1px;
+  border: 0;
+	color: clr(secondary);
+	background-color: clr(secondary)
+}
+
+.dot-primary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(primary);
+  border-radius: 50%;
+}
+.dot-secondary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(secondary);
+  border-radius: 50%;
+}
+.dot-tertiary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(tertiary);
+  border-radius: 50%;
+}
+.dot-th-1 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-1);
+  border-radius: 50%;
+}
+.dot-th-2 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-2);
+  border-radius: 50%;
+}
+.dot-th-3 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-3);
+  border-radius: 50%;
+}
+.dot-th-4 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-4);
+  border-radius: 50%;
+}
+.dot-th-5 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-5);
+  border-radius: 50%;
+}
+
+.clr-w {
+  color: white !important;
+}
+
+.no-upper {
+  text-transform: none;
+}
+
+.to-upper {
+  text-transform: uppercase;
+}

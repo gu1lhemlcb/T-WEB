@@ -2,8 +2,19 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <!-- header -->
+    <app-header></app-header>
+
+    <!-- routes will be rendered here -->
+    <!-- <app-hero-travel-form></app-hero-travel-form> -->
+    <app-hero-travel-form></app-hero-travel-form>
+    <router-outlet></router-outlet>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+  `,
+  styles: []
 })
 export class AppComponent {
   title = 'client';

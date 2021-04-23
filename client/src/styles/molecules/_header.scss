@@ -1,0 +1,44 @@
+header {
+  width: 100%;
+  padding: 3.8rem 0;
+  border-bottom: 1px solid clr(primary);
+}
+
+.nav-logo {
+  display: block;
+  width: 100%;
+  h1 {
+    font-weight: 700;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: clr(primary);
+}
+
+.a-menu {
+  position: relative;
+  color: clr(primary);
+  text-align: center;
+  &.current {
+    padding-bottom: 2px;
+    border-bottom: 3px solid clr(primary);
+  }
+}
+.a-menu:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -5rem;
+  content: '';
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  background: clr(th-2);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.a-menu:hover:after {
+  width: 100%;
+  left: 0;
+}

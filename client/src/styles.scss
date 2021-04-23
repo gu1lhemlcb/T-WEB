@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+// Vendors
+//  ───────────────────────────────────
+//  Utils
+//  ───────────────────────────────────
+@import './styles/utils/reset';
+@import './styles/utils/box-sizing';
+@import './styles/utils/font-rendering';
+@import './styles/utils/mixins';
+@import './styles/utils/fonts';
+@import './styles/utils/variables';
+@import './styles/utils/helpers';
+@import './styles/utils/debgrid';
+@import './styles/utils/swiper';
+
+//  Global
+//  ───────────────────────────────────
+@import './styles/global/animations';
+@import './styles/global/commons';
+@import './styles/global/grid';
+@import './styles/global/icons';
+@import './styles/global/typography';
+
+//  Atoms
+//  ───────────────────────────────────
+// @import 'atoms/logo';
+@import './styles/atoms/button';
+@import './styles/atoms/form';
+
+//  Molecules
+//  ───────────────────────────────────
+@import 'styles/molecules/header';
+@import 'styles/molecules/footer';
+
+//  Organisms
+//  ───────────────────────────────────
+// @import 'organisms/header';
+
+@import 'styles/templates/_hero-travel-from.scss';

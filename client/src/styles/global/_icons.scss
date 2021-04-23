@@ -1,0 +1,33 @@
+
+.icon{
+	vertical-align: middle;
+	width: 2rem;
+	height: 2rem;
+}
+
+@svg-load logout url(../sprite/logout.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(primary)};
+  }
+}
+
+@svg-load arrow-bottom url(../sprite/arrow-bottom.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(primary)};
+  }
+}
+
+@svg-load croix url(../sprite/croix.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}

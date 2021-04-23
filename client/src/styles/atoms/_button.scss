@@ -1,0 +1,108 @@
+button[disabled],
+input[type=button][disabled],
+input[type=submit][disabled] {
+    color: white;
+    background: clr(tertiary) !important;
+    cursor: not-allowed;;
+}
+
+.a-button {
+  // display: inline-block;
+  width: 100%;
+  margin: 0.9rem 0;
+  padding: 2.2rem 3.4rem 2rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-family: $font-renogare;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.21;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transition: background-color $anim, color $anim, border-color $anim, display $anim;
+  &.primary {
+    background-color: clr(primary);
+    color: clr(white);
+  
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      background-color: clr(quaternary);
+    }
+
+    &.sub-formations {
+      padding: 2.2rem 0 2rem;
+    }
+  }
+  
+  &.secondary {
+    border-color: clr(th-2);
+    background-color: clr(th-2);
+    color: clr(white);
+  
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      border-color: clr(th-2);
+    }
+  }
+
+  &.transparent {
+    border-color: clr(white);
+    background-color: transparent;
+    color: clr(white);
+  
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      border-color: clr(primary);
+      color: clr(primary);
+    }
+  }
+
+  &.transparent-formations {
+    border-color: clr(white);
+    background-color: transparent;
+    color: clr(white);
+  
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      border-color: clr(transparent);
+      color: clr(primary);
+      background-color: white;
+    }
+  }
+
+  &.transparent-formations-2 {
+    border-color: clr(white);
+    background-color: white;
+    color: clr(primary);
+  
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      border-color: clr(primary);
+      color: clr(white);
+      background-color: clr(primary);
+    }
+  }
+
+  &.btn-icon {
+    width: 100%;
+    border: 1px solid clr(secondary);
+    background-color: clr(white);
+    padding: 2rem 1.9rem 1.6rem;
+    color: clr(primary);
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      background-color: clr(primary);
+      color: white;
+    }
+    .icon {
+      width: 2.4rem;
+      height: 2.2rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
