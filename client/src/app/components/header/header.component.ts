@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core'
     <header>
       <div class="row align-center-center">
         <div class="column-4 lg-offset-2">
-          <div class="nav-logo"><h1>TRAVEL</h1></div>
+          <div class="nav-logo"><h1>Travel</h1></div>
         </div>
         <div class="column-2 a-menu lg-offset-2">
           <h4>
