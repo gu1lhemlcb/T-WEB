@@ -1,8 +1,21 @@
+import dotenv from 'dotenv';
 import express from 'express';
+import MasterRouter from './routes/MasterRouter';
 
-const app = express();
-const PORT = 3000;
-app.get('/', (req, res) => {
-    res.send('The sedulous hyena ate the antelope!');
+// load the environment variables from the .env file
+dotenv.config({
+    path: '.env'
 });
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+class Server {
+    public app = express();
+    public router = MasterRouter;
+}
+
+const server = new Server();
+
+server.app.use('/api', server.router);
+
+((port = process.env.PORT || 5000) => {
+    server.app.listen(port, () => console.log(`> Listening on port ${port}`));
+})();
