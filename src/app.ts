@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express();
-const PORT = 3000;
+const PORT = 4040;
 app.get('/', (req, res) => {
     res.send('The sedulous hyena ate the antelope!');
 });
