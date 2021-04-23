@@ -1,8 +1,8 @@
 import express from 'express';
 
 const app = express();
-const PORT = 3000;
+const PORT = 4040;
 app.get('/', (req, res) => {
-    res.send('The sedulous hyena ate the antelope!');
+    res.send('The sedulous hyena ate the antelope! JENKINS3');
 });
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

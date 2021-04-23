@@ -7,5 +7,12 @@
     "sourceMap": true,
     "outDir": "dist"
   },
-  "lib": ["es2015"]
+  "lib": ["es2015"],
+  "exclude": [
+    "node_modules",
+    "public",
+    "client",
+    "typings/browser.d.ts",
+    "typings/browser/**"
+  ]
 }
