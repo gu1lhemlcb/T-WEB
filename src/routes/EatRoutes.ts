@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import EatController from '../controllers/EatController';
+import EatController from '../controllers/api/activities/EatController';
 
 class EatRouter {
     private _router = Router();

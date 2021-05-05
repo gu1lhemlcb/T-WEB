@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import DrinkController from '../controllers/DrinkController';
+import DrinkController from '../controllers/api/activities/DrinkController';
 
 class DrinkRouter {
     private _router = Router();

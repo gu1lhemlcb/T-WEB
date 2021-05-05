@@ -4,6 +4,7 @@ import EatRouter from './EatRoutes';
 import EnjoyRouter from './EnjoyRoutes';
 import SleepRouter from './SleepRoutes';
 import TravelRouter from './TravelRoutes';
+import AuthRouter from './AuthRoutes';
 
 class MasterRouter {
     private _router = Router();
@@ -12,6 +13,7 @@ class MasterRouter {
     private _subrouterEnjoy = EnjoyRouter;
     private _subrouterSleep = SleepRouter;
     private _subrouterTravel = TravelRouter;
+    private _subrouterAuth = AuthRouter;
 
     get router() {
         return this._router;
@@ -30,6 +32,7 @@ class MasterRouter {
         this._router.use('/enjoy', this._subrouterEnjoy);
         this._router.use('/sleep', this._subrouterSleep);
         this._router.use('/travel', this._subrouterTravel);
+        this._router.use('/auth', this._subrouterAuth);
     }
 }
 

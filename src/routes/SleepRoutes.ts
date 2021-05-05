@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import SleepController from '../controllers/SleepController';
+import SleepController from '../controllers/api/activities/SleepController';
 
 class SleepRouter {
     private _router = Router();

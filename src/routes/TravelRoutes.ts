@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import TravelController from '../controllers/TravelController';
+import TravelController from '../controllers/api/activities/TravelController';
 
 class TravelRouter {
     private _router = Router();

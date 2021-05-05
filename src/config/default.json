@@ -1,3 +1,4 @@
 {
-    "dbConnection": "mongodb+srv://guilhem:ct2m6G5KTI1y4wx8@cluster0.lqp9x.mongodb.net/EpicRoadTripDatabase?retryWrites=true&w=majority"
+    "dbConnection": "mongodb+srv://guilhem:ct2m6G5KTI1y4wx8@cluster0.lqp9x.mongodb.net/EpicRoadTripDatabase?retryWrites=true&w=majority",
+    "jwtSecretToken": "Xvr8NP;6"
 }

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from 'express';
-import EnjoyController from '../controllers/EnjoyController';
+import EnjoyController from '../controllers/api/activities/EnjoyController';
 
 class EnjoyRouter {
     private _router = Router();
