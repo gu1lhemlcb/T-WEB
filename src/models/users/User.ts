@@ -1,8 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 import isEmail from 'validator/lib/isEmail'
 import { IUser } from './users.types'
-// import { findOneOrCreate } from "./users.statics";
-// import { setLastUpdated, sameLastName } from "./users.methods";
 
 const UserSchema = new mongoose.Schema<IUser>({
     firstName: {

@@ -4,12 +4,6 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 const config = require('../../../config/default.json');
-// const jwt = require("jsonwebtoken");
-// const config = require("config");
-// const bcrypt = require("bcrypt");
-// const jwtSecretToken = config.get('jwtSecretToken');
-// const { body, validationResult } = require("express-validator");
-
 
 const user = require('../../../models/users/User');
 
@@ -21,8 +15,6 @@ class AuthController {
     };
 
     async sign_up(req: Request, res: Response) {
-
-        // const { first_name, last_name, username, email, password } = req.body;
 
         const firstName = req.body.firstName
         const lastName = req.body.lastName
