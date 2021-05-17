@@ -20,9 +20,6 @@ class AuthRouter {
         this._router.get('/', (req: Request, res: Response, next: NextFunction) => {
             res.status(200).json(this._controller.defaultMethod());
         });
-        // this._router.post('/register', (req: Request, res: Response, next: NextFunction) => {
-        //     res.status(200).json(this._controller.sign_up());
-        // });
         this._router.post('/register', this._controller.sign_up);
         this._router.post('/login', this._controller.login);
         // this._router.post('/get_user', this._controller.get_user);

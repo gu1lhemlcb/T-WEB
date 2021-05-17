@@ -1,9 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import connectDB from './db';
-// import AuthRoutes from './routes/AuthRoutes'
 import MasterRouter from './routes/MasterRouter';
-// const connectDB = require('./config/db');
 
 dotenv.config({
     path: '.env'
