@@ -9,7 +9,9 @@ class TravelController {
         };
     };
 
-    // finds Top cities and returns a short description
+    /**
+     * Finds top cities and brings a short description.
+     */
     async findLocation(req: Request, res: Response) {
 
         const query = {
@@ -21,6 +23,36 @@ class TravelController {
         };
 
         const url = new URL('https://www.triposo.com/api/20210317/location.json?part_of=&tag_labels=&count=&order_by=&fields=');
+        url.search = new URLSearchParams(query).toString();
+        console.log(url.search)
+
+        const headers = {
+            "X-Triposo-Account": config.triposoId,
+            "X-Triposo-Token": config.triposoAPIToken
+        };
+
+        const response = await fetch(
+            url.toString(),
+            { headers }
+        );
+        const data = await response.json();
+        console.log(data)
+    };
+
+    /**
+     * Finds related cities and places visited by others.
+     */
+    async findOtherVisitedPlaces(req: Request, res: Response) {
+
+        const query = {
+            part_of: req.body.part_of, // ex: "France"
+            annotate: "distance:45.47083,9.18815",
+            distance: "<=300000",
+            also_visited: req.body.also_visited, // ex: "Toulouse", should corresponds to the city chosen to visit initially
+            order_by: "-also_visited_score"
+        };
+
+        const url = new URL('https://www.triposo.com/api/20210317/location.json?part_of=&annotate=&distance=&also_visited=&order_by=');
         url.search = new URLSearchParams(query).toString();
         console.log(url.search)
 

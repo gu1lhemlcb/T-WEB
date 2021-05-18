@@ -21,6 +21,7 @@ class TravelRouter {
             res.status(200).json(this._controller.defaultMethod());
         });
         this._router.get('/locations', this._controller.findLocation);
+        this._router.get('/locations/other-visited-places', this._controller.findOtherVisitedPlaces);
     }
 }
 

@@ -9,7 +9,9 @@ class EnjoyController {
         };
     };
 
-    // For a specific city, finds activities
+    /**
+     * For a specific city, finds activities.
+     */
     async findActivities(req: Request, res: Response) {
         const query = {
             location_ids: req.body.location_ids, // ex: "Rio_de_Janeiro"
