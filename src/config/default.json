@@ -2,5 +2,7 @@
     "dbConnection": "mongodb+srv://guilhem:ct2m6G5KTI1y4wx8@cluster0.lqp9x.mongodb.net/EpicRoadTripDatabase?retryWrites=true&w=majority",
     "jwtSecretToken": "Xvr8NP;6",
     "triposoId": "BQFR2CKO",
-    "triposoAPIToken": "k8jje0k9gb2mshb49tpb5p7uuoh4mus7"
+    "triposoAPIToken": "k8jje0k9gb2mshb49tpb5p7uuoh4mus7",
+    "amadeusAPIKEY": "JoNIhJqNjO0OKYeyxAELV4yHGmsf6nUX",
+    "amadeusAPITOKEN": "qDCrinz4kutGPK0H"
 }

@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import fetch from 'node-fetch';
 
 const config = require('../../../config/default.json');
+var Amadeus = require('amadeus');
 class TravelController {
     defaultMethod() {
         return {
@@ -67,6 +68,41 @@ class TravelController {
         );
         const data = await response.json();
         console.log(data)
+    };
+
+    /**
+     * Finds flights between two destinations.
+     * 
+     * TO FIND LOCATIONS CODE:
+     * https://www.iata.org/en/publications/directories/code-search/?
+     * 
+     */
+    async searchFlight(req: Request, res: Response) {
+
+        var amadeus = new Amadeus({
+            clientId: config.amadeusAPIKEY,
+            clientSecret: config.amadeusAPITOKEN
+        });
+
+        amadeus.shopping.flightOffersSearch.get({
+            originLocationCode: req.body.originLocationCode, // ex: 'PAR' 
+            destinationLocationCode: req.body.destinationLocationCode, // ex: 'MPL'
+            departureDate: req.body.departureDate, // ex: '2021-08-01',
+            adults: req.body.adults, // ex: '2'
+            // }).then(function (response) {
+            //     return amadeus.shopping.flightOffers.pricing.post(
+            //         JSON.stringify({
+            //             'data': {
+            //                 'type': 'flight-offers-pricing',
+            //                 'flightOffers': [response.data[0]]
+            //             }
+            //         })
+            //     )
+        }).then(function (response) {
+            console.log(response.data);
+        }).catch(function (responseError) {
+            console.log(responseError.code);
+        });
     }
 }
 

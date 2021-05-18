@@ -22,6 +22,7 @@ class TravelRouter {
         });
         this._router.get('/locations', this._controller.findLocation);
         this._router.get('/locations/other-visited-places', this._controller.findOtherVisitedPlaces);
+        this._router.get('/flights', this._controller.searchFlight);
     }
 }
 
