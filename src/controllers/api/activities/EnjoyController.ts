@@ -16,8 +16,8 @@ class EnjoyController {
         const query = {
             location_ids: req.body.location_ids, // ex: "Rio_de_Janeiro"
             count: req.body.count, // ex: "10"
-            fields: req.body.fields, // ex: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels"
-            order_by: req.body.order_by // ex: "-score"
+            fields: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels", // ex: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels"
+            order_by: "-score" // ex: "-score"
         };
 
         const url = new URL('https://www.triposo.com/api/20210317/tour.json?location_ids=&count=&fields=&order_by=');

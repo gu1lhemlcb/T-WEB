@@ -19,8 +19,8 @@ class TravelController {
             part_of: req.body.part_of, // ex: "France"
             tag_labels: req.body.tag_labels, // ex: "city"
             count: req.body.count, // ex: "10"
-            order_by: req.body.order_by, //  ex: "-score"
-            fields: req.body.fields // ex: "name,id,snippet,parent_id,score,type"
+            order_by: "-score", //  ex: "-score"
+            fields: "name,id,snippet,parent_id,score,type" // ex: "name,id,snippet,parent_id,score,type"
         };
 
         const url = new URL('https://www.triposo.com/api/20210317/location.json?part_of=&tag_labels=&count=&order_by=&fields=');

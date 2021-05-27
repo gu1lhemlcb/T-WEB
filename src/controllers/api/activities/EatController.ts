@@ -19,8 +19,8 @@ class EatController {
             tag_labels: req.body.tag_labels, // ex: "cuisine-Sushi"
             location_id: req.body.location_id, // ex: "Amsterdam"
             count: req.body.count, // ex: "10"
-            order_by: req.body.order_by, // ex: "-score"
-            fields: req.body.fields, // ex: "name,best_for,coordinates,score,id"
+            order_by: "-score", // ex: "-score"
+            fields: "name,best_for,coordinates,score,id", // ex: "name,best_for,coordinates,score,id"
         };
 
         const url = new URL('https://www.triposo.com/api/20210317/poi.json?tag_labels=&location_id=&count=&order_by=&fields=');

@@ -20,6 +20,7 @@ class DrinkRouter {
         this._router.get('/', (req: Request, res: Response, next: NextFunction) => {
             res.status(200).json(this._controller.defaultMethod());
         });
+        this._router.get('/bars', this._controller.findBars)
     }
 }
 
