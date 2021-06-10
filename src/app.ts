@@ -17,9 +17,9 @@ export class Server {
     public router = MasterRouter;
 }
 
-interface IServer {
-    name: string;
-}
+// interface IServer {
+//     name: string;
+// }
 
 const server = new Server();
 server.app.use(express.json());
