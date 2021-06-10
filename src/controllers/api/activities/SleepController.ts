@@ -33,6 +33,7 @@ class SleepController {
 
         }).then(function (response) {
             console.log(response.data);
+            res.status(200).json(response.data);
         }).catch(function (responseError) {
             console.log(responseError.code);
         });

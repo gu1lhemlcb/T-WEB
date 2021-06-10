@@ -80,7 +80,7 @@ class AuthController {
 
             bcrypt.compare(password, user.password)
                 .then((isMatch) => {
-                    if (!isMatch) return res.status(400).json({ msg: 'Please ensure your password correct' })
+                    if (!isMatch) return res.status(400).json({ msg: 'Please ensure your password is correct' })
 
                     const payload = {
                         user: {

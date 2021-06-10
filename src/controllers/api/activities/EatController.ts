@@ -36,7 +36,8 @@ class EatController {
             { headers }
         );
         const data = await response.json();
-        console.log(data)
+        console.log(data);
+        res.status(200).json(data);
     }
 }
 

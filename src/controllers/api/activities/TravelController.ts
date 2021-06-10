@@ -37,7 +37,8 @@ class TravelController {
             { headers }
         );
         const data = await response.json();
-        console.log(data)
+        console.log(data);
+        res.status(200).json(data);
     };
 
     /**
@@ -67,7 +68,8 @@ class TravelController {
             { headers }
         );
         const data = await response.json();
-        console.log(data)
+        console.log(data);
+        res.status(200).json(data);
     };
 
     /**
@@ -100,6 +102,7 @@ class TravelController {
             //     )
         }).then(function (response) {
             console.log(response.data);
+            res.status(200).json(response.data);
         }).catch(function (responseError) {
             console.log(responseError.code);
         });

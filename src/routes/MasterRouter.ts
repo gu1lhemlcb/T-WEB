@@ -27,12 +27,12 @@ class MasterRouter {
      * Connect routes to their matching routers.
      */
     private _configure() {
-        this._router.use('/drink', this._subrouterDrink);
-        this._router.use('/eat', this._subrouterEat);
-        this._router.use('/enjoy', this._subrouterEnjoy);
-        this._router.use('/sleep', this._subrouterSleep);
-        this._router.use('/travel', this._subrouterTravel);
-        this._router.use('/auth', this._subrouterAuth);
+        this._router.use('/api/drink', this._subrouterDrink);
+        this._router.use('/api/eat', this._subrouterEat);
+        this._router.use('/api/enjoy', this._subrouterEnjoy);
+        this._router.use('/api/sleep', this._subrouterSleep);
+        this._router.use('/api/travel', this._subrouterTravel);
+        this._router.use('/api/auth', this._subrouterAuth);
     }
 }
 
