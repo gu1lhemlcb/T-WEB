@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeroTravelFormComponent } from './components/hero-travel-form/hero-travel-form.component';
+import { DestinationsListComponent } from './destinations-list/destinations-list.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HeroTravelFormComponent } from './components/hero-travel-form/hero-trav
     HeaderComponent,
     FooterComponent,
     HeroTravelFormComponent,
+    DestinationsListComponent,
   ],
   imports: [
     BrowserModule,
