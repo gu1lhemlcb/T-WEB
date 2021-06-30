@@ -101,7 +101,7 @@ import { Component, OnInit } from '@angular/core'
                 :)
               </p>
             </div>
-            <div class="column-8 pt-30">
+            <div class="column-12 pt-30">
               <a class="a-button primary " href="">READ MORE</a>
             </div>
           </div>

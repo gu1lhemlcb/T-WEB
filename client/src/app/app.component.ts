@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
     <!-- routes will be rendered here -->
     <!-- <app-hero-travel-form></app-hero-travel-form> -->
     <app-hero-travel-form></app-hero-travel-form>
+    <app-destinations-list></app-destinations-list>
     <router-outlet></router-outlet>
 
     <!-- footer -->
