@@ -15,7 +15,6 @@ class AuthController {
     };
 
     async sign_up(req: Request, res: Response) {
-
         const firstName = req.body.firstName
         const lastName = req.body.lastName
         const username = req.body.username
@@ -39,8 +38,6 @@ class AuthController {
                 password,
             });
 
-            console.log(user)
-
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(password, salt);
 
@@ -48,7 +45,7 @@ class AuthController {
 
             const payload = {
                 user: {
-                    id: user._id // See mongoose _id field in the collection
+                    id: user._id
                 }
             }
 

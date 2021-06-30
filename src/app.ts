@@ -9,24 +9,21 @@ dotenv.config({
 
 
 export class Server {
-    // constructor(public name: string) {
-    //     console.log('Server built');
-    // }
 
     public app = express();
     public router = MasterRouter;
+    public activationStatus = false;
+
+    public startServer() {
+        this.app.use(express.json());
+        connectDB;
+        server.app.use('/', server.router);
+        return this.activationStatus = true;
+    };
 }
 
-// interface IServer {
-//     name: string;
-// }
-
 const server = new Server();
-server.app.use(express.json());
-connectDB;
-
-server.app.use('/', server.router);
-
+server.startServer();
 
 ((port = process.env.PORT || 4040) => {
     server.app.listen(port, () => console.log(`> Listening on port ${port}`));
