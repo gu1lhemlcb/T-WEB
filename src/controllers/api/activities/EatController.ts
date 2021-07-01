@@ -16,7 +16,7 @@ class EatController {
 
     async findRestaurantsByType(req: Request, res: Response) {
         const query = {
-            tag_labels: req.body.tag_labels, // ex: "cuisine-Sushi"
+            tag_labels: req.body.tag_labels, // ex: "cuisine-Sushi" or "eatingout"
             location_id: req.body.location_id, // ex: "Amsterdam"
             count: req.body.count, // ex: "10"
             order_by: "-score", // ex: "-score"

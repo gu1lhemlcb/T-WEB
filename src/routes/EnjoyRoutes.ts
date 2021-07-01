@@ -21,6 +21,7 @@ class EnjoyRouter {
             res.status(200).json(this._controller.defaultMethod());
         });
         this._router.get('/activities', this._controller.findActivities);
+        this._router.get('/visit', this._controller.findPlacesToVisit);
     }
 }
 
