@@ -1,7 +1,11 @@
 .hero-travel {
-    position: relative; 
+    position: relative;
     padding: 16rem 0;
+    @media #{$sm-only} {
+        padding: 8rem 0;
+    }
     background-image: url(https://youmatter.world/app/uploads/sites/2/2019/11/travel-world.jpg);
+    background-attachment: fixed;
     background-size: cover;
 }
 
