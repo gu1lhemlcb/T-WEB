@@ -18,6 +18,7 @@ export class Server {
         this.app.use(express.json());
         connectDB;
         server.app.use('/', server.router);
+
         return this.activationStatus = true;
     };
 }

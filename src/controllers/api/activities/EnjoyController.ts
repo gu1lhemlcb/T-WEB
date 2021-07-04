@@ -16,7 +16,7 @@ class EnjoyController {
         const query = {
             location_ids: req.body.location_ids, // ex: "Rio_de_Janeiro"
             count: req.body.count, // ex: "10"
-            fields: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels", // ex: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels"
+            fields: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels,images", // ex: "id,name,score,price,price_is_per_person,booking_info,intro,tag_labels"
             order_by: "-score" // ex: "-score"
         };
 

@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { request, response, Router } from 'express';
 import DrinkRouter from './DrinkRoutes';
 import EatRouter from './EatRoutes';
 import EnjoyRouter from './EnjoyRoutes';
@@ -27,6 +27,9 @@ class MasterRouter {
      * Connect routes to their matching routers.
      */
     private _configure() {
+        this._router.get('/', (request, response) => {
+            response.status(200).send("Welcome to EpicRoadTrip's API")
+        });
         this._router.use('/api/drink', this._subrouterDrink);
         this._router.use('/api/eat', this._subrouterEat);
         this._router.use('/api/enjoy', this._subrouterEnjoy);
