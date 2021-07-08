@@ -1,8 +1,14 @@
 .destinations-list-container {
+    @media #{$sm-only} {
+        padding: 2rem;
+    }
     padding: 6rem;
     color: clr(primary);
 
     .destinations-item {
-        padding: 3rem;
+        padding: 3rem 0;
+        .destination-item-title {
+            padding-top: 2rem;
+        }
     }
 }

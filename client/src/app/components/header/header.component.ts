@@ -1,35 +1,49 @@
 // src/app/components/header.component.ts
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   template: `
     <header>
-      <div class="row align-center-center">
-        <div class="column-4 lg-offset-2">
+      <div class="mobile-header">
+        <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
+        <div class="row">
+          <label for="openSidebarMenu" class="sidebarIconToggle">
+            <div class="spinner diagonal part-1"></div>
+            <div class="spinner horizontal"></div>
+            <div class="spinner diagonal part-2"></div>
+          </label>
+          <div class="column-6 offset-8">
+            <div class="nav-logo"><h1>Travel</h1></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-center-center" id="desktop-header">
+        <div class="sm-column-6 sm-offset-1 lg-column-4 lg-offset-2">
           <div class="nav-logo"><h1>Travel</h1></div>
         </div>
-        <div class="column-2 a-menu lg-offset-2">
+        <div class="sm-column-2 sm-offset-1 lg-column-2 lg-offset-2  a-menu">
           <h4>
             <a href="">HOME</a>
           </h4>
         </div>
-        <div class="column-2 a-menu">
+        <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
             <a href="">HOTELS</a>
           </h4>
         </div>
-        <div class="column-2 a-menu">
+        <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
             <a href="">PAGES</a>
           </h4>
         </div>
-        <div class="column-2 a-menu">
+        <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
             <a href="">BONUS</a>
           </h4>
         </div>
-        <div class="column-2 a-menu">
+        <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
             <a href="">CONTACT</a>
           </h4>
