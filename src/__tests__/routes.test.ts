@@ -1,9 +1,11 @@
 import { suite, test } from '@testdeck/jasmine';
 import { Server } from "../app";
+import AuthController from '../controllers/api/auth/AuthController';
 
 const test_server = new Server();
 
 const api_endpoint = 'http://localhost:4040/';
+const auth_endpoint = 'http://localhost:4040/api/auth';
 const drink_endpoint = 'http://localhost:4040/api/drink';
 const eat_endpoint = 'http://localhost:4040/api/eat';
 const sleep_endpoint = 'http://localhost:4040/api/sleep';
@@ -37,7 +39,6 @@ describe("GET '/api/drink'", () => {
     var data = {};
     beforeAll((done) => {
         Request.get(drink_endpoint, (error, response, body) => {
-            console.log(response.statusCode)
             data['status'] = response.statusCode;
             done();
         });
@@ -98,3 +99,23 @@ describe("GET '/api/travel'", () => {
         expect(data['status']).toBe(200);
     });
 })
+
+/**
+ * Create an user.
+ */
+
+// describe("POST '/api/auth/register'", () => {
+//     var data = {};
+//     beforeAll((done) => {
+//         Request.post(auth_endpoint + '/register').send({
+//             "firstName": "firstNameTest",
+//             "lastName": "lastNameTest",
+//             "username": "usernameTest",
+//             "email ": "emailTest",
+//             "password": "passwordTest"
+//         })
+//         // console.log(Request.body)
+//         // data['status'] = Response.statusCode;
+//         done();
+//     });
+// });
