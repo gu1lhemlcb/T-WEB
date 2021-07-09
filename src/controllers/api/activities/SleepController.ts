@@ -32,7 +32,7 @@ class SleepController {
             ratings: req.body.ratings // ex: '3'
 
         }).then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             res.status(200).json(response.data);
         }).catch(function (responseError) {
             console.log(responseError.code);
