@@ -1,8 +1,6 @@
 import { suite, test } from '@testdeck/jasmine';
+import { response } from 'express';
 import { Server } from "../app";
-import AuthController from '../controllers/api/auth/AuthController';
-
-const test_server = new Server();
 
 const api_endpoint = 'http://localhost:4040/';
 const auth_endpoint = 'http://localhost:4040/api/auth';
@@ -77,7 +75,7 @@ describe("GET '/api/enjoy'", () => {
 describe("GET '/api/sleep'", () => {
     var data = {};
     beforeAll((done) => {
-        Request.get(enjoy_endpoint, (error, response, body) => {
+        Request.get(sleep_endpoint, (error, response, body) => {
             data['status'] = response.statusCode;
             done();
         });
