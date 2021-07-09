@@ -101,19 +101,3 @@ describe("GET '/api/travel'", () => {
 /**
  * Create an user.
  */
-
-// describe("POST '/api/auth/register'", () => {
-//     var data = {};
-//     beforeAll((done) => {
-//         Request.post(auth_endpoint + '/register').send({
-//             "firstName": "firstNameTest",
-//             "lastName": "lastNameTest",
-//             "username": "usernameTest",
-//             "email ": "emailTest",
-//             "password": "passwordTest"
-//         })
-//         // console.log(Request.body)
-//         // data['status'] = Response.statusCode;
-//         done();
-//     });
-// });

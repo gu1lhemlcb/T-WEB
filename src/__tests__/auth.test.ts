@@ -16,14 +16,14 @@ describe('POST /auth/register', function () {
         request(api_endpoint)
             .post('api/auth/register')
             .send({
-                firstName: "registerTest",
-                lastName: "registerTest",
-                username: "registerTest",
-                email: "registerTest@test.com",
+                firstName: "keynoteTest",
+                lastName: "keynoteTest",
+                username: "keynoteTest",
+                email: "keynoteTest@test.com",
                 password: "12345678"
             })
             .then(function (res) {
-                console.log(res.text);
+                // console.log(res.text);
                 expect(res.status).toBe(200)
                 done()
             })
@@ -39,7 +39,7 @@ describe('POST /auth/login', function () {
                 password: "12345678"
             })
             .then(function (res) {
-                console.log(res.text);
+                // console.log(res.text);
                 expect(res.status).toBe(200);
                 done()
             }
