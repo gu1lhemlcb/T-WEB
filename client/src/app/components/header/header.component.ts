@@ -14,14 +14,14 @@ import { Component, OnInit } from '@angular/core';
             <div class="spinner diagonal part-2"></div>
           </label>
           <div class="column-6 offset-8">
-            <div class="nav-logo"><h1>Travel</h1></div>
+            <div class="nav-logo"><h1>EpicRoadTrip</h1></div>
           </div>
         </div>
       </div>
 
       <div class="row align-center-center" id="desktop-header">
         <div class="sm-column-6 sm-offset-1 lg-column-4 lg-offset-2">
-          <div class="nav-logo"><h1>Travel</h1></div>
+          <div class="nav-logo"><h1>EpicRoadTrip</h1></div>
         </div>
         <div class="sm-column-2 sm-offset-1 lg-column-2 lg-offset-2  a-menu">
           <h4>
@@ -30,22 +30,27 @@ import { Component, OnInit } from '@angular/core';
         </div>
         <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
-            <a href="">HOTELS</a>
+            <a href="">TRAVEL</a>
           </h4>
         </div>
         <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
-            <a href="">PAGES</a>
+            <a href="">SLEEP</a>
           </h4>
         </div>
         <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
-            <a href="">BONUS</a>
+            <a href="">EAT</a>
           </h4>
         </div>
         <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
           <h4>
-            <a href="">CONTACT</a>
+            <a href="">ENJOY</a>
+          </h4>
+        </div>
+        <div class="sm-column-2 sm-offset-1 lg-column-2 a-menu">
+          <h4>
+            <a href=""></a>
           </h4>
         </div>
       </div>
@@ -54,6 +59,6 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
-  ngOnInit() {}
+  constructor() { }
+  ngOnInit() { }
 }

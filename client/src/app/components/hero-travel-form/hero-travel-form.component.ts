@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core'
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import axios from "axios";
+
 
 @Component({
   selector: 'app-hero-travel-form',
@@ -13,51 +17,29 @@ import { Component, OnInit } from '@angular/core'
                 <label for="where">
                   <h4>Where whould you like to go ?</h4>
                 </label>
-                <input
-                  class="a-input-text"
-                  type="text"
-                  name="where"
-                  id="where"
-                  placeholder="Destination: Country, City, Airport..."
+                <input type="text" class="a-input-text" id="where"
+                  required
+                  [(ngModel)]="originLocationCode" name="originLocationCode"
+                  placeholder="Departure airport: City Airport, ex: MPL"
+                />
+                <input type="text" class="a-input-text" id="where"
+                  required
+                  [(ngModel)]="destinationLocationCode" name="destinationLocationCode"
+                  placeholder="Destination: City airport, ex :JFK"
                 />
               </div>
               <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
-                <input
-                  class="a-input-text"
-                  type="date"
-                  name="check-in"
-                  id="check-in"
-                />
+              <input type="date" class="a-input-text" id="departure-date"
+                required
+                [(ngModel)]="destinationLocationCode" name="departureDate"
+              />
               </div>
               <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
-                <input
-                  class="a-input-text"
-                  type="date"
-                  name="check-out"
-                  id="check-out"
+                <input type="number" class="a-input-text" id="adults"
+                  required
+                  [(ngModel)]="adults" name="adults"
+                  placeholder="Number of adults"
                 />
-              </div>
-              <div class="sm-column-22 sm-offset-1 lg-column-8 lg-offset-1">
-                <select class="a-select" name="adults" id="adults">
-                  <option value="1" selected>
-                    Adults
-                  </option>
-                  <option value="2">
-                    Lorem 2
-                  </option>
-                  <option value="3">
-                    Lorem 3
-                  </option>
-                  <option value="4">
-                    Lorem 4
-                  </option>
-                  <option value="5">
-                    Lorem 5
-                  </option>
-                  <option value="6">
-                    Lorem 6
-                  </option>
-                </select>
               </div>
               <div class="sm-column-22 sm-offset-1 lg-column-13 lg-offset-1">
                 <select class="a-select" name="Max Budget" id="Max Budget">
@@ -82,7 +64,7 @@ import { Component, OnInit } from '@angular/core'
                 </select>
               </div>
               <div class="sm-column-22 sm-offset-1 lg-column-14 lg-offset-5">
-                <a href="" class="a-button secondary">Book Now</a>
+                <button class="a-button secondary" ng-click="searchFlights()">BOOK NOW</button>
               </div>
             </div>
           </form>
@@ -112,7 +94,31 @@ import { Component, OnInit } from '@angular/core'
   styles: [],
 })
 export class HeroTravelFormComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  public originLocationCode: string;
+  public destinationLocationCode: string;
+  public departureDate: string;
+  public adults: number;
+
+  constructor() {
+
+    // this.originLocationCode: string,
+    //   this.destinationLocationCode: string,
+    //     this.departureDate: string,
+    //       this.adults: number
+  };
+
+  searchFlights() {
+    console.log('SENT')
+    axios
+      .post('http://localhost:4040/api/travel/flights', {
+        originLocationCode: this.originLocationCode,
+        destinationLocationCode: this.destinationLocationCode,
+        departureDate: this.departureDate,
+        adults: this.adults
+      })
+  }
+  ngOnInit(): void {
+
+  }
 }
