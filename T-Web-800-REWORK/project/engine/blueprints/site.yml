@@ -1,0 +1,45 @@
+###########################################################################################################################
+
+title: "Dashboard"
+
+###########################################################################################################################
+
+options:
+  update:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+
+###########################################################################################################################
+
+tabs:
+  pages:
+    extends: utils/site/site-01
+    label: "Pages"
+    icon: text
+  common:
+    extends: utils/site/site-02
+    label: "Commun"
+    icon: template
+  media:
+    extends: utils/site/site-03
+    label: "Médias"
+    icon: file
+  infos:
+    extends: utils/site/site-04
+    label: "Informations"
+    icon: smile
+  settings:
+    extends: utils/site/site-05
+    label: "Paramètres"
+    icon: settings
+  errors:
+    extends: utils/site/site-06
+    label: "Gestion des erreurs"
+    icon: error
+
+###########################################################################################################################

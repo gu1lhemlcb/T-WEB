@@ -1,0 +1,58 @@
+###########################################################################################################################
+
+title: "Maintenance"
+icon: page
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: false
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: false
+    editor: false
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: false
+    editor: false
+    client: false
+  changeTitle:
+    admin: false
+    editor: false
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+columns:
+  -
+    width: 1/1
+    sections:
+      info:
+        theme: info
+        headline: "Vous êtes sur une page système."
+        text: "En conséquence, cette page ne nécessite aucune action de votre part."
+
+###########################################################################################################################

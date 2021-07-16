@@ -1,0 +1,27 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/privacy
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+{% set contents = page.privacy_contents.toBlocks|default('<p>Aucun contenu.</p>') %}
+
+
+{% block page %}
+<main>
+  <section class="our-team pt-60 pb-90">
+    <div class="row align-center-center">
+      <div class="column-22 offset-1">
+        <div class="our-team-title pt-60 pb-20">
+          <h4>
+            {{ page.privacy_title ? page.privacy_title|raw : '' }}
+          </h4>
+        </div>
+        <div class="our-team-contents align-center-start">
+          <div class="textarea-nl">
+            {{ contents ? contents|raw : '' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

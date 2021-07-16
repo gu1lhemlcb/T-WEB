@@ -1,0 +1,73 @@
+Title: Se connecter
+
+----
+
+Hero-title: Sign in/Sign up
+
+----
+
+Hero-description: Access my online services
+
+----
+
+Hero-contents: To access our services, you must have an Epitravel account.
+
+----
+
+Quotation-title: VOUS N'AVEZ PAS ENCORE D'IDENTIFIANT ?
+
+----
+
+Quotation-description: Contactez-nous pour discuter de votre projet avec un formateur certifié
+
+----
+
+Redirect: 
+
+----
+
+Seo-indexing: 
+
+----
+
+Excludefromxmlsitemap: false
+
+----
+
+Seo-title: 
+
+----
+
+Seo-suffix: true
+
+----
+
+Seo-description: 
+
+----
+
+Seo-og: false
+
+----
+
+Seo-og-title: 
+
+----
+
+Seo-og-description: 
+
+----
+
+Seo-og-image: 
+
+----
+
+Seo-mc: false
+
+----
+
+Seo-mc-data: 
+
+----
+
+Contents: []

@@ -1,0 +1,127 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 1/1
+    fields:
+      seo_indexing:
+        width: 1/2
+        type: select
+        required: false
+        default: "index, follow"
+        options:
+          - "noindex, nofollow"
+          - "noindex, follow"
+          - "index, nofollow"
+          - "index, follow"
+        label: "Indexation"
+      excludefromxmlsitemap:
+        width: 1/2
+        type: toggle
+        required: false
+        default: off
+        label: "Exclure du sitemap"
+        text:
+          - "Non"
+          - "Oui"
+      seo_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Données SEO"
+      seo_title:
+        width: 3/4
+        type: text
+        required: false
+        maxlength: 100
+        label: "Titre"
+      seo_suffix:
+        width: 1/4
+        type: toggle
+        required: false
+        default: on
+        label: "Suffixe "{{ site.seo_separator }} {{ site.title }}""
+        text:
+          - "Non"
+          - "Oui"
+      seo_description:
+        width: 1/1
+        type: textarea
+        required: false
+        maxlength: 150
+        buttons: false
+        size: small
+        label: "Description"
+      seo_og_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Open Graph"
+      seo_og:
+        width: 1/1
+        type: toggle
+        required: false
+        default: off
+        label: "Activer les données Open Graph"
+        text:
+          - "Non"
+          - "Oui"
+      seo_og_title:
+        width: 1/1
+        type: text
+        required: false
+        maxlength: 100
+        label: "Titre"
+        when:
+          seo_og: true
+      seo_og_description:
+        width: 1/1
+        type: textarea
+        required: false
+        maxlength: 150
+        buttons: false
+        size: small
+        label: "Description"
+        when:
+          seo_og: true
+      seo_og_image:
+        width: 1/1
+        type: files
+        required: false
+        multiple: false
+        search: true
+        query: site.files.template("image")
+        uploads:
+          parent: site
+          template: image
+        layout: list
+        link: true
+        image: false
+        label: "Image"
+        empty: "Pas d'image"
+        when:
+          seo_og: true
+      seo_mc_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Microdonnées"
+      seo_mc:
+        width: 1/1
+        type: toggle
+        required: false
+        default: off
+        label: "Activer les microdonnées"
+        text:
+          - "Non"
+          - "Oui"
+      seo_mc_data:
+        width: 1/1
+        type: textarea
+        required: false
+        buttons: false
+        size: medium
+        label: "Microdonnées (JSON)"
+        when:
+          seo_mc: true
+###########################################################################################################################

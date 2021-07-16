@@ -1,0 +1,30 @@
+<div class="sub-destinations-contents-5 align-center-start">
+  <div class="column-22 lg-offset-2" style="position:relative">
+    <h3 class="clr-primary">
+      {{ section.contents_title|raw ? section.contents_title|raw : '' }}
+    </h3>
+    <div class="sub-destinations-icon">
+      <svg class="icon">
+        <use xlink:href="#icon-{{ section.contents_icon }}" />
+      </svg>
+    </div>
+    {% for item in section.contents_contents.toStructure %}
+      <h4 class="pt-20">
+        {{ item.group_sequence_title|raw ? item.group_sequence_title|raw : '' }}
+      </h4>
+      <ul class="a-ul">
+        {% for sequence in item.sequences.toStructure %}
+          <li class="a-li">
+            {{ sequence.sequence_title|raw ? sequence.sequence_title|raw : '' }}<ul class="a-sub-ul">
+              <li class="a-sub-li">
+                {{ sequence.sequence_contents|raw
+                  ? sequence.sequence_contents|raw
+                  : '' }}
+              </li>
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,121 @@
+###########################################################################################################################
+
+title: Destinations - Item"
+icon: page
+num: date
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: true
+    editor: true
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: true
+    editor: true
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listé"
+    text: "La sous page est publique pour tout le monde."
+  unlisted:
+    label: "Non listé"
+    text: "La sous page est en ligne et ne peut être consulté qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La sous page est en mode brouillon. Il ne peut être consulté que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          hero_headline:
+            width: 1/1
+            type: headline
+            label: Haut de page
+          short_description:
+            width: 1/1
+            type: textarea
+            label: Description courte
+      -
+        width: 1/2
+        fields:
+          contents_builder_headline:
+            width: 1/1
+            type: headline
+            label: Colonne de gauche
+          contents_builder_left:
+            width: 1/1
+            type: builder
+            columns: 1
+            label: 'Description'
+            fieldsets:
+              contents_left:
+                extends: utils/builder/contents_left
+              sequences:
+                extends: utils/builder/sequences
+              sequence_description:
+                extends: utils/builder/sequence_description
+      -
+        width: 1/2
+        fields:
+          right_column:
+            width: 1/1
+            type: headline
+            label: Colonne de droite
+          contents_builder_right:
+            width: 1/1
+            type: builder
+            columns: 1
+            label: 'Description'
+            fieldsets:
+              contents_1:
+                extends: utils/builder/contents_1
+              contents_2:
+                extends: utils/builder/contents_2
+              button_devis:
+                extends: utils/builder/button_devis
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

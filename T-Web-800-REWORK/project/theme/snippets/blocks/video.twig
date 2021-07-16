@@ -1,0 +1,8 @@
+{% if block.url.isNotEmpty %}
+    <figure>
+        {{ video(block.url) }}
+        {% if block.caption.isNotEmpty %}
+            <figcaption>{{ block.caption }}</figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

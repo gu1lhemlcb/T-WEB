@@ -1,0 +1,37 @@
+.contact-hero {
+  position: relative;
+  background-color: clr(primary);
+  color: white;
+}
+
+.contact-informations-container {
+  position: relative;
+  padding: 4rem 0;
+  &.border {
+    border-bottom: 1px solid clr(tertiary);
+  }
+  .contact-informations {
+    padding-left: 6rem;
+
+    .contact-informations-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 85%);
+      width: 5rem;
+      height: 5rem;
+      border: 1px solid clr(secondary);
+      border-radius: 50%;
+      padding: 1.5rem 1.5rem;
+      color: clr(primary);
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(75%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+} 

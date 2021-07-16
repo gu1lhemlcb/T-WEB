@@ -1,0 +1,269 @@
+.home-top {
+  position: relative;
+  background-color: clr(white);
+  background-size: 50% auto;
+  color: white;
+
+  .background-middle {
+    display: block;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 45%;
+    background-color: clr(primary);
+    &.border {
+      border-top: 1px solid clr(white);
+      padding: 6rem 0;
+    }
+  }
+
+  .destination-img {
+    @media #{$lg} {
+      &:not(:first-child) {
+        margin-left: 3rem;
+      }
+    }
+    position: relative;
+    width: 100%;
+    height: 39.5rem;
+    transition: display 50ms, opacity 50ms;
+    &.th-1 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-1);
+        background-image: linear-gradient(
+          rgba(clr(th-1), 0),
+          rgba(clr(th-1), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-2 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-2);
+        background-image: linear-gradient(
+          rgba(clr(th-2), 0),
+          rgba(clr(th-2), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-3 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-3);
+        background-image: linear-gradient(
+          rgba(clr(th-3), 0),
+          rgba(clr(th-3), 0.6)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-4 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-4);
+        background-image: linear-gradient(
+          rgba(clr(th-4), 0),
+          rgba(clr(th-4), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-5 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-5);
+        background-image: linear-gradient(
+          rgba(clr(th-5), 0),
+          rgba(clr(th-5), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    img {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .form-contents {
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      .destination-title {
+        color: clr(white) !important;
+      }
+
+      .a-button {
+        display: none;
+        opacity: 0;
+        transition: visibility $anim, opacity $anim linear;
+      }
+      @media #{$sm-only} {
+        .a-button {
+          display: inline-block;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      .form-contents .a-button {
+        opacity: 1;
+        display: inline-block;
+        animation: appear 0.3s
+      }
+    }
+  }
+}
+
+.engagements {
+  .engagements-description {
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 1.19;
+    }
+  }
+
+  .engagements-contents-1,
+  .engagements-contents-2,
+  .engagements-contents-3 {
+    position: relative;
+    .engagements-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 85%);
+      width: 5rem;
+      height: 5rem;
+      border: 1px solid clr(secondary);
+      border-radius: 50%;
+      color: clr(primary);
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(75%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .engagements-contents-1,
+  .engagements-contents-2 {
+    border-bottom: 1px solid clr(common-gray);
+  }
+
+  .engagements-img {
+    position: relative;
+    width: 100%;
+    height: 70rem;
+    background-image: url("/assets/images/hotels.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media #{$sm-only} {
+      height: 32rem;
+    }
+  }
+}
+
+.citation {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid clr(common-gray);
+  text-align: center;
+  padding-bottom: 10rem;
+  h2 {
+    position: relative;
+    &::before {
+      content: "“";
+      position: absolute;
+      top: 0;
+      left: 15%;
+      transform: translate(-100%, 10%);
+      font-size: 100px;
+      line-height: 1.18;
+      color: clr(secondary);
+      @media #{$md} {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, 45%);
+      }
+    }
+
+    &::after {
+      content: "”";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(0, 25%);
+      font-size: 100px;
+      line-height: 1.18;
+      color: clr(secondary);
+      @media #{$sm-only} {
+        bottom: 0;
+        right: 0;
+        transform: translate(-25%, 40%);
+      }
+    }
+    .citation-p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      transform: translate(60%, -50%);
+      @media #{$sm-only} {
+        transform: translate(14%, 100%);
+      }
+    }
+  }
+}

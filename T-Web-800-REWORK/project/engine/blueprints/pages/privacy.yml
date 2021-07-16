@@ -1,0 +1,81 @@
+###########################################################################################################################
+
+title: "Confidentialité"
+icon: page
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: false
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: false
+    editor: false
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: false
+    editor: false
+    client: false
+  changeTitle:
+    admin: false
+    editor: false
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          privacy_headline:
+            width: 1/1
+            type: headline
+            label: Confidentialité
+          privacy_title:
+            width: 1/1
+            type: text
+            label: Titre
+          privacy_contents:
+            width: 1/1
+            type: editor
+            required: true
+            pretty: false
+            allowed:
+              - h2
+              - h3
+              - paragraph
+              - hr
+            label: 'Contenus'
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

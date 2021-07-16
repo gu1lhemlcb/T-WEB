@@ -1,0 +1,388 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/modules_index
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+	{% set user = kirby.user() %}
+	{% if user %}
+
+		{# //////////////////////////////////////////////////////////////////////// #}
+		{% if user %}
+			<main>
+				<!-- ###### TOP START ###### -->
+				<section class="modules-hero">
+					<div class="row align-start-start">
+						<div class="column-14 pt-60 pb-60 lg-offset-1">
+							<a href="/">
+								<div class="back-module-icon">
+									<svg class="icon">
+										<use xlink:href="#icon-fleche-gauche"/>
+									</svg>
+								</div>
+								<h4>
+									Revenir à l'accueil
+								</h4>
+							</a>
+						</div>
+					</div>
+					<div class="row align-start-start pb-90">
+						<div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+							{# <h1>
+								{{ site.if_more_one_session|default(0) ? site.if_more_one_session.kt.inline|raw : "" }}
+							</h1>
+							{% for item in user.session_in.toStructure %}
+								<h3>{{ item.title }}</h3>
+							{% endfor %} #}
+						</div>
+					</div>
+				</section>
+				<!-- ###### TOP END ###### -->
+			</main>
+			{% if user_session == true %}
+				{% for session in user.session_in.toStructure %}
+					{# {% for user_session in session.users_session.toUsers %}
+						{% if user == user_session %} #}
+							<main>
+								<!-- ###### TOP START ###### -->
+								<section class="modules-hero">
+									<div class="row align-start-start">
+										<div class="sm-column-22 sm-offset-1 lg-column-14 pt-60 pb-60 lg-offset-1">
+											<h4>
+												Votre ESPACE PERSONNEL
+											</h4>
+										</div>
+									</div>
+									<div class="row align-start-start pb-90">
+										<div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+											<h1>
+												Bienvenue
+												{{ user.first_name }}
+												{{ user.last_name }}
+												dans votre espace personnel de formation
+											</h1>
+										</div>
+									</div>
+								</section>
+								<!-- ###### TOP END ###### -->
+								<section class="modules-form pb-30 pt-60">
+									<div class="row">
+										<div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-3">
+											<div class="left-contents-head pb-30">
+												<div class="row">
+													<div class="column-20">
+														<h4>
+															Votre formation en ligne
+														</h4>
+														<h3 class="pt-30 {{ session.session_title.toPage.formation_name.toPage.parent.hero_theme }}">
+															{{ session.session_title.toPage.formation_name.toPage.parent.title }}
+														</h3>
+														<h3>
+															{{ session.session_title.toPage.formation_name.toPage.title }}
+														</h3>
+													</div>
+												</div>
+												<div class="row">
+													<div class="sm-column-22 sm-offset-1 lg-column-7 lg-offset-0">
+														<div class="modules-informations-container">
+															<div class="modules-informations">
+																<p>
+																	Date de début
+																</p>
+																<p style="font-weight:700">
+																	{{
+                                  session.session_title.toPage.start_date_session.toDate('%d/%m/%Y')
+                                }}
+																</p>
+																<div class="modules-informations-icon">
+																	<svg class="icon">
+																		<use xlink:href="#icon-calendrier"/>
+																	</svg>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sm-column-22 sm-offset-1 lg-column-7 lg-offset-1">
+														<div class="modules-informations-container">
+															<div class="modules-informations">
+																<p>
+																	Date de fin
+																</p>
+																<p style="font-weight:700">
+																	{{
+                                  session.session_title.toPage.end_date_session.toDate('%d/%m/%Y')
+                                }}
+																</p>
+																<div class="modules-informations-icon">
+																	<svg class="icon">
+																		<use xlink:href="#icon-calendrier"/>
+																	</svg>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sm-column-22 sm-offset-1 lg-column-7 lg-offset-1">
+														<div class="modules-informations-container">
+															<div class="modules-informations">
+																<p>
+																	Durée
+																</p>
+																<p style="font-weight:700">
+																	{{ session.session_title.toPage.duration }}
+																</p>
+																<div class="modules-informations-icon">
+																	<svg class="icon">
+																		<use xlink:href="#icon-duree"/>
+																	</svg>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="left-content-advancement">
+												{% set validated = true %}
+												{% for item in user.session_in.toStructure %}
+													{% for module in item.modules_progress.toStructure %}
+														{% if module.module_timer == "00:00:00" %}
+															<div class="modules-list-section pt-30">
+																<div class="row align-center-center">
+																	<div class="sm-column-18 sm-offset-4 lg-column-8 modules-name lg-offset-2">
+																		<p class="clr-secondary" style="font-weight:700">
+																			MODULE 0{{ loop.index }}
+																		</p>
+																		<h3>
+																			{{ module.modules_title.toPage.title|raw  }}
+																		</h3>
+																		<div class="modules-advancement-icon">
+																			<svg class="icon">
+																				<use xlink:href="#icon-check-light"/>
+																			</svg>
+																		</div>
+																	</div>
+																	<div class="sm-column-18 sm-offset-4 lg-column-3 lg-offset-11 text-left">
+																		<a href="{{ module.modules_title.toPage.url }}" class="validated-module">
+																			<h3>
+																				VALIDÉ
+																			</h3>
+																		</a>
+																	</div>
+																</div>
+															</div>
+															{% set validated = true %}
+														{% elseif module.module_timer != "00:00:00" and validated == true %}
+															<div class="modules-list-section pt-30">
+																<div class="row align-center-center">
+																	<div class="sm-column-19 sm-offset-5 lg-column-5 modules-name lg-offset-2">
+																		<p class="clr-secondary" style="font-weight:700">
+																			MODULE 0{{ loop.index }}
+																		</p>
+																		<h3>
+																			{{ module.modules_title.toPage.title|raw  }}
+																		</h3>
+																		<div class="modules-advancement-icon -light">
+																			<svg class="icon">
+																				<use xlink:href="#icon-encours"/>
+																			</svg>
+																		</div>
+																	</div>
+																	<div class="sm-column-15 sm-offset-1 lg-column-6 lg-offset-11 text-left">
+																		<a href="{{ module.modules_title.toPage.url }}" class="a-button primary">
+																			À FAIRE
+																		</a>
+																	</div>
+																</div>
+															</div>
+															{% set validated = false %}
+														{% elseif module.module_timer != "00:00:00" and validated == false %}
+															<div class="modules-list-section pt-30">
+																<div class="row align-center-center">
+																	<div class="sm-column-8 sm-offset-5 lg-column-5 modules-name-disabled lg-offset-2">
+																		<p class="clr-tertiary" style="font-weight:700">
+																			MODULE 0{{ loop.index }}
+																		</p>
+																		<h3 class="clr-secondary">
+																			{{ module.modules_title.toPage.title|raw  }}
+																		</h3>
+																		<div class="modules-advancement-icon -disabled"></div>
+																	</div>
+																	<div class="sm-column-10 sm-offset-1 lg-column-7 lg-offset-10 text-left">
+																		<button class="a-button primary" disabled>
+																			En Attente
+																		</button>
+																	</div>
+																</div>
+															</div>
+															{% set validated = false %}
+														{% endif %}
+													{% endfor %}
+												{% endfor %}
+
+												{# CHECK IF ALL MODULES ARE VALIDATED #}
+												{% set allValidated = false %}
+												{% set alreadyDone = false %}
+												{% for item in user.session_in.toStructure %}
+													{% if item.qcm_result|default(0) %}
+														{% set alreadyDone = true %}
+													{% endif %}
+													{% for module in item.modules_progress.toStructure %}
+														{% if module.module_timer == "00:00:00" %}
+															{% set allValidated = true %}
+														{% else %}
+															{% set allValidated = false %}
+														{% endif %}
+													{% endfor %}
+												{% endfor %}
+
+												{# TO DO : RANDOMISER LE LIEN DU QCM #}
+												{% set qcm_link = null %}
+												{% set qcmArray = [] %}
+												{% for item in user.session_in.toStructure %}
+													{% for qcm in item.qcm_index.toStructure %}
+														{# {{ dump(qcm.content.toArray.qcm_title|json_encode) }} #}
+														{% set qcmArray = qcmArray|merge([qcm.content.toArray.qcm_title]) %}
+													{% endfor %}
+												{% endfor %}
+												{% set qcm_link = random(qcmArray)[0] %}
+												{# ---------------------------------- #}
+												{% if alreadyDone == true  %}
+													<div class="modules-list-section pt-30">
+														<div class="row">
+															<div class="sm-column-22 sm-offset-1 lg-column-24 lg-offset-0 modules-name">
+																<button class="a-button primary" disabled>
+																	Évaluation terminée
+																</button>
+															</div>
+														</div>
+													</div>
+												{% elseif allValidated == true %}
+													<div class="modules-list-section pt-30">
+														<div class="row">
+															<div class="sm-column-22 sm-offset-1 lg-column-24 lg-offset-0 modules-name">
+																<a href="{{ qcm_link }}" class="a-button primary">
+																	Passer à l'évaluation
+																</a>
+															</div>
+														</div>
+													</div>
+												{% else %}
+													<div class="modules-list-section pt-30">
+														<div class="row">
+															<div class="sm-column-22 sm-offset-1 lg-column-24 lg-offset-0 modules-name">
+																<button class="a-button primary" disabled>
+																	Passer à l'évaluation
+																</button>
+															</div>
+														</div>
+													</div>
+												{% endif %}
+											</div>
+										</div>
+										<div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
+											<div class="row right-contents-head">
+												<div class="sm-column-24 lg-column-16 pt-40 modules-informations-container border">
+													<div class="modules-informations">
+														<h4 class="no-upper">
+															Votre Formateur<br/>
+															<p class="pt-10 f-bold">
+																{{ session.session_title.toPage.trainer_name }}
+															</p>
+															<p>
+																{{ session.session_title.toPage.trainer_email }}
+															</p>
+														</h4>
+														<div class="modules-informations-icon">
+															<svg class="icon">
+																<use xlink:href="#icon-user"/>
+															</svg>
+														</div>
+													</div>
+												</div>
+												<div class="sm-column-24 lg-column-16 pt-40 modules-informations-container border">
+													<div class="modules-informations">
+														<h4 class="no-upper">
+															Contact<p class="pt-10 f-bold">
+																GLCE Form
+															</p>
+															<p>
+																formation@groupeglce.fr
+															</p>
+															<p>
+																04 67 45 50 47
+															</p>
+														</h4>
+														<div class="modules-informations-icon">
+															<svg class="icon">
+																<use xlink:href="#icon-contact"/>
+															</svg>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</main>
+						{# {% endif %}
+					{% endfor %} #}
+				{% endfor %}
+			{% else %}
+				<main>
+					<!-- ###### TOP START ###### -->
+					<section class="modules-hero">
+						<div class="row align-start-start">
+							<div class="column-14 pt-60 pb-60 lg-offset-1">
+								<a href="/">
+									<div class="back-module-icon">
+										<svg class="icon">
+											<use xlink:href="#icon-fleche-gauche"/>
+										</svg>
+									</div>
+									<h4>
+										Revenir à l'accueil
+									</h4>
+								</a>
+							</div>
+						</div>
+						<div class="row align-start-start pb-90">
+							<div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+								<h1>
+									{{ site.if_session_empty|default(0) ? site.if_session_empty.kt.inline|raw : "" }}
+								</h1>
+							</div>
+						</div>
+					</section>
+					<!-- ###### TOP END ###### -->
+				</main>
+			{% endif %}
+		{% endif %}
+	{% else %}
+		<main>
+			<!-- ###### TOP START ###### -->
+			<section class="modules-hero">
+				<div class="row align-start-start">
+					<div class="column-14 pt-60 pb-60 lg-offset-1">
+						<a href="/">
+							<div class="back-module-icon">
+								<svg class="icon">
+									<use xlink:href="#icon-fleche-gauche"/>
+								</svg>
+							</div>
+							<h4>
+								Revenir à l'accueil
+							</h4>
+						</a>
+					</div>
+				</div>
+				<div class="row align-start-start pb-90">
+					<div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+						<h1>
+							{{ site.if_not_connected|default(0) ? site.if_not_connected.kt.inline|raw : "" }}
+						</h1>
+					</div>
+				</div>
+			</section>
+			<!-- ###### TOP END ###### -->
+		</main>
+	{% endif %}
+{% endblock %}

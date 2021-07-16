@@ -1,0 +1,173 @@
+input,
+select,
+textarea {
+  appearance: none;
+  outline: none;
+}
+
+label {
+  position: relative;
+  color: clr(primary);
+  font-family: $font-renogare;
+  font-size: 1.4rem;
+  line-height: 1.42;
+
+  .optional {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: clr(secondary) !important;
+  }
+}
+
+.a-input-text,
+.a-input-textarea,
+.a-select  {
+  width: 100%;
+  height: 6rem;
+  margin: 0.9rem 0;
+  padding: 2rem 2rem;
+  border-radius: 3px;
+  border: 1px solid clr(secondary);
+  color: clr(secondary);
+  text-align: left;
+  text-decoration: none;
+  font-size: 1.4rem;
+  line-height: 1.21;
+  cursor: pointer;
+  outline: none;
+  &:focus {
+    border: 1px solid clr(primary);
+    color: clr(primary);
+  }
+
+}
+
+.a-input-textarea {
+  width: 100%;
+  height: 13.5rem;
+  font-family: $font-helvetica;
+}
+
+input::placeholder {
+  color: clr(secondary);
+  font-family: $font-helvetica;
+}
+textarea::placeholder {
+  color: clr(secondary);
+  font-family: $font-helvetica;
+}
+
+textarea:placeholder-shown {
+  font-family: $font-helvetica;
+}
+
+.a-select {
+  width: 100%;
+  height: 6rem;
+  border: 1px solid clr(secondary);
+  border-radius: 3px;
+  background: svg-inline(arrow-bottom);
+  background-repeat: no-repeat;
+  background-size: 1.8rem 1.4rem;
+  background-position: right 2rem top 50%;
+  color: clr(tertiary);
+
+  &:focus {
+    border-color: clr(primary);
+  }
+
+  [selected] {
+    border: 1px solid clr(primary);
+    color: clr(primary);
+  }
+}
+
+// // Input checkbox & input radio
+// // ───────────────────────────────────
+.a-checkbox,
+.a-radio {
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: absolute;
+    height: 0;
+    opacity: 0;
+
+    + label {
+      display: block;
+      position: relative;
+      padding-left: 4rem;
+      text-transform: none;
+      font-size: 1.4rem;
+      line-height: 1.43;
+      font-family: $font-helvetica;
+      transition: color $anim;
+      user-select: none;
+      cursor: pointer;
+      margin: 0.9rem 0;
+
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0, -25%);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 3px;
+      }
+
+      &::before {
+        border: 1px solid clr(tertiary);
+      }
+
+      &::after {
+        top: 0;
+        left: 0;
+        width: 3rem;
+        height: 3rem;
+        background-color: clr(primary);
+        border-radius: 3px;
+        background-image: svg-inline(croix);
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0;
+        transition: opacity $anim;
+      }
+    }
+
+    &:checked {
+      + label {
+        font-weight: 700;
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Input radio
+// // ───────────────────────────────────
+// .a-radio {
+//   input[type='radio'] {
+//     + label {
+//       &::before {
+//         border-radius: 50%;
+//       }
+//       &::after {
+//         border: none;
+//         border-radius: 50%;
+//       }
+//     }
+//   }
+// }
+
+.success {
+  margin-bottom: 2rem;
+  color: clr(success);
+  font-weight: 700;
+}

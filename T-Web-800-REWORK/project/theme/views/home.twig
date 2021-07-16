@@ -1,0 +1,138 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/home
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+	<main>
+		<!-- ###### TOP START ###### -->
+		<section class="home-top">
+			<div class="background-middle"></div>
+			<div class="row align-start-start">
+
+				<div class="sm-column-22 lg-column-14 pt-60 pb-60 sm-offset-1 lg-offset-1">
+					<h1>
+						{{ page.hero_title }}
+					</h1>
+				</div>
+			</div>
+			<div class="row align-start-start">
+				<div class="column-14 offset-1">
+					<h4>
+						{{ page.destinations_title }}
+					</h4>
+				</div>
+				<div class="row align-center-start pt-30 pb-30">
+					{% for destination in site.index.filterBy('template', 'destinations_category') %}
+						<div class="sm-column-22 sm-offset-0 lg-column-7 lg-offset-0 destination-img {{ destination.hero_theme }} mb-30">
+							<img src="{{ destination.hero_image.toFile.url }}" alt="" class="gradient">
+							<div class="row form-contents lg-pb-60 sm-pb-30">
+								<div class="column-16 offset-3">
+									<h3 class="destination-title">
+										{{ destination.title|raw }}
+									</h3>
+								</div>
+								<div class="column-16 offset-3">
+									<p class="clr-w">
+										{{ destination.short_description.kt.inline|raw }}
+									</p>
+								</div>
+								<div class="column-16 offset-3">
+									<a href="{{ destination.url }}" class="a-button transparent-destinations pt-30">
+										Voir les destinations
+									</a>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+		<!-- ###### TOP END ###### -->
+		<!-- ###### ENGAGEMENTS START ###### -->
+		<section class="engagements">
+			<div class="row align-start-start">
+				<div class="sm-column-22 lg-column-10 offset-1">
+					<div class="row">
+						<div class="column-24 engagements-title pb-30">
+							<h4>
+								{{ page.engagements_title|raw }}
+							</h4>
+						</div>
+						<div class="column-24 engagements-description">
+							<h1>
+								{{ page.engagements_description|raw }}
+							</h1>
+						</div>
+						<div class="column-24 engagements-contents-1 align-center-start">
+							<div class="lg-column-22 lg-offset-1 pt-60 pb-60">
+								<div class="">
+									<h3 class="pb-10 pl-60">
+										{{ page.client_satisfying_title|raw
+                      ? page.client_satisfying_title|raw
+                      : '' }}
+									</h3>
+									<p class="pl-60">
+										{{ page.client_satisfying_contents|raw
+                      ? page.client_satisfying_contents|raw
+                      : '' }}
+									</p>
+								</div>
+								<div class="engagements-icon">
+									<svg class="icon">
+										<use xlink:href="#icon-{{ page.contents_icon_1 }}"/>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="engagements-contents-2 align-center-start">
+							<div class="lg-column-22 lg-offset-1 pt-60 pb-60">
+								<div class="">
+									<h3 class="pb-10 pl-60">
+										{{ page.learner_satisfying_title|raw
+                      ? page.learner_satisfying_title|raw
+                      : '' }}
+									</h3>
+									<p class="pl-60">
+										{{ page.learner_satisfying_contents|raw
+                      ? page.learner_satisfying_contents|raw
+                      : '' }}
+									</p>
+								</div>
+								<div class="engagements-icon">
+									<svg class="icon">
+										<use xlink:href="#icon-{{ page.contents_icon_2 }}"/>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sm-column-24 lg-column-11 lg-offset-1">
+					<div class="engagements-img" style="background-image: url('{{
+												            page.engagements_img.toFile.url
+												            }}');"></div>
+				</div>
+			</div>
+		</section>
+		<!-- ###### ENGAGEMENTS END ###### -->
+		<!-- ###### CITATION START ###### -->
+		<section class="citation">
+			<div class="row align-center-center">
+				<div class="lg-column-11 lg-offset-1">
+					<blockquote>
+						<h2 class="pr-30 pl-30 pt-80 pb-60">
+							{{ page.citation_contents|raw ? page.citation_contents|raw : '' }}
+							<div class="column-22 lg-column-11 lg-offset-3 text-left">
+								<p class="citation-p">
+									{{ page.citation_autor|raw ? page.citation_autor|raw : '' }}
+								</p>
+							</div>
+						</h2>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+		<!-- ###### CITATION END ###### -->
+	</main>
+{% endblock %}

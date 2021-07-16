@@ -1,0 +1,50 @@
+label: 'Contenus sur liste à puces + description'
+name: 'Contenu sur liste à puces + description'
+fields:
+  contents_icon:
+    width: 1/4
+    type: select
+    required: true
+    min: 1
+    label: Icone
+    options:
+      contact: Bulle de dialogue
+      satisfaction2: Carte satisfaction
+      publics: Carte vitale
+      duree: Chronomètre
+      croix: Croix
+      email: Email
+      objectifs: Objectifs
+      contenu: Page
+      engagements: People
+      participants: People (+)
+      adresse: Point GPS
+      satisfaction: Pouce en l'air
+      logout: Sortie
+      tarif: Tarif
+      telephone: Telephone
+      user: Utilisateur
+  objectif_title:
+    width: 3/4
+    type: text
+    label: Objectifs (Titre)
+  objectif_description:
+    width: 1/1
+    type: text
+    label: Objectifs (Description)
+  objectif_contents:
+    width: 1/1
+    type: structure
+    required: false
+    sortable: true
+    label: "Objectifs (contenus)"
+    empty: "Aucun élément"
+    columns:
+      objectif_label:
+        width: 1/1
+        align: left
+    fields:
+      objectif_label:
+        width: 1/1
+        type: text
+        label: Titre

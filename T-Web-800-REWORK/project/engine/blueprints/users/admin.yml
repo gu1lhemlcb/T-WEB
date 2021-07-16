@@ -1,0 +1,55 @@
+###########################################################################################################################
+
+title: "Administateur"
+
+###########################################################################################################################
+
+fields:
+  first_phone:
+    width: 1/2
+    type: tel
+    required: false
+    translate: false
+    maxlength: 50
+    icon: false
+    label: "N° de téléphone principal"
+  second_phone:
+    width: 1/2
+    type: tel
+    required: false
+    translate: false
+    maxlength: 50
+    icon: false
+    label: "N° de téléphone secondaire"
+  address:
+    width: 1/1
+    type: textarea
+    required: false
+    translate: false
+    maxlength: 300
+    buttons: false
+    size: small
+    label: "Adresse"
+  zip:
+    width: 1/3
+    type: text
+    required: false
+    translate: false
+    maxlength: 50
+    label: "Code postal"
+  city:
+    width: 1/3
+    type: text
+    required: false
+    translate: false
+    maxlength: 100
+    label: "Ville"
+  country:
+    width: 1/3
+    type: text
+    required: false
+    translate: false
+    maxlength: 100
+    label: "Pays"
+
+###########################################################################################################################

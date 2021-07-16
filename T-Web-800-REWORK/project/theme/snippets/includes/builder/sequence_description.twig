@@ -1,0 +1,21 @@
+<div class="sub-destinations-contents-1 align-center-start">
+  <div class="column-22 lg-offset-2" style="position:relative">
+    <h3 class="clr-primary">
+      {{ section.objectif_title ? section.objectif_title : '' }}
+    </h3>
+    <div class="sub-destinations-icon">
+      <svg class="icon">
+        <use xlink:href="#icon-{{ section.contents_icon }}" />
+      </svg>
+    </div>
+    <div class="a-h4-subform pt-20">
+      {{ section.objectif_description ? section.objectif_description : '' }}
+    </div>
+
+    <ul class="a-ul-light">
+      {% for objectif in section.objectif_contents.toStructure %}
+        <li class="a-li-light">{{ objectif.objectif_label|raw }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

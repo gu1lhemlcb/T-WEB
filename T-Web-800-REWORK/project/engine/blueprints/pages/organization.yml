@@ -1,0 +1,158 @@
+###########################################################################################################################
+
+title: "L'organisme"
+icon: page
+num: date
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: true
+    editor: true
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listé"
+    text: "La page est publique pour tout le monde."
+  unlisted:
+    label: "Non listé"
+    text: "La page est en ligne et ne peut être consulté qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La page est en mode brouillon. Il ne peut être consulté que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          hero_headline:
+            width: 1/1
+            type: headline
+            label: hero
+          hero_background:
+            width: 1/1
+            type: files
+            required: false
+            translate: false
+            label: 'Hero (image)'
+            empty: "Pas encore d'image"
+            query: site.images.filterBy('template', 'image')
+            uploads:
+              parent: site
+              template: image
+            multiple: false
+            layout: cards
+            search: true
+            image:
+              cover: false
+              back: pattern
+            size: tiny
+            link: true
+          hero_title:
+            width: 1/1
+            type: text
+            label: Hero (titre)
+          hero_description:
+            width: 1/1
+            type: text
+            label: Hero (description)
+          hero_objectif_title:
+            width: 1/1
+            type: text
+            label: Hero (Notre objectif - titre)
+          hero_objectif:
+            width: 1/1
+            type: textarea
+            label: Hero (Notre objectif - contenu)
+          strong_points_headline:
+            width: 1/1
+            type: headline
+            label: Nos points forts
+          strong_points_title:
+            width: 1/1
+            type: text
+            label: Nos points forts (titre)
+          strong_points_description_01:
+            width: 1/1
+            type: text
+            label: Nos points forts (description 01)
+          strong_points_description_02:
+            width: 1/1
+            type: text
+            label: Nos points forts (description 02)
+          strong_points_description_03:
+            width: 1/1
+            type: text
+            label: Nos points forts (description 03)
+          strong_points_description_04:
+            width: 1/1
+            type: text
+            label: Nos points forts (description 04)
+          strong_points_image:
+            width: 1/1
+            type: files
+            required: false
+            translate: false
+            label: 'Nos points forts (image)'
+            empty: "Pas encore d'image"
+            query: site.images.filterBy('template', 'image')
+            uploads:
+              parent: site
+              template: image
+            multiple: false
+            layout: cards
+            search: true
+            image:
+              cover: false
+              back: pattern
+            size: tiny
+            link: true
+
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

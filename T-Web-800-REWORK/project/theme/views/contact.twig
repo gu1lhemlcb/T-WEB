@@ -1,0 +1,180 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/contact
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+<main>
+  <!-- ###### TOP START ###### -->
+  <section class="contact-hero">
+    <div class="row align-start-start">
+      <div class="sm-column-22 sm-offset-1 lg-column-14 pt-60 pb-60 lg-offset-1">
+        <h4>
+          {{ page.hero_title }}
+        </h4>
+      </div>
+    </div>
+    <div class="row align-start-start pb-90">
+      <div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+        <h1>
+          {{ page.hero_description }}
+        </h1>
+      </div>
+    </div>
+  </section>
+  <!-- ###### TOP END ###### -->
+  <section class="contact-form pb-60 pt-60">
+    <div class="row">
+      <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-3">
+        <h4>Formulaire de contact</h4>
+
+        <form method="POST" action="{{ page.url }}" enctype="multipart/form-data" name="contact_form" class="pb-30" id="js-form-application">
+          <input type="hidden" name="form_type" value="contact_form" />
+          <input type="hidden"
+            name="contact_form_recaptcha_response" id="contact_form_recaptcha_response" />
+          <div class="row">
+            <div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
+              <label for="contact_firstname">Prénom</label>
+              <input id="contact_firstname"
+                class="a-input-text"
+                type="text"
+                name="contact_firstname"
+                placeholder="Philippe"
+                value="{{ contactForm.data.firstname|default(0) ? contactForm.data.firstname : null }}" required/>
+              {% for alert in alerts.firstname|default(0) %}
+                <span class="error">{{ alert }}</span>
+              {% endfor %}
+            </div>
+            <div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
+              <label for="contact_lastname">
+                Nom
+              </label>
+              <input id="contact_lastname"
+                class="a-input-text"
+                name="contact_lastname"
+                placeholder="Dupont"
+                value="{{ contactForm.data.lastname|default(0) ? contactForm.data.lastname : null }}"
+                />
+              {% for alert in alerts.lastname|default(0) %}
+                <span class="error">{{ alert }}</span>
+              {% endfor %}
+            </div>
+            <div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
+              <label for="contact_email">Adresse email</label>
+              <input id="contact_email"
+                class="a-input-text"
+                type="text"
+                name="contact_email"
+                placeholder="test@test.com"
+                value="{{ contactForm.data.email|default(0) ? contactForm.data.email : null }}" required/>
+              {% for alert in alerts.email|default(0) %}
+                <span class="error">{{ alert }}</span>
+              {% endfor %}
+            </div>
+            <div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
+              <label for="contact_phone">
+                Téléphone
+                <div class="optional">Optionnel</div>
+              </label>
+              <input 
+                type="tel"
+                pattern="[0-9]{10}"
+                id="contact_phone"
+                class="a-input-text"
+                name="contact_phone"
+                placeholder="06 12 34 56 78"
+                value="{{
+                contactForm.data.phone|default(0)
+                  ? contactForm.data.phone
+                  : null
+                }}"/>
+            </div>
+            <div class="sm-column-24 lg-column-24 lg-offset-0 pt-15">
+              <p>
+                <label for="textarea">
+                  Votre message
+                </label>
+                <textarea id="contact_message"
+                  class="a-input-textarea"
+                  name="contact_message"
+                  placeholder="Bonjour..." required>{{ contactForm.data.message|default(0) ? contactForm.data.message }}</textarea>
+                {% for alert in alerts.message|default(0) %}
+                  <span class="error">{{ alert }}</span>
+                {% endfor %}
+              </p>
+            </div>
+            <div class="sm-column-24 lg-column-13 lg-offset-0 align-end-center pt-30" id="js-submit-button">
+              <div id="grecaptcha"></div>
+              <input type="submit" id="submit-btn" class="a-button primary" value="Envoyer votre message" />
+            </div>            
+          </div>
+          {% if success|default(0) %}
+            <div class="success">
+              <p>
+                {{ success }}
+              </p>
+            </div>
+          {% endif %}
+          {% if alerts|default(0) %}
+            <div class="message error">
+              <ul>
+                {% for alert in alerts %}
+                  <li>{{ alert }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </form>
+        {% if page.legal_description|default(0) %}
+          <div class="legal-description">
+              {{ page.legal_description.kirbytext|raw}}
+          </div>
+        {% endif %}
+      </div>
+      <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
+        <div class="row">
+          <div class="sm-column-22 sm-offset-1 lg-column-14 lg-offset-0 sm-pt-30">
+            <h4>GLCE destination</h4>
+          </div>
+          <div class="sm-column-22 sm-offset-1 lg-column-16 lg-offset-0  pt-40 contact-informations-container border">
+            <div class="contact-informations">
+              <h4 class="no-upper">{{ site.contact_address ? site.contact_address|raw : "" }}<br>
+                {{ site.contact_zip ? site.contact_zip|raw : "" }} {{ site.contact_city ? site.contact_city|raw : "" }}
+              </h4>
+              <div class="contact-informations-icon">
+                <svg class="icon">
+                  <use xlink:href="#icon-adresse" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="sm-column-22 sm-offset-1 lg-column-16 lg-offset-0  pt-40 contact-informations-container border">
+            <div class="contact-informations">
+              <h4 class="no-upper">
+                {{ site.phone_number ? site.phone_number|raw : "" }}
+              </h4>
+              <div class="contact-informations-icon">
+                <svg class="icon">
+                  <use xlink:href="#icon-telephone" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="sm-column-22 sm-offset-1 lg-column-16 lg-offset-0  pt-40 contact-informations-container">
+            <div class="contact-informations">
+              <h4 class="no-upper">
+                {{ site.email_address ? site.email_address|raw : "" }}
+              </h4>
+              <div class="contact-informations-icon">
+                <svg class="icon">
+                  <use xlink:href="#icon-email" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

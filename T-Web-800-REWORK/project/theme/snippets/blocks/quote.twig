@@ -1,0 +1,8 @@
+<blockquote>
+  {{ block.text }}
+  {% if block.citation.isNotEmpty %}
+    <footer>
+        {{ block.citation }}
+    </footer>
+  {% endif %}
+</blockquote>

@@ -1,0 +1,168 @@
+Title: Accueil
+
+----
+
+Hero-title: LET’S DISCOVER THE WORLD TOGETHER
+
+----
+
+Destinations-title: WHERE WOULD YOU LIKE TO GO?
+
+----
+
+Engagements-img:
+
+- travel.jpg
+
+----
+
+Contents-icon-1: satisfaction
+
+----
+
+Engagements-title: Our commitments
+
+----
+
+Engagements-description: Deeply committed to finding the best for you, we ensure the satisfaction of all stakeholders: Our commitments
+
+----
+
+Contents-icon-2: satisfaction2
+
+----
+
+Client-satisfying-title: Satisfaction
+
+----
+
+Client-satisfying-contents: Through the clear presentation of our research and quality support.
+
+----
+
+Contents-icon-3: objectifs
+
+----
+
+client-satisfying-title: All-in-one solution
+
+----
+
+client-satisfying-contents: With Epitravel, there's no need to search dozens of different sites to plan your trip.
+
+----
+
+Citation-contents: Satisfait. Rien à redire service très efficace. A recommander.
+
+----
+
+Citation-autor: Chuck Noris
+
+----
+
+Seo-indexing: index, follow
+
+----
+
+Excludefromxmlsitemap: false
+
+----
+
+Seo-title: 
+
+----
+
+Seo-suffix: true
+
+----
+
+Seo-description: 
+
+----
+
+Seo-og: false
+
+----
+
+Seo-og-title: 
+
+----
+
+Seo-og-description: 
+
+----
+
+Seo-og-image: 
+
+----
+
+Seo-mc: false
+
+----
+
+Seo-mc-data: 
+
+----
+
+Commitment-title: Engagement auprès de nos collaborateurs
+
+----
+
+Commitment-contents: Qu’ils soient salariés de notre organisme ou prestataires, le développement de nos collaborateurs est notre priorité. Au travers d’entretiens réguliers, nous veillons à la mise à jour de leurs compétences et connaissances.
+
+----
+
+Formation-1-title: hotels
+
+----
+
+Formation-2-title: musees
+
+----
+
+Formation-3-title: Risque éléctrique
+
+----
+
+Formation-1-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro, sequi assumenda veritatis omnis vitae
+
+----
+
+Formation-2-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro, sequi assumenda veritatis omnis vitae
+
+----
+
+Formation-3-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro, sequi assumenda veritatis omnis vitae
+
+----
+
+Formation-4-title: Protection des personnes
+
+----
+
+Formation-5-title: Langues
+
+----
+
+Formation-4-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro, sequi assumenda veritatis omnis vitae
+
+----
+
+Formation-5-description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum porro, sequi assumenda veritatis omnis vitae
+
+----
+
+Certificates-builder:
+
+- 
+  certif_name: 'organisme  validé & certifié PAR DATADOCK'
+  certif_logo:
+    - datadock-min.jpg
+- 
+  certif_name: 'destinations certifiéES  ISO 9001 : 2008 garantie NF AFNOR'
+  certif_logo:
+    - afaq.jpg
+
+----
+
+Contents: [{"content":{"level":"h2","text":"EpiTravel"},"id":"7f6a0883-c1fd-4fb9-b64b-4da22e4fd5d0","isHidden":false,"type":"heading"},{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"},"id":"9cee28ad-87b8-4152-b5a7-4379f2892ef6","isHidden":false,"type":"text"},{"content":{"text":"<p><\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"},"id":"24564f8f-ae38-45e3-b3d8-34d7d2f09ae8","isHidden":false,"type":"text"},{"content":{"level":"h2","text":"Lorem Ipsum"},"id":"c69b0b44-83b7-4fa4-acc9-f3c4fce1fef5","isHidden":false,"type":"heading"}]

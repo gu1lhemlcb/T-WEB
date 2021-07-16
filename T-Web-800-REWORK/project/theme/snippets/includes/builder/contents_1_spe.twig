@@ -1,0 +1,13 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/builder/contents_1_spe
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+
+{% set contents = section.contents.toBlocks|default('<p>Aucun contenu.</p>') %}
+
+<div class="container pt-20">
+  <div class="places-details">
+    <div class="deatils-box">
+      {{ contents|raw }}
+    </div>
+  </div>
+</div>

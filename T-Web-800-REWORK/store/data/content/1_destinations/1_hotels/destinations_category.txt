@@ -1,0 +1,80 @@
+Title: Hotels
+
+----
+
+Hero-image:
+
+- >
+  kronasar_aussenansicht_daemmerung_europa-park.jpg
+
+----
+
+Hero-theme: th-1
+
+----
+
+Short-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+----
+
+Full-description-left-title: Lorem ipsum dolor
+
+----
+
+Full-description-right-title: Lorem ipsum dolor
+
+----
+
+Full-description-left-bold: Lorem ipsum dolor sit amet, consectetur adipiscing elit,  sed do eiusmod tempor incididunt ut labore
+
+----
+
+Full-description-left: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+----
+
+Full-description-right: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+----
+
+Seo-indexing: index, follow
+
+----
+
+Excludefromxmlsitemap: false
+
+----
+
+Seo-title: 
+
+----
+
+Seo-suffix: true
+
+----
+
+Seo-description: 
+
+----
+
+Seo-og: false
+
+----
+
+Seo-og-title: 
+
+----
+
+Seo-og-description: 
+
+----
+
+Seo-og-image: 
+
+----
+
+Seo-mc: false
+
+----
+
+Seo-mc-data: 

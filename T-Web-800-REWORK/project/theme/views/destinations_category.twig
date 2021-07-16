@@ -1,0 +1,145 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/destinations-category
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+  <main>
+    <section class="destinations-hero {{ page.hero_theme }}"
+      style="background-image:url({{ page.hero_image.toFile.url }})">
+      <div class="row destinations-hero--contents">
+        <div class="sm-column-22 sm-offset-1 lg-column-23 lg-offset-1 pt-60">
+          <h4>
+            {{ page.parent.uri }}
+          </h4>
+          <h1 class="pt-60">
+            {{ page.title }}
+          </h1>
+        </div>
+        <div class="sm-column-22 sm-offset-1 lg-column-5 lg-offset-1 pt-15 pb-60">
+          <p>
+            {{ page.short_description|raw ? page.short_description|raw ? : '' }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-presentation">
+      <div class="row">
+        <div class="sm-column-22 sm-offset-1 lg-column-8 lg-offset-3">
+          <h4 class="pb-20">
+            {{ page.full_description_left_title|raw
+              ? page.full_description_left_title|raw
+              : '' }}
+          </h4>
+          <h2 class="pb-20 no-upper">
+            {{ page.full_description_left_bold|raw
+              ? page.full_description_left_bold|raw
+              : '' }}
+          </h2>
+          <p>
+            {{ page.full_description_left|raw|nl2br
+              ? page.full_description_left|raw|nl2br
+              : '' }}
+          </p>
+        </div>
+        <div class="sm-column-22 sm-offset-1 sm-pt-30 lg-column-8 lg-offset-2">
+          <h4 class="pb-20">
+            {{ page.full_description_right_title|raw
+              ? page.full_description_right_title|raw
+              : '' }}
+          </h4>
+          <p>
+            {{ page.full_description_right|raw|nl2br
+              ? page.full_description_right|raw|nl2br
+              : '' }}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pages">
+      <div class="row align-center-center pb-30">
+        <h4>
+          destinations <span class="{{ page.hero_theme }}">{{ page.title }}</span>
+          proposées
+        </h4>
+      </div>
+      <div class="row align-center-center">
+        {% for destination in page.children().filterBy(
+          'template',
+          'destinations_item'
+        ) %}
+          <div class="sm-column-22 mb-30 lg-column-5 sub-destination {{ page.hero_theme }} lg-ml-20">
+            <div class="destinations-number">
+              <h4>
+                0{{ loop.index }}
+              </h4>
+            </div>
+            <div class="row form-contents">
+              <div class="column-22 offset-1 pb-10">
+                <h2 class="to-upper">
+                  {{ destination.title|raw }}
+                </h2>
+              </div>
+              <div class="column-22 offset-1">
+                <p class="clr-w">
+                  {{ destination.short_description
+                    ? destination.short_description|raw
+                    : '' }}
+                </p>
+              </div>
+              <div class="column-22 offset-1">
+                <a href="{{ destination.url }}"
+                  class="a-button transparent-destinations-2 pt-30">
+                  En savoir plus
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section-pages">
+      <div class="row align-center-center pb-30">
+        <h4>
+          Nos autres destinations
+        </h4>
+      </div>
+
+      <div class="row align-center-center">
+        {% for destination in site.index.filterBy(
+          'template',
+          'destinations_category'
+        ).listed %}
+          {% if destination.title != page.title %}
+            <div class="sm-column-22 lg-column-5 mb-30 destination-img {{
+              destination.hero_theme
+              }} lg-ml-20">
+              <img src="{{ destination.hero_image.toFile.url }}" alt="" class="gradient">
+              <div class="row form-contents">
+                <div class="column-20">
+                  <h3>
+                    {{ destination.title }}
+                  </h3>
+                </div>
+                <div class="column-20">
+                  <p class="clr-w">
+                    {{ destination.short_description }}
+                  </p>
+                </div>
+                <div class="column-24">
+                  <a href="{{ destination.url }}"
+                    class="a-button transparent-destinations pt-30">
+                    En savoir plus
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+{% endblock %}

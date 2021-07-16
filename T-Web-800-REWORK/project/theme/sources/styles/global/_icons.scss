@@ -1,0 +1,87 @@
+
+.icon {
+	vertical-align: middle;
+	width: 2rem;
+	height: 2rem;
+}
+
+@svg-load logout url(../sprite/logout.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(primary)};
+  }
+}
+
+@svg-load arrow-bottom url(../sprite/arrow-bottom.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(primary)};
+  }
+}
+
+@svg-load croix url(../sprite/croix.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load check url(../sprite/check.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load eye url(../sprite/eye.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load encours url(../sprite/encours.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load avancement url(../sprite/avancement.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load thumb-down url(../sprite/thumb-down.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}
+
+@svg-load log-in url(../sprite/log-in.svg) {
+  path,
+  rect,
+  polygon,
+  circle {
+    fill: #{clr(white)};
+  }
+}

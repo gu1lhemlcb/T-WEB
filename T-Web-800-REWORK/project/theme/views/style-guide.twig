@@ -1,0 +1,227 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/home
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+<main>
+  <section>
+    <div class="row align-center-start">
+      <div class="column-22 pb-30 pt-30" style="border-bottom: 1px solid black">
+        <h1>
+          Typographies
+        </h1>
+      </div>
+      <div class="column-22 pt-30">
+        <h1>
+          h1: Lorem Ipsum
+        </h1>
+      </div>
+      <div class="column-22 pt-10">
+        <h2>
+          h2: Lorem Ipsum
+        </h2>
+      </div>
+      <div class="column-22 pt-10">
+        <h3>
+          h3: Lorem Ipsum
+        </h3>
+      </div>
+      <div class="column-22 pt-10">
+        <h4>
+          h4: Lorem Ipsum
+        </h4>
+      </div>
+      <div class="column-10 pt-10">
+        <p>
+          p: <br />D’après l’INRS, la mise en place de mesures de prévention
+          techniques, organisationnelles et d’information/destination des salariés
+          contribuerait à permettre au personnel de réagir rapidement et
+          efficacement face à un début d’musees et d’en limiter ses effets. de
+          Sécurité musees et d’Assistance à Personnes
+        </p>
+      </div>
+      <div class="column-11 lg-offset-1 pt-10">
+        <h3>
+          Liste à puce
+        </h3>
+        <ul class="a-ul">
+          <li class="a-li">
+            Lorem ipsum<ul class="a-sub-ul">
+              <li class="a-sub-li">Lorem ipsum</li>
+            </ul>
+          </li>
+          <li class="a-li">
+            Lorem ipsum<ul class="a-sub-ul">
+              <li class="a-sub-li">Lorem ipsum</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row align-center-start">
+      <div class="column-22 pb-30 pt-30"
+        style="border-bottom: 1px solid black; border-top: 1px solid black">
+        <h1>
+          Couleurs
+        </h1>
+      </div>
+    </div>
+    <div class="row align-center-start">
+      <div class="column-2 pb-30 pt-30">
+        <div class="dot-primary"></div>
+        <p class="text-center">
+          #080F24
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-secondary"></div>
+        <p class="text-center">
+          #999999
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-tertiary"></div>
+        <p class="text-center">
+          #D8D8D8
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-th-1"></div>
+        <p class="text-center">
+          #A40A28
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-th-2"></div>
+        <p class="text-center">
+          #E5CB1B
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-th-3"></div>
+        <p class="text-center">
+          #1377A8
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-th-4"></div>
+        <p class="text-center">
+          #FBAF5D
+        </p>
+      </div>
+      <div class="column-2 pb-30 pt-30 lg-offset-1">
+        <div class="dot-th-5"></div>
+        <p class="text-center">
+          #6FA921
+        </p>
+      </div>
+    </div>
+    <div class="row align-center-start">
+      <div class="column-22 pb-30 pt-30"
+        style="border-bottom: 1px solid black; border-top: 1px solid black">
+        <h1>
+          Boutons
+        </h1>
+      </div>
+
+      <div class="column-4 pt-30 pb-30">
+        <h4>
+          Bouton primaire
+        </h4>
+        <button class="a-button primary">Action bouton</button>
+      </div>
+      <div class="column-4 lg-offset-1 pt-30 pb-30">
+        <h4>
+          Bouton disabled
+        </h4>
+        <button class="a-button primary" disabled>Action bouton</button>
+      </div>
+      <div class="column-4 lg-offset-1 pt-30 pb-30">
+        <h4>
+          Bouton secondaire
+        </h4>
+        <button class="a-button secondary">Action bouton</button>
+      </div>
+      <div class="column-4 lg-offset-1 pt-30 pb-30">
+        <h4>
+          Bouton avec icône
+        </h4>
+        <button class="a-button btn-icon">
+          <svg class="icon">
+            <use xlink:href="#icon-logout" />
+          </svg>Se déconnecter
+        </button>
+      </div>
+    </div>
+    <div class="row align-center-start">
+      <div class="column-22 pb-30 pt-30"
+        style="border-bottom: 1px solid black; border-top: 1px solid black">
+        <h1>
+          Formulaires
+        </h1>
+      </div>
+      <div class="column-23 lg-offset-1">
+        <form method="post" accept-charset="UTF-8">
+          <div class="row">
+            <div class="column-6 pt-30">
+              <label for="loginName">Username or email</label>
+              <input id="loginName"
+                class="a-input-text"
+                type="text"
+                name="loginName"
+                placeholder="Nom/Prénom" />
+            </div>
+            <div class="column-10 lg-offset-1 pt-30">
+              <p>
+                <label for="textarea">
+                  Commentaires ou détail de votre demande
+                </label>
+                <textarea id="textarea"
+                  class="a-input-textarea"
+                  name="textarea"
+                  placeholder="Bonjour..."></textarea>
+              </p>
+            </div>
+            <div class="column-3 lg-offset-1 pt-30">
+              <p class="a-checkbox">
+                <input type="checkbox" id="test1" />
+                <label for="test1" aria-describedby="label">Checkbox</label>
+              </p> <br>
+              <p class="a-radio">
+                <input type="radio" id="test2" />
+                <label for="test2" aria-describedby="label">Radio</label>
+              </p>
+            </div>
+            <div class="column-17 pt-30">
+              <select class="a-select" name="select-test" id="select-test">
+                <option value="1">
+                  Lorem 1
+                </option>
+                <option value="2" selected>
+                  Lorem 2
+                </option>
+                <option value="3">
+                  Lorem 3
+                </option>
+                <option value="4">
+                  Lorem 4
+                </option>
+                <option value="5">
+                  Lorem 5
+                </option>
+                <option value="6">
+                  Lorem 6
+                </option>
+              </select>
+            </div>
+            <div class="column-4 lg-offset-1 pt-30">
+              <input type="submit" class="a-button primary" value="Action bouton" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+<main>
+{% endblock %}

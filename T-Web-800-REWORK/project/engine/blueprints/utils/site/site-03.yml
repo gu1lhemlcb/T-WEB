@@ -1,0 +1,48 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 2/3
+    sections:
+      images:
+        type: files
+        template: image
+        sortable: false
+        sortBy: false
+        flip: true
+        layout: cards
+        size: tiny
+        limit: 20
+        image:
+          cover: false
+          ratio: 16/9
+          back: pattern
+        headline: "Images"
+        empty: "Encore aucune image"
+  -
+    width: 1/3
+    sections:
+      docs_pdf:
+        type: files
+        template: doc-pdf
+        sortable: false
+        sortBy: false
+        flip: true
+        layout: list
+        limit: 10
+        image: false
+        headline: "Documents PDF"
+        empty: "Encore aucun document"
+      docs_text:
+        type: files
+        template: doc-text
+        sortable: false
+        sortBy: false
+        flip: true
+        layout: list
+        limit: 10
+        image: false
+        headline: "Documents texte"
+        empty: "Encore aucun document"
+
+###########################################################################################################################

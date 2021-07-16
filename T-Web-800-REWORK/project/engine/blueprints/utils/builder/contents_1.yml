@@ -1,0 +1,40 @@
+label: 'Contenus sur 1 colonne'
+name: 'Contenu sur 1 colonne'
+fields:
+
+  contents_icon:
+    width: 1/4
+    type: select
+    required: true
+    min: 1
+    label: Icone
+    options:
+      contact: Bulle de dialogue
+      satisfaction2: Carte satisfaction
+      publics: Carte vitale
+      duree: Chronomètre
+      croix: Croix
+      email: Email
+      objectifs: Objectifs
+      contenu: Page
+      engagements: People
+      participants: People (+)
+      adresse: Point GPS
+      satisfaction: Pouce en l'air
+      logout: Sortie
+      tarif: Tarif
+      telephone: Telephone
+      user: Utilisateur
+  block_title:
+    width: 3/4
+    type: text
+    label: Titre
+  contents:
+    width: 1/1
+    type: editor
+    required: true
+    pretty: false
+    allowed:
+      - blockquote
+      - paragraph
+    label: 'Contenus'

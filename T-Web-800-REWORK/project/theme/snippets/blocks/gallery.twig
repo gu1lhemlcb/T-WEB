@@ -1,0 +1,9 @@
+<figure>
+  <ul>
+    {% for image in block.images.toFiles() %}
+    <li>
+      {{ image }}
+    </li>
+    {% endforeach %}
+  </ul>
+</figure>

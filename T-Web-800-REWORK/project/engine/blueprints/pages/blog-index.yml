@@ -1,0 +1,129 @@
+###########################################################################################################################
+
+title: "Blog - Index"
+icon: book
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: true
+    editor: true
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listé"
+    text: "Le blog est public pour tout le monde."
+  unlisted:
+    label: "Non listé"
+    text: "Le blog est en ligne et ne peut être consulté qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "Le blog est en mode brouillon. Il ne peut être consulté que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  categories:
+    icon: list-bullet
+    label: "Catégories"
+    columns:
+      -
+        width: 2/3
+        sections:
+          published:
+            type: pages
+            create: blog-category
+            template: blog-category
+            status: published
+            sortable: false
+            sortBy: status asc title asc
+            layout: list
+            limit: 20
+            image: false
+            headline: "Catégories publiées"
+            empty: "Encore aucune catégorie"
+      -
+        width: 1/3
+        sections:
+          draft:
+            type: pages
+            create: blog-category
+            template: blog-category
+            status: draft
+            sortable: false
+            sortBy: title asc
+            layout: list
+            limit: 20
+            image: false
+            headline: "Catégories en brouillon"
+            empty: "Encore aucune catégorie"
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          contents:
+            width: 1/1
+            type: blocks
+            required: true
+            pretty: false
+            fieldsets:
+              text:
+                label: Text
+                type: group
+                fieldsets:
+                  - heading
+                  - text
+                  - list
+              media:
+                label: Media
+                type: group
+                fieldsets:
+                  - image
+                  - video
+            label: "Contenus"
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

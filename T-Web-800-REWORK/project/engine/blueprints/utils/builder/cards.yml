@@ -1,0 +1,206 @@
+label: "Blocs image/texte"
+name: "Blocs image/texte"
+fields:
+  theme:
+    width: 1/1
+    type: select
+    required: true
+    default: white
+    label: "Thème"
+    options:
+      - value: color_01
+        text: "Couleur 01"
+      - value: color_02
+        text: "Couleur 02"
+      - value: gradient_01
+        text: "Dégradé de la couleur 01 à la couleur 02"
+      - value: gradient_02
+        text: "Dégradé de la couleur 02 à la couleur 01"
+      - value: white
+        text: "Blanc"
+  surtitle:
+    width: 1/2
+    type: textarea
+    required: false
+    buttons: false
+    size: tiny
+    label: "Surtitre"
+  surtitle_alignement:
+    width: 1/2
+    type: select
+    required: true
+    default: center
+    label: "Alignement"
+    options:
+      - value: left
+        text: "Gauche"
+      - value: center
+        text: "Centre"
+      - value: right
+        text: "Droite"
+      - value: justify
+        text: "Justifié"
+  title:
+    width: 1/2
+    type: textarea
+    required: false
+    buttons: false
+    size: tiny
+    label: "Titre"
+  title_alignement:
+    width: 1/2
+    type: select
+    required: true
+    default: center
+    label: "Alignement"
+    options:
+      - value: left
+        text: "Gauche"
+      - value: center
+        text: "Centre"
+      - value: right
+        text: "Droite"
+      - value: justify
+        text: "Justifié"
+  contents:
+    width: 3/4
+    type: editor
+    required: false
+    pretty: false
+    allowed:
+      - paragraph
+    label: "Contenus"
+  contents_alignement:
+    width: 1/4
+    type: select
+    required: true
+    default: center
+    label: "Alignement"
+    options:
+      - value: left
+        text: "Gauche"
+      - value: center
+        text: "Centre"
+      - value: right
+        text: "Droite"
+      - value: justify
+        text: "Justifié"
+  per_row:
+    width: 1/1
+    type: select
+    required: true
+    default: 3
+    label: 'Nombre d'images par ligne'
+    options:
+      - value: '2'
+        text: '2'
+      - value: '3'
+        text: '3'
+      - value: '4'
+        text: '4'
+  table:
+    width: 1/1
+    type: structure
+    required: false
+    min: 0
+    max: 10
+    sortable: true
+    label: "Blocs"
+    empty: "Aucun élément"
+    columns:
+      image:
+        width: 1/1
+        align: left
+    fields:
+      image:
+        width: 1/1
+        type: files
+        required: true
+        multiple: false
+        query: site.files.template("image")
+        uploads:
+          parent: site
+          template: image
+        layout: cards
+        size: tiny
+        image:
+          back: pattern
+          cover: false
+          ratio: 16/9
+        label: "Image"
+        empty: "Aucune image"
+      contents:
+        width: 1/1
+        type: editor
+        required: true
+        pretty: false
+        allowed:
+          - ol
+          - ul
+          - paragraph
+        label: "Contenus"
+      page:
+        width: 1/1
+        type: pages
+        required: false
+        multiple: false
+        layout: list
+        limit: 20
+        image: false
+        label: "Lien vers une page"
+        empty: "Aucune page selectionnée"
+
+  button:
+    width: 1/1
+    type: toggle
+    default: off
+    label: 'Ajouter un bouton'
+    text:
+      - 'Non'
+      - 'Oui'
+
+  button_label:
+    width: 1/1
+    type: text
+    when:
+      button: on
+    maxlength: 100
+    label: 'Label du bouton'
+
+  button_choice:
+    width: 1/1
+    type: select
+    when:
+      button: on
+    default: intern
+    label: 'Type'
+    options:
+      - value: intern
+        text: 'Lien interne'
+      - value: extern
+        text: 'Lien externe'
+
+  button_action_intern:
+    width: 1/1
+    type: pages
+    when:
+      button_choice: intern
+      button: on
+    multiple: false
+    layout: list
+    limit: 20
+    image: false
+    label: 'Action du bouton'
+    empty: 'Aucune page selectionnéee'
+    
+  button_action_extern:
+    width: 1/1
+    type: url
+    when:
+      button_choice: extern
+      button: on
+    icon: false
+    maxlength: 200
+    placeholder: false
+    label: 'URL'
+

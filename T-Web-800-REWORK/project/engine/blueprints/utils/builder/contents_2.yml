@@ -1,0 +1,46 @@
+label: 'Contenus sur 2 colonnes'
+name: 'Contenu sur 2 colonnes'
+fields:
+
+  contents_icon:
+    width: 1/4
+    type: select
+    min: 1
+    label: Icone
+    options:
+      contact: Bulle de dialogue
+      satisfaction2: Carte satisfaction
+      publics: Carte vitale
+      duree: Chronomètre
+      croix: Croix
+      email: Email
+      objectifs: Objectifs
+      contenu: Page
+      engagements: People
+      participants: People (+)
+      adresse: Point GPS
+      satisfaction: Pouce en l'air
+      logout: Sortie
+      tarif: Tarif
+      telephone: Telephone
+      user: Utilisateur
+  block_title:
+    width: 3/4
+    type: text
+    label: Titre
+  contents_left:
+    width: 1/2
+    type: editor
+    pretty: false
+    allowed:
+      - blockquote
+      - paragraph
+    label: 'Contenus de gauche'
+  contents_right:
+    width: 1/2
+    type: editor
+    pretty: false
+    allowed:
+      - blockquote
+      - paragraph
+    label: 'Contenus de droite'

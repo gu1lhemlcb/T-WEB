@@ -1,0 +1,43 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/builder/contents_2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% set image_right = section.file_right.toFile %}
+{% set image_left = section.file_left.toFile %}
+
+{% set title_left = section.title_left|default(0) %}
+{% set title_right = section.title_right|default(0) %}
+
+<div class="container pt-20 pb-20">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="places-boxes">
+        <!-- Title -->
+        {% if title_left|default(0) %}
+          <div class="section-title text-center">
+            <span class="title-tag">{{ title_left|raw }}</span>
+          </div>
+        {% endif %}
+        {% if image_left|default(0) %}
+          <div class="text-center">
+            <img src="{{ image_left.url }}" alt="{{ image_left.alt }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="places-boxes">
+        <!-- Title -->
+        {% if title_right|default(0) %}
+          <div class="section-title text-center">
+            <span class="title-tag">{{ title_right|raw }}</span>
+          </div>
+        {% endif %}
+        {% if image_right|default(0) %}
+          <div class="text-center">
+            <img src="{{ image_right.url }}" alt="{{ image_right.alt }}" />
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

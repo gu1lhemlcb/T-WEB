@@ -1,0 +1,127 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/organizations
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+  <main>
+    <!-- ###### TOP START ###### -->
+    <section class="organization-hero"
+      style="background-image:url({{ page.hero_background.toFile.url }})">
+      <div class="row align-start-start">
+        <div class="sm-column-22 sm-offset-1 lg-column-11 pt-60 pb-60 lg-offset-1">
+          <h4>
+            {{ page.hero_title|raw }}
+          </h4>
+        </div>
+      </div>
+      <div class="row align-start-start pb-30">
+        <div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+          <h1>
+            {{ page.hero_description }}
+          </h1>
+        </div>
+      </div>
+      <div class="row align-start-start sm-pb-60 lg-pb-120">
+        <div class="sm-column-22 sm-offset-1 lg-column-11 lg-offset-1">
+          <p>
+            <span style="font-weight: 700">{{ page.hero_objectif_title }}</span>
+            {{ page.hero_objectif|raw }}
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ###### TOP END ###### -->
+    <!-- ###### STRONG POINTS START ###### -->
+    <section class="strong-points lg-pt-60">
+      <div class="row align-start-start">
+        <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
+          <div class="strong-points-title pt-60 pb-30">
+            <h3>
+              {{ page.strong_points_title ? page.strong_points_title|raw : '' }}
+            </h3>
+          </div>
+          {% if page.strong_points_description_01|default(0) %}
+            <div class="column-24 strong-points-contents align-center-start">
+              <div class="lg-column-22 lg-offset-1 pt-30 pb-30">
+                <div class="">
+                  <h4 class="a-h4-light pb-5 pl-50">
+                    {{ page.strong_points_description_01
+                      ? page.strong_points_description_01|raw
+                      : '' }}
+                  </h4>
+                </div>
+                <div class="strong-points-icon">
+                  <h3>
+                    01.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if page.strong_points_description_02|default(0) %}
+            <div class="column-24 strong-points-contents align-center-start">
+              <div class="lg-column-22 lg-offset-1 pt-30 pb-30">
+                <div class="">
+                  <h4 class="a-h4-light pb-5 pl-50">
+                    {{ page.strong_points_description_02
+                      ? page.strong_points_description_02|raw
+                      : '' }}
+                  </h4>
+                </div>
+                <div class="strong-points-icon">
+                  <h3>
+                    02.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if page.strong_points_description_03|default(0) %}
+            <div class="column-24 strong-points-contents align-center-start">
+              <div class="lg-column-22 lg-offset-1 pt-30 pb-30">
+                <div class="">
+                  <h4 class="a-h4-light pb-5 pl-50">
+                    {{ page.strong_points_description_03
+                      ? page.strong_points_description_03|raw
+                      : '' }}
+                  </h4>
+                </div>
+                <div class="strong-points-icon">
+                  <h3>
+                    03.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if page.strong_points_description_04|default(0) %}
+            <div class="column-24 strong-points-contents align-center-start">
+              <div class="lg-column-22 lg-offset-1 pt-30 pb-30">
+                <div class="">
+                  <h4 class="a-h4-light pb-5 pl-50">
+                    {{ page.strong_points_description_04
+                      ? page.strong_points_description_04|raw
+                      : '' }}
+                  </h4>
+                </div>
+                <div class="strong-points-icon">
+                  <h3>
+                    04.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <div class="sm-column-24 sm-offset-0 lg-column-11 lg-offset-1">
+          <div class="strong-points-img"
+            style="background-image:url('{{
+            page.strong_points_image.toFile.url
+            }}')"></div>
+        </div>
+      </div>
+    </section>
+    <!-- ###### STRONG POINTS END ###### -->
+  </main>
+{% endblock %}

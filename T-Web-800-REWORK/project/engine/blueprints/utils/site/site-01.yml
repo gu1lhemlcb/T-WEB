@@ -1,0 +1,108 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 1/3
+    sections:
+      home:
+        type: pages
+        create: false
+        template: home
+        status: all
+        layout: list
+        image: false
+        headline: "Accueil"
+        empty: "Encore aucune page"
+      contact:
+        type: pages
+        create: false
+        template: contact
+        status: all
+        layout: list
+        image: false
+        headline: "Contact"
+        empty: "Encore aucune page"
+      organization:
+        type: pages
+        create: organization
+        template: organization
+        status: all
+        max: 1
+        layout: list
+        image: false
+        headline: "L'organisme"
+        empty: "Encore aucune page"
+      connexion:
+        type: pages
+        create: false
+        template: connexion
+        status: all
+        max: 1
+        layout: list
+        image: false
+        headline: "Se connecter"
+        empty: "Encore aucune page"
+  -
+    width: 1/3
+    sections:
+      destinations:
+        type: pages
+        create: destinations_index
+        template: destinations_index
+        status: all
+        max: 1
+        layout: list
+        image: false
+        headline: Destinations
+        empty: "Encore aucune page"
+      dashboard:
+        type: pages
+        create: dashboard_index
+        template: dashboard_index
+        status: all
+        max: 1
+        layout: list
+        image: false
+        headline: Dashboard
+        empty: "Encore aucune page"
+  -
+    width: 1/3
+    sections:
+      legal:
+        type: pages
+        create: false
+        template: legal
+        status: all
+        layout: list
+        image: false
+        headline: "Mentions légales"
+        empty: "Encore aucune page"
+      privacy:
+        type: pages
+        create: false
+        template: privacy
+        status: all
+        layout: list
+        image: false
+        headline: "Confidentialité"
+        empty: "Encore aucune page"
+      maintenance:
+        type: pages
+        create: false
+        template: maintenance
+        status: all
+        layout: list
+        image: false
+        headline: "Maintenance"
+        empty: "Encore aucune page"
+      error:
+        type: pages
+        create: false
+        template: error
+        status: all
+        layout: list
+        image: false
+        headline: "Erreur 404"
+        empty: "Encore aucune page"
+
+###########################################################################################################################

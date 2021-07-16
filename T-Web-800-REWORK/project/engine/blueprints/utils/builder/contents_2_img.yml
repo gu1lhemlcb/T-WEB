@@ -1,0 +1,51 @@
+label: "Images sur 2 colonnes"
+name: "Images sur 2 colonnes"
+fields:
+  title_left:
+    width: 1/2
+    type: textarea
+    required: false
+    buttons: false
+    size: tiny
+    label: "Titre gauche"
+  title_right:
+    width: 1/2
+    type: textarea
+    required: false
+    buttons: false
+    size: tiny
+    label: "Titre droite"
+  file_left:
+    width: 1/2
+    type: files
+    required: true
+    multiple: false
+    query: site.files.template("image")
+    uploads:
+      parent: site
+      template: image
+    layout: cards
+    size: tiny
+    image:
+      back: pattern
+      cover: false
+      ratio: 16/9
+    label: "Image de gauche"
+    empty: "Aucune image"
+  file_right:
+    width: 1/2
+    type: files
+    required: true
+    multiple: false
+    query: site.files.template("image")
+    uploads:
+      parent: site
+      template: image
+    layout: cards
+    size: tiny
+    image:
+      back: pattern
+      cover: false
+      ratio: 16/9
+    label: "Image de droite"
+    empty: "Aucune image"

@@ -1,0 +1,30 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/home
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+  <section>
+    <div class="row text-center">
+      <div class="column-22 offset-1">
+        <div class="error-404">
+          <div class="error-title">
+            404
+          </div>
+          <a href="{{ site.url }}" class="pt-60">
+            <h4>
+              <span>
+                Revenir à l'accueil
+                <div class="back-result-icon">
+                  <svg class="icon">
+                    <use xlink:href="#icon-fleche-droite"/>
+                  </svg>
+                </div>
+              </span>
+            </h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

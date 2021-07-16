@@ -1,0 +1,36 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/builder/button_devis
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+
+<div class="builder-destination-devis " style="position:relative">
+  <div class="row align-center-center">
+    <div class="sm-column-6 sm-offset-0 lg-column-4 lg-offset-2">
+      <h4 class="clr-primary">
+        {{ section.block_title ? section.block_title|raw : '' }}
+      </h4>
+      <div class="sub-destinations-icon-devis">
+        <svg class="icon">
+          <use xlink:href="#icon-tarif" />
+        </svg>
+      </div>
+    </div>
+    {% if section.choice == 'intern' %}
+      <div class="sm-column-11 sm-offset-1 lg-column-14 lg-offset-1">
+        <a href="{{ section.intern.toPage.url }}" class="a-button btn-devis">
+          {{ section.block_button_label
+            ? section.block_button_label
+            : 'demande de devis gratuit' }}
+        </a>
+      </div>
+    {% elseif section.choice == 'extern' %}
+      <div class="sm-column-12 sm-offset-1 lg-column-14 lg-offset-1">
+        <a href="{{ section.extern.url }}" class="a-button btn-devis">
+          {{ section.block_button_label
+            ? section.block_button_label
+            : 'demande de devis gratuit' }}
+        </a>
+      </div>
+    {% endif %}
+    
+  </div>
+</div>

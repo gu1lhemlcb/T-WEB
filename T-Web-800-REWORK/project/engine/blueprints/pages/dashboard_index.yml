@@ -1,0 +1,112 @@
+###########################################################################################################################
+
+title: "Dashboard - Index"
+icon: book
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    learner: false
+  create:
+    admin: true
+    editor: true
+    learner: false
+  update:
+    admin: true
+    editor: true
+    learner: false
+  delete:
+    admin: true
+    editor: true
+    learner: false
+  duplicate:
+    admin: false
+    editor: false
+    learner: false
+  changeSlug:
+    admin: true
+    editor: true
+    learner: false
+  changeTitle:
+    admin: true
+    editor: true
+    learner: false
+  changeStatus:
+    admin: true
+    editor: false
+    learner: false
+  changeTemplate:
+    admin: false
+    editor: false
+    learner: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listé"
+    text: "La page de modules est public pour tout le monde."
+  unlisted:
+    label: "Non listé"
+    text: "La page de modules est en ligne et ne peut être consulté qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La page de modules est en mode brouillon. Il ne peut être consulté que par les administrateurs."
+
+###########################################################################################################################
+
+# tabs:
+#   categories:
+#     icon: list-bullet
+#     label: "Modules"
+#     columns:
+#       -
+#         width: 2/3
+#         sections:
+#           published:
+#             type: pages
+#             create: modules_item
+#             template: modules_item
+#             status: published
+#             info: "{{ page.formation_name.toPage.title }}"
+#             sortable: true
+#             layout: list
+#             limit: 20
+#             image: false
+#             headline: "Modules publiés"
+#             empty: "Encore aucun module"
+#       -
+#         width: 1/3
+#         sections:
+#           draft:
+#             type: pages
+#             create: modules_item
+#             template: modules_item
+#             info: "{{ page.formation_name.toPage.title }}"
+#             status: draft
+#             sortable: true
+#             layout: list
+#             limit: 20
+#             image: false
+#             headline: "Module en brouillon"
+#             empty: "Encore aucun module"
+  # model:
+  #   icon: list-bullet
+  #   label: "Contenu"
+  #   columns:
+  #     -
+  #       width: 1/1
+  #       fields:
+  #         hero_surtitle:
+  #           width: 1/1
+  #           type: text
+  #           label: Surtitre Haut de page 
+  #         hero_title:
+  #           width: 1/1
+  #           type: text
+  #           label: Titre Haut de page
+
+###########################################################################################################################

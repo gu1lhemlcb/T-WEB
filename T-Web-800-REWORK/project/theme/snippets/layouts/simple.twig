@@ -1,0 +1,10 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/layouts/simple
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+<!DOCTYPE html>
+<html lang="fr">
+    {% include '@snippets/layouts/_head.twig' %}
+    <body id="{{ page.template }}">
+      {% block page endblock %}
+    </body>
+</html>

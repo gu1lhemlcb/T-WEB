@@ -1,0 +1,134 @@
+.swiper-container {
+  margin-top: -15rem;
+}
+
+.swiper-slide {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 100%;
+  max-height: 100%;
+  img {
+    width: 100%;
+    height: auto;
+    @media #{$lg} {
+      width: 10rem;
+      height: 6rem;
+    }
+    .slick-slide {
+      padding-right: 1rem;
+    }
+  }
+  .swiper-contents {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 3rem 0;
+  }
+}
+
+.mySwiper2 {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid clr(tertiary);
+  margin-bottom: 3rem;
+  img {
+    width: 100%;
+  }
+}
+
+.mySwiper {
+  padding-right: 6rem;
+  padding-left: 6rem;
+}
+
+.mySwiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  &.slick-current {
+    opacity: 1;
+  }
+}
+
+.slide {
+  .slide-img-container {
+    position: relative;
+    .slider-lighbox-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      width: 5rem;
+      height: 5rem;
+      color: clr(quaternary);
+      border: 1px solid clr(quaternary);
+      border-radius: 50%;
+      background-color: white;
+      &:hover:not([disabled]),
+      &:focus:not([disabled]) {
+        background-color: clr(tertiary);
+        color: white;
+        border-color: clr(tertiary);
+        .icon {
+          color: clr(primary);
+        }
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: clr(primary);
+        transform: translate(70%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.gslide-title p {
+  font-size: 1.6rem;
+  line-height: 1.19;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.read-slide {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(120%, 50%);
+    width: 3.2rem;
+    height: 3.2rem;
+    color: white;
+    background : svg-inline(eye);
+    background-color: clr(primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+}
+
+.validated-slide {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(120%, 50%);
+    width: 3.2rem;
+    height: 3.2rem;
+    color: white;
+    background : svg-inline(check);
+    background-color: clr(primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+  }
+}

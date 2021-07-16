@@ -1,0 +1,46 @@
+{
+  "name": "troadigital/EpiTravel",
+  "description": "Kirby starter for Troa",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Cyrielle Vuillemin",
+      "email": "cyrielle@troa.fr",
+      "homepage": "https://troa.fr"
+    },
+    {
+      "name": "Romain Breton",
+      "email": "romain@troa.fr",
+      "homepage": "https://troa.fr"
+    }
+  ],
+  "support": {
+    "email": "contact@troa.fr",
+    "issues": "https://github.com/troadigital/EpiTravel/issues",
+    "source": "https://github.com/troadigital/EpiTravel"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "extra": {
+    "kirby-cms-path": false,
+    "kirby-plugin-path": "plugins"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.3.0",
+    "amteich/kirby-twig": "^4.1",
+    "bnomei/kirby3-doctor": "^1.4",
+    "bnomei/kirby3-fingerprint": "^3.0",
+    "bnomei/kirby3-janitor": "^2.6",
+    "bnomei/kirby3-robots-txt": "^1.4",
+    "bnomei/kirby3-stopwatch": "^1.0",
+    "getkirby/cms": "^3.5",
+    "getkirby/editor": "^1.0",
+    "mullema/k3-panel-view-extended": "^3.0",
+    "omz13/kirby3-xmlsitemap": "^1.2",
+    "timoetting/kirby-builder": "^2.0"
+  }
+}

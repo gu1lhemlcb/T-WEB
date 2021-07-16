@@ -1,0 +1,123 @@
+Title: À PROPOS
+
+----
+
+Hero-background:
+
+- travel.jpg
+
+----
+
+Hero-title: Lorem ipsum dolor
+
+----
+
+Hero-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+----
+
+Hero-objectif-title: 
+
+----
+
+Hero-objectif: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+----
+
+Strong-points-title: Lorem ipsum dolor
+
+----
+
+Strong-points-description-01: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+----
+
+Strong-points-description-02: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+----
+
+Strong-points-description-03: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+----
+
+Strong-points-description-04: Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+----
+
+Strong-points-image:
+
+- conrad-maldives-rangali-island.jpeg
+
+----
+
+Citation-contents: 
+
+----
+
+Citation-autor: 
+
+----
+
+Our-team-title: 
+
+----
+
+Our-team-description: 
+
+----
+
+Our-team-contents: 
+
+----
+
+Our-team-certifs: 
+
+----
+
+Our-team-image:
+
+- images.jpeg
+
+----
+
+Seo-indexing: index, follow
+
+----
+
+Excludefromxmlsitemap: false
+
+----
+
+Seo-title: 
+
+----
+
+Seo-suffix: true
+
+----
+
+Seo-description: 
+
+----
+
+Seo-og: false
+
+----
+
+Seo-og-title: 
+
+----
+
+Seo-og-description: 
+
+----
+
+Seo-og-image: 
+
+----
+
+Seo-mc: false
+
+----
+
+Seo-mc-data: 

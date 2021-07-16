@@ -1,0 +1,40 @@
+# Dependencies
+# ---------------------------------------------
+
+# composer
+**/vendor
+
+# node
+**/node_modules
+yarn.lock
+
+# Environment
+# ---------------------------------------------
+
+# secrets
+.env
+
+
+# Kirby
+# ---------------------------------------------
+
+# plugins
+plugins/*
+!plugins/.keep
+
+# sprite
+project/theme/snippets/includes/sprite.twig
+
+# public/media
+public/assets/**
+!public/assets/.keep
+
+# public/media
+public/media
+
+# store/cache
+store/cache/**
+!store/cache/.keep
+
+# license
+project/config/.license

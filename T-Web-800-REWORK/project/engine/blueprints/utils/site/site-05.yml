@@ -1,0 +1,284 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 2/3
+    fields:
+      seo_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Référencement"
+      seo_indexing:
+        width: 1/2
+        type: select
+        required: false
+        default: "index, follow"
+        options:
+          - "noindex, nofollow"
+          - "noindex, follow"
+          - "index, nofollow"
+          - "index, follow"
+        label: "Indexation"
+      seo_separator:
+        width: 1/2
+        type: select
+        required: true
+        default: "•"
+        options:
+          - "-"
+          - "–"
+          - "—"
+          - "|"
+          - "·"
+          - "•"
+          - "~"
+        label: "Séparateur"
+      forms_headline_contact:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Formulaires de contact"
+      forms_contact_from_email:
+        width: 1/2
+        type: email
+        required: true
+        translate: false
+        maxlength: 100
+        placeholder: false
+        icon: false
+        label: "Adresse e-mail de l'expéditeur"
+      forms_contact_to_email:
+        width: 1/2
+        type: email
+        required: true
+        translate: false
+        maxlength: 100
+        placeholder: false
+        icon: false
+        label: "Adresse e-mail du destinataire"
+      forms_contact_cc_to_email:
+        width: 1/1
+        type: structure
+        translate: false
+        label: Liste des emails de copie
+        empty: "Aucun contenu"
+        sortable: true
+        columns:
+          cc_email_list:
+            width: 1/1
+            align: left
+        fields:
+          cc_email_list:
+            width: 1/1
+            type: email
+            required: true
+            translate: false
+            maxlength: 100
+            placeholder: false
+            icon: false
+            label: "Email de copie"
+      forms_quotation_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Formulaires de demande de devis"
+      forms_quotation_from_email:
+        width: 1/2
+        type: email
+        required: true
+        translate: false
+        maxlength: 100
+        placeholder: false
+        icon: false
+        label: "Adresse e-mail de l'expéditeur"
+      forms_quotation_to_email:
+        width: 1/2
+        type: email
+        required: true
+        translate: false
+        maxlength: 100
+        placeholder: false
+        icon: false
+        label: "Adresse e-mail du destinataire"
+      forms_quotatoin_cc_to_email:
+        width: 1/1
+        type: structure
+        translate: false
+        label: Liste des emails de copie
+        empty: "Aucun contenu"
+        sortable: true
+        columns:
+          cc_email_list:
+            width: 1/1
+            align: left
+        fields:
+          cc_email_list:
+            width: 1/1
+            type: email
+            required: true
+            translate: false
+            maxlength: 100
+            placeholder: false
+            icon: false
+            label: "Email de copie"
+      forms_resultats_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Résultats QCM"
+      forms_resultats_cc_to_email:
+        width: 1/1
+        type: structure
+        translate: false
+        label: Liste des emails de copie
+        empty: "Aucun contenu"
+        sortable: true
+        columns:
+          cc_email_list:
+            width: 1/1
+            align: left
+        fields:
+          cc_email_list:
+            width: 1/1
+            type: email
+            required: true
+            translate: false
+            maxlength: 100
+            placeholder: false
+            icon: false
+            label: "Email de copie"
+      recaptcha_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "reCAPTCHA"
+      recaptcha_site:
+        width: 1/2
+        type: text
+        required: false
+        translate: false
+        maxlength: 50
+        label: "Clé secrète"
+      recaptcha_secret:
+        width: 1/2
+        type: text
+        required: false
+        translate: false
+        maxlength: 50
+        label: "Clé site"
+      cookies_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Cookies"
+      cookies_contents:
+        width: 1/1
+        type: textarea
+        required: true
+        maxlength: 300
+        buttons: false
+        size: small
+        label: "Texte"
+      cookies_button_action:
+        width: 1/2
+        type: pages
+        required: true
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+        limit: 20
+        link: true
+        image: false
+        label: "Bouton - action"
+        empty: "Aucune page selectionnéee"
+      cookies_button_label:
+        width: 1/2
+        type: text
+        required: true
+        maxlength: 100
+        label: "Bouton - label"
+      google_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Google"
+      google_verification:
+        width: 1/1
+        type: text
+        required: false
+        translate: false
+        maxlength: 50
+        label: "Vérification Google"
+      google_analytics:
+        width: 1/1
+        type: text
+        required: false
+        translate: false
+        maxlength: 50
+        label: "ID Google Analytics"
+      google_tag:
+        width: 1/1
+        type: text
+        required: false
+        translate: false
+        maxlength: 50
+        label: "ID Google Tag"
+  -
+    width: 1/3
+    fields:
+      performances_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Performances"
+      performances_flush_pages:
+        width: 1/1
+        type: janitor
+        label: "Vider le cache des pages"
+        progress: "En cours..."
+        job: flushPages
+      performances_clean_cache:
+        width: 1/1
+        type: janitor
+        label: "Vider les caches additionnels"
+        progress: "En cours..."
+        job: cleanCache
+      performances_flush_sessions:
+        width: 1/1
+        type: janitor
+        label: "Supprimer les sessions"
+        progress: "En cours..."
+        job: flushSessions
+      performances_check_doctor:
+        width: 1/1
+        type: doctor
+        label: "Allô docteur ?"
+        progress: "En cours..."
+      development_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Développement"
+      development_maintenance:
+        width: 1/2
+        type: toggle
+        required: false
+        translate: false
+        default: off
+        label: "Maintenance"
+        text:
+          - "Non"
+          - "Oui"
+      development_ips:
+        width: 1/1
+        type: textarea
+        required: false
+        translate: false
+        buttons: false
+        size: small
+        label: "Adresses IP autorisées"
+        help: "Une adresse IP par ligne"
+
+###########################################################################################################################

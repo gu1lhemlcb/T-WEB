@@ -1,0 +1,167 @@
+###########################################################################################################################
+
+title: "Client"
+permissions:
+  access:
+    panel: false
+
+###########################################################################################################################
+
+fields:
+  first_name:
+    width: 1/1
+    type: text
+    label: Prénom
+  last_name:
+    width: 1/1
+    type: text
+    label: Nom
+  session_in:
+    width: 1/1
+    type: structure
+    translate: false
+    max: 1
+    label: Session
+    empty: "Aucun contenu"
+    columns:
+      formation_title:
+        width: 1/1
+        align: left
+    fields:
+      session_title:
+        width: 1/1
+        type: pages
+        required: false
+        translate: false
+        disabled: true
+        label: "Titre de la session"
+        empty: "Encore aucun lien"
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+      formation_title:
+        width: 1/1
+        type: pages
+        required: false
+        translate: false
+        disabled: true
+        label: "Titre de la destination"
+        empty: "Encore aucun lien"
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+      qcm_index:
+        width: 5/6
+        type: structure
+        disabled: true;
+        label: QCM de la destination
+        translate: false
+        empty: "Aucun contenu"
+        columns:
+          qcm_title:
+            width: 1/1
+            align: left
+        fields:
+          qcm_title:
+            width: 1/1
+            type: pages
+            multiple: false
+            required: false
+            translate: false
+            label: Liste des QCM
+            empty: Encore aucun QCM
+            query: site.index.filterBy('template', 'in', ['qcm_item'])
+            subpages: true
+            search: true
+            layout: list
+            sortable: true
+      qcm_result:
+        width: 1/6
+        type: number
+        required: false
+        disabled: true
+        label: Resultat
+        empty: Encore aucun resultat
+        help: "Resultat sur 20 points."
+      modules_progress:
+        width: 1/1
+        type: structure
+        label: Avancement des modules
+        translate: false
+        empty: "Aucun contenu"
+        columns:
+          modules_title:
+            width: 5/6
+            align: left
+          module_timer:
+            width: 1/6
+            align: left
+        fields:
+          modules_title:
+            width: 5/6
+            type: pages
+            required: false
+            translate: false
+            disabled: true
+            label: Liste des modules
+            empty: Encore aucun module
+            query: site.index.filterBy('template', 'in', ['modules_item'])
+            subpages: true
+            search: true
+            layout: list
+            sortable: trueJ'a
+          module_timer:
+            width: 1/6
+            type: time
+            step: second
+            # disabled: true
+            label: Avancement du module
+            display: HH:mm:ss
+            help: >
+              Format : Heures : minutes : secondes
+    
+
+###########################################################################################################################
+permissions:
+  access:
+    site: true
+    panel: false
+    users: false
+    settings: false
+  site:
+    update: false
+  files:
+    create: false
+    update: false
+    delete: false
+    replace: false
+    changeName: false
+  pages:
+    create: false
+    update: false
+    delete: false
+    hide: false
+    sort: false
+    changeTemplate: false
+    changeTitle: false
+    changeSlug: false
+  user:
+    create: true
+    update: true
+    delete: true
+    changeName: true
+    changeEmail: true
+    changePassword: true
+    changeLanguage: true
+    changeRole: true
+  users:
+    create: true
+    update: true
+    delete: true
+    changeName: true
+    changeEmail: true
+    changePassword: true
+    changeLanguage: true
+    changeRole: true

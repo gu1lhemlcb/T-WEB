@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  web:
+    container_name: "EpiTravel"
+    build:
+      context: ../../
+      dockerfile: utils/docker/Dockerfile
+    ports:
+      - 80:80
+      - 3000:3000
+    volumes:
+      - ../../:/var/html/www/
+      - ./vhost.conf:/opt/docker/etc/httpd/vhost.conf
+    environment:
+      - WEB_DOCUMENT_ROOT=/var/html/www/public
+      - WEB_DOCUMENT_INDEX=index.php
+    extra_hosts:
+      - "EpiTravel.vm:127.0.0.1"
+      - "www.EpiTravel.vm:127.0.0.1"

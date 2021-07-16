@@ -1,0 +1,27 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/builder/contents_left
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+
+{% set contents = section.contents.toBlocks|default('<p>Aucun contenu.</p>') %}
+<div class="sub-destinations-contents-2 align-center-start">
+  <div class="column-22" style="position:relative">
+    <div class="row">
+      <div class="sub-destinations-contents-4 align-center-start">
+        <div class="column-24" style="position:relative">
+          <h3 class="clr-primary">
+            {{ section.block_title ? section.block_title : '' }}
+          </h3>
+          <div class="sub-destinations-icon">
+            <svg class="icon">
+              <use xlink:href="#icon-{{ section.contents_icon }}" />
+            </svg>
+          </div>
+          <div class="a-h4-subform pt-20">
+            {{ section.block_subtitle ? section.block_subtitle : '' }}
+          </div>
+          {{ contents|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+label: 'Contenus sur liste à puces'
+name: 'Contenu sur liste à puces'
+fields:
+  contents_icon:
+    width: 1/4
+    type: select
+    required: true
+    min: 1
+    label: Icone
+    options:
+      contact: Bulle de dialogue
+      satisfaction2: Carte satisfaction
+      publics: Carte vitale
+      duree: Chronomètre
+      croix: Croix
+      email: Email
+      objectifs: Objectifs
+      contenu: Page
+      engagements: People
+      participants: People (+)
+      adresse: Point GPS
+      satisfaction: Pouce en l'air
+      logout: Sortie
+      tarif: Tarif
+      telephone: Telephone
+      user: Utilisateur
+  contents_title:
+    width: 3/4
+    type: text
+    label: Contenu (Titre)
+  contents_contents:
+    width: 1/1
+    type: structure
+    required: false
+    sortable: true
+    label: "Contenu (contenus)"
+    empty: "Aucun élément"
+    columns:
+      group_sequence_title:
+        width: 1/1
+        align: left
+    fields:
+      group_sequence_title:
+        width: 1/1
+        type: text
+        label: Titre
+      sequences:
+        width: 1/1
+        type: structure
+        required: false
+        sortable: true
+        label: "Séquences (contenu)"
+        empty: "Aucun élément"
+        columns:
+          sequence_title:
+            width: 1/1
+            align: left
+        fields:
+          sequence_title:
+            width: 1/1
+            type: text
+            label: Séquence (titre)
+          sequence_contents:
+            width: 1/1
+            type: text
+            label: Séquence (contenu)

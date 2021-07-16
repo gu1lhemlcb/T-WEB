@@ -1,0 +1,220 @@
+###########################################################################################################################
+
+title: "Accueil"
+icon: home
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: false
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: false
+    editor: false
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: false
+    editor: false
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          headline:
+            width: 1/1
+            type: headline
+            label: "Hero"
+          hero_title:
+            width: 1/1
+            type: text
+            label: Titre du Hero
+            required: true
+          destinations_headline:
+            width: 1/1
+            type: headline
+            label: "Nos destinations"
+          destinations_title:
+            width: 1/1
+            type: text
+            label: Titre du bloc
+            required: true
+          engagements_headline:
+            width: 1/1
+            type: headline
+            label: "Nos engagements"
+          engagements_img:
+            width: 1/1
+            type: files
+            required: false
+            translate: false
+            label: 'Image (engagement)'
+            empty: "Pas encore d'image"
+            query: site.images.filterBy('template', 'image')
+            uploads:
+              parent: site
+              template: image
+            multiple: false
+            layout: cards
+            search: true
+            image:
+              cover: false
+              back: pattern
+            size: tiny
+            link: true
+          contents_icon_1:
+            width: 1/4
+            type: select
+            required: true
+            min: 1
+            label: Icone
+            options:
+              contact: Bulle de dialogue
+              satisfaction2: Carte satisfaction
+              publics: Carte vitale
+              duree: Chronomètre
+              croix: Croix
+              email: Email
+              objectifs: Objectifs
+              contenu: Page
+              engagements: People
+              participants: People (+)
+              adresse: Point GPS
+              satisfaction: Pouce en l'air
+              logout: Sortie
+              tarif: Tarif
+              telephone: Telephone
+              user: Utilisateur
+          engagements_title:
+            width: 3/4
+            type: text
+            label: Titre du bloc
+            required: true
+          engagements_description:
+            width: 1/1
+            type: text
+            label: Description du bloc
+            required: true
+          line4:
+            width: 1/1
+            type: line
+          contents_icon_2:
+            width: 1/4
+            type: select
+            required: true
+            min: 1
+            label: Icone
+            options:
+              contact: Bulle de dialogue
+              satisfaction2: Carte satisfaction
+              publics: Carte vitale
+              duree: Chronomètre
+              croix: Croix
+              email: Email
+              objectifs: Objectifs
+              contenu: Page
+              engagements: People
+              participants: People (+)
+              adresse: Point GPS
+              satisfaction: Pouce en l'air
+              logout: Sortie
+              tarif: Tarif
+              telephone: Telephone
+              user: Utilisateur
+          client_satisfying_title:
+            width: 3/4
+            type: text
+            label: "Titre du bloc: Satisfaction"
+          client_satisfying_contents:
+            width: 1/1
+            type: text
+            label: "Contenus du bloc: Satisfaction"
+          line1:
+            width: 1/1
+            type: line
+          contents_icon_3:
+            width: 1/4
+            type: select
+            required: true
+            min: 1
+            label: Icone
+            options:
+              contact: Bulle de dialogue
+              satisfaction2: Carte satisfaction
+              publics: Carte vitale
+              duree: Chronomètre
+              croix: Croix
+              email: Email
+              objectifs: Objectifs
+              contenu: Page
+              engagements: People
+              participants: People (+)
+              adresse: Point GPS
+              satisfaction: Pouce en l'air
+              logout: Sortie
+              tarif: Tarif
+              telephone: Telephone
+              user: Utilisateur
+          learner_satisfying_title:
+            width: 3/4
+            type: text
+            label: "Titre du bloc: All in one solution"
+          learner_satisfying_contents:
+            width: 1/1
+            type: text
+            label: "Contenus du bloc: All in one solution"
+          line3:
+            width: 1/1
+            type: line
+          citation_headline:
+            width: 1/1
+            type: headline
+            label: "Citation"
+          citation_contents:
+            width: 1/1
+            type: textarea
+            label: "Citation"
+          citation_autor:
+            width: 1/1
+            type: text
+            label: "Auteur"
+
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

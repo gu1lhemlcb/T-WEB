@@ -1,0 +1,129 @@
+###########################################################################################################################
+
+title: "Blog - Catégorie"
+icon: tag
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: true
+    editor: true
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: true
+    editor: true
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listée"
+    text: "La catégorie est publique pour tout le monde."
+  unlisted:
+    label: "Non listée"
+    text: "La catégorie est en ligne et ne peut être consultée qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La catégorie est en mode brouillon. Elle ne peut être consultée que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  items:
+    icon: list-bullet
+    label: "Articles"
+    columns:
+      -
+        width: 2/3
+        sections:
+          published:
+            type: pages
+            create: blog-item
+            template: blog-item
+            status: published
+            sortable: false
+            sortBy: status asc date desc
+            layout: list
+            limit: 20
+            image: false
+            headline: "Articles publiés"
+            empty: "Encore aucun article"
+            info: "{{ page.date.toDate('%d/%m/%Y') }}"
+      -
+        width: 1/3
+        sections:
+          draft:
+            type: pages
+            create: blog-item
+            template: blog-item
+            status: draft
+            sortable: false
+            sortBy: title asc
+            layout: list
+            limit: 20
+            image: false
+            headline: "Articles en brouillon"
+            empty: "Encore aucun article"
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          description:
+            width: 1/1
+            type: blocks
+            required: true
+            pretty: false
+            fieldsets:
+              text:
+                label: Text
+                type: group
+                fieldsets:
+                  - heading
+                  - text
+                  - list
+              media:
+                label: Media
+                type: group
+                fieldsets:
+                  - image
+                  - video
+            label: "Description"
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

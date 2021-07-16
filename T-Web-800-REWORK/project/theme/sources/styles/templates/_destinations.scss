@@ -1,0 +1,644 @@
+.destinations-hero {
+  position: relative;
+  color: white;
+
+  .destinations-hero--contents {
+    z-index: 5;
+
+    a {
+      text-decoration: none;
+
+      &.th-1 {
+        color: clr(th-1) !important;
+      }
+
+      &.th-2 {
+        color: clr(th-2) !important;
+      }
+
+      &.th-3 {
+        color: clr(th-3) !important;
+      }
+
+      &.th-4 {
+        color: clr(th-4) !important;
+      }
+
+      &.th-5 {
+        color: clr(th-5) !important;
+      }
+    }
+  }
+
+  h1 {
+    font: 3rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  p {
+    color: white !important;
+  }
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &.th-1 {
+    border-top: 5px solid clr(th-1);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(clr(th-1), 0),
+        rgba(clr(th-1), 0.7)
+      );
+    }
+  }
+
+  &.th-2 {
+    border-top: 5px solid clr(th-2);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(clr(th-2), 0),
+        rgba(clr(th-2), 0.7)
+      );
+    }
+  }
+
+  &.th-3 {
+    border-top: 5px solid clr(th-3);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(clr(th-3), 0),
+        rgba(clr(th-3), 0.6)
+      );
+    }
+  }
+
+  &.th-4 {
+    border-top: 5px solid clr(th-4);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(clr(th-4), 0),
+        rgba(clr(th-4), 0.7)
+      );
+    }
+  }
+
+  &.th-5 {
+    border-top: 5px solid clr(th-5);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(clr(th-5), 0),
+        rgba(clr(th-5), 0.7)
+      );
+    }
+  }
+}
+
+.section-presentation {
+  padding: 7rem 0;
+  border-bottom: 1px solid clr(tertiary);
+}
+
+.section-pages {
+  padding: 6rem 0;
+  border-bottom: 1px solid clr(tertiary);
+
+  .th-1 {
+    color: clr(th-1) !important;
+  }
+
+  .th-2 {
+    color: clr(th-2) !important;
+  }
+
+  .th-3 {
+    color: clr(th-3) !important;
+  }
+
+  .th-4 {
+    color: clr(th-4) !important;
+  }
+
+  .th-5 {
+    color: clr(th-5) !important;
+  }
+
+  .sub-destination {
+    &.th-1 {
+      background-color: clr(th-1);
+    }
+
+    &.th-2 {
+      background-color: clr(th-2);
+    }
+
+    &.th-3 {
+      background-color: clr(th-3);
+    }
+
+    &.th-4 {
+      background-color: clr(th-4);
+    }
+
+    &.th-5 {
+      background-color: clr(th-5);
+    }
+
+    h4,
+    p,
+    h3,
+    h2 {
+      color: clr(primary) !important;
+    }
+
+    .destinations-number {
+      position: absolute;
+      width: 0;
+      top: 0;
+      left: 0;
+      transform: translate(3rem, 3rem);
+    }
+    position: relative;
+    width: 100%;
+    height: 39.5rem;
+
+    .form-contents {
+      position: absolute;
+      padding: 3rem 3rem;
+      bottom: 0;
+      left: 0;
+      transition: display 50ms, opacity 50ms;
+
+      .a-button {
+        display: none;
+        opacity: 0;
+        transition: display $anim, opacity $anim linear;
+      }
+      @media #{$sm-only} {
+        .a-button {
+          display: inline-block;
+          opacity: 1;
+          transition: display $anim, opacity $anim linear;
+        }
+      }
+    }
+
+    &:hover {
+      .form-contents .a-button {
+        opacity: 1;
+        display: inline-block;
+      }
+    }
+    &.th-1,
+    &.th-2,
+    &.th-3,
+    &.th-4 {
+      p {
+        color: white !important;
+      }
+    }
+
+    &.th-1 {
+      border-top: 5px solid clr(th-1);
+    }
+    &.th-2 {
+      border-top: 5px solid clr(th-2);
+    }
+    &.th-3 {
+      border-top: 5px solid clr(th-3);
+    }
+    &.th-4 {
+      border-top: 5px solid clr(th-4);
+    }
+    &.th-5 {
+      border-top: 5px solid clr(th-5);
+    }
+  }
+  .destination-img {
+    &.th-1 {
+      background-color: clr(th-1);
+    }
+
+    &.th-2 {
+      background-color: clr(th-2);
+    }
+
+    &.th-3 {
+      background-color: clr(th-3);
+    }
+
+    &.th-4 {
+      background-color: clr(th-4);
+    }
+
+    &.th-5 {
+      background-color: clr(th-5);
+    }
+
+    h4,
+    p,
+    h3,
+    &.th-1,
+    &.th-2,
+    &.th-3,
+    &.th-4,
+    p {
+      color: clr(white) !important;
+    }
+
+    .destinations-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(3rem, 3rem);
+    }
+    position: relative;
+    width: 100%;
+    height: 39.5rem;
+
+    &.th-1 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-1);
+        background-image: linear-gradient(
+          rgba(clr(th-1), 0),
+          rgba(clr(th-1), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-2 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-2);
+        background-image: linear-gradient(
+          rgba(clr(th-2), 0),
+          rgba(clr(th-2), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-3 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-3);
+        background-image: linear-gradient(
+          rgba(clr(th-3), 0),
+          rgba(clr(th-3), 0.6)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-4 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-4);
+        background-image: linear-gradient(
+          rgba(clr(th-4), 0),
+          rgba(clr(th-4), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &.th-5 {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-top: 5px solid clr(th-5);
+        background-image: linear-gradient(
+          rgba(clr(th-5), 0),
+          rgba(clr(th-5), 0.7)
+        );
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    img {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .form-contents {
+      position: absolute;
+      z-index: 10;
+      padding: 3rem 3rem;
+      bottom: 0;
+      left: 0;
+      transition: display 50ms, opacity 50ms;
+
+      .a-button {
+        display: none;
+        opacity: 0;
+        transition: visibility $anim, opacity $anim linear;
+      }
+      @media #{$sm-only} {
+        .a-button {
+          display: inline-block;
+          opacity: 1;
+          transition: visibility $anim, opacity $anim linear;
+        }
+      }
+    }
+
+    &:hover {
+      .form-contents .a-button {
+        opacity: 1;
+        display: inline-block;
+        animation: appear 0.3s;
+      }
+    }
+
+    &.th-1 {
+      border-top: 5px solid clr(th-1);
+      background-image: linear-gradient(
+          rgba(clr(th-1), 0),
+          rgba(clr(th-1), 0.7)
+        ),
+        url("/assets/images/hotels.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.th-2 {
+      border-top: 5px solid clr(th-2);
+      background-image: linear-gradient(
+          rgba(clr(th-2), 0),
+          rgba(clr(th-2), 0.7)
+        ),
+        url("/assets/images/musees.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.th-3 {
+      border-top: 5px solid clr(th-3);
+      background-image: linear-gradient(
+          rgba(clr(th-3), 0),
+          rgba(clr(th-3), 0.6)
+        ),
+        url("/assets/images/vols.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.th-4 {
+      border-top: 5px solid clr(th-4);
+      background-image: linear-gradient(
+          rgba(clr(th-4), 0),
+          rgba(clr(th-4), 0.7)
+        ),
+        url("/assets/images/langues.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.th-5 {
+      border-top: 5px solid clr(th-5);
+      background-image: linear-gradient(
+          rgba(clr(th-5), 0),
+          rgba(clr(th-5), 0.7)
+        ),
+        url("/assets/images/protection des personnes.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.sub-destinations {
+  border-bottom: 1px solid clr(tertiary);
+
+  .right-column {
+    &.th-1 {
+      background-color: clr(th-1);
+    }
+
+    &.th-2 {
+      background-color: clr(th-2);
+    }
+
+    &.th-3 {
+      background-color: clr(th-3);
+    }
+
+    &.th-4 {
+      background-color: clr(th-4);
+    }
+
+    &.th-5 {
+      background-color: clr(th-5);
+    }
+    .sub-destinations-contents-right {
+      position: relative;
+      width: 100%;
+      margin: 0 3rem 0 6rem;
+
+      .builder-destination {
+        padding: 6rem 3rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid clr(common-gray);
+        }
+      }
+
+      .builder-destination-devis {
+        @media #{$sm} {
+          padding: 6rem 0;
+        }
+        padding: 6rem 3rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid clr(common-gray);
+        }
+      }
+
+      .sub-destinations-icon,
+      .sub-destinations-icon-devis {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-60%, 80%);
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid clr(secondary);
+        background-color: white;
+        border-radius: 50%;
+        color: clr(primary);
+        .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(75%, 70%);
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      @media #{$sm} {
+        .sub-destinations-icon-devis {
+          transform: translate(-50%, 55%);
+        }
+      }
+      @media #{$md} {
+        .sub-destinations-icon-devis {
+          transform: translate(35%, 25%);
+        }
+      }
+    }
+
+    .sub-destinations-img {
+      position: relative;
+      width: 100%;
+      height: 70rem;
+      background-image: url("/assets/images/hotels.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .sub-destinations-description {
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 1.19;
+    }
+  }
+
+  .sub-destinations-contents-1,
+  .sub-destinations-contents-2,
+  .sub-destinations-contents-3,
+  .sub-destinations-contents-4,
+  .sub-destinations-contents-5 {
+    position: relative;
+    width: 100%;
+    margin: 0 6rem;
+    padding: 6rem 3rem;
+    .sub-destinations-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-120%, 55%);
+      height: 5rem;
+      width: 5rem;
+      border: 1px solid clr(secondary);
+      background-color: white;
+      border-radius: 50%;
+      color: clr(primary);
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(75%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid clr(common-gray);
+    }
+  }
+
+  .sub-destinations-contents-2 {
+    margin: 0 3rem 0 4rem;
+    padding: 6rem 2rem;
+  }
+  @media #{$sm} {
+    .sub-destinations-contents-5 {
+      margin: 0 3rem 0 6rem;
+      padding: 6rem 2rem;
+    } 
+  }
+  @media #{$md} {
+    .sub-destinations-contents-5 {
+      margin: 0 3rem 0 0rem;
+      padding: 6rem 2rem;
+    } 
+  }
+
+  .sub-destinations-contents-4 {
+    margin: 0 2rem;
+    padding: 3rem 0rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid clr(common-gray);
+    }
+  }
+
+  .sub-destinations-img {
+    position: relative;
+    width: 100%;
+    height: 70rem;
+    background-image: url("/assets/images/hotels.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,44 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 1/1
+    fields:
+      error_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Gestion des erreurs"
+      if_session_empty:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si l'utilisateur est inscrit à aucune session."
+      if_not_connected:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si l'utilisateur n'est pas connecté ou n'a pas les permissions d'accès à la page."
+      if_no_name:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si le formateur n'a pas renseigner le nom ou prénom de l'utilisateur."
+      if_more_one_session:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si l'utilisateur est inscrit à plus d'une session."
+      if_qcm_done:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si l'utilisateur a déjà effectué le QCM"
+      if_qcm_not_done:
+        width: 1/1
+        type: textarea
+        required: true
+        label: "Si l'utilisateur n'a pas encore effectué le QCM"
+
+
+###########################################################################################################################

@@ -1,0 +1,79 @@
+Title: Vols
+
+----
+
+Hero-image:
+
+- unnamed.jpg
+
+----
+
+Hero-theme: th-3
+
+----
+
+Short-description: 
+
+----
+
+Full-description-left-title: 
+
+----
+
+Full-description-right-title: 
+
+----
+
+Full-description-left-bold: 
+
+----
+
+Full-description-left: 
+
+----
+
+Full-description-right: 
+
+----
+
+Seo-indexing: index, follow
+
+----
+
+Excludefromxmlsitemap: false
+
+----
+
+Seo-title: 
+
+----
+
+Seo-suffix: true
+
+----
+
+Seo-description: 
+
+----
+
+Seo-og: false
+
+----
+
+Seo-og-title: 
+
+----
+
+Seo-og-description: 
+
+----
+
+Seo-og-image: 
+
+----
+
+Seo-mc: false
+
+----
+
+Seo-mc-data: 

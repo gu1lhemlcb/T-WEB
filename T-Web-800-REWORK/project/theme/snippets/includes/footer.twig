@@ -1,0 +1,191 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/footer
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+<!-- ###### CERTIFICATES START ###### -->
+{# <section class="certificates">
+  <div class="row align-center-center pt-30">
+    {% for item in site.certificates_builder.toStructure %}
+      <div class="sm-column-22 sm-offset-1 sm-pb-30 lg-column-6 lg-ml-30 lg-mr-30">
+        <h4 class="certificates-name">
+          <div class="row align-center-center">
+            <div class="column-8">
+              <div class="certificates-icon">
+                <div class="certificates-img"
+                  style="background-image:url({{
+                  item.certif_logo.toFile.url
+                  }})"></div>
+                <svg class="check-icon">
+                  <use xlink:href="#icon-check-mark" />
+                </svg>
+                <svg class="w-background">
+                  <use xlink:href="#icon-w-circle" />
+                </svg>
+              </div>
+            </div>
+            <div class="column-15 offset-1">
+              {{ item.certif_name|raw }}
+            </div>
+          </div>
+        </h4>
+      </div>
+    {% endfor %}
+  </div>
+</section> #}
+<!-- ###### CERTIFICATES END ###### -->
+<footer>
+  <section class="top-section">
+    <div class="row align-start-center">
+      <div class="column-14 lg-offset-1">
+        <h4>
+          GLCE destination
+        </h4>
+      </div>
+      {% set user = kirby.user() %}
+      {% if user %}
+        <div class="lg-column-4">
+          <a href="{{ site.connexion_btn_footer.toPage.url }}"
+            class="a-button btn-icon">
+            <svg class="icon">
+              <use xlink:href="#icon-logout" />
+            </svg>Se deconnecter
+          </a>
+        </div>
+      {% else %}
+      <div class="lg-column-4">
+        <a href="{{ site.connexion_btn_footer.toPage.url }}"
+          class="a-button btn-icon">
+          <svg class="icon">
+            <use xlink:href="#icon-user" />
+          </svg>{{ site.connexion_btn_label ? site.connexion_btn_label|raw : "" }}
+        </a>
+      </div>
+      {% endif %}
+      <div class="lg-column-4 ml-30">
+        <a href="{{ site.contact_btn_footer.toPage.url }}"
+          class="a-button btn-icon">
+          <svg class="icon">
+            <use xlink:href="#icon-contact" />
+          </svg>{{ site.contact_btn_label ? site.contact_btn_label|raw : "" }}
+        </a>
+      </div>
+    </div>
+    <div class="row align-start-center">
+      <div class="lg-column-3 offset-1">
+        <p>
+          {{ site.contact_address|raw }}<br /> {{ site.contact_zip|raw }} {{ site.contact_city|raw }}
+        </p>
+      </div>
+      <div class="lg-column-2 offset-1">
+        <p>
+          {{ site.phone_number|raw }}
+        </p>
+      </div>
+      <div class="lg-column-3 offset-1">
+        <p>
+          {{ site.email_address|raw }}
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="mobile-top-section">
+    <div class="row align-start-center">
+      {% set user = kirby.user() %}
+      {% if user %}
+        <div class="sm-column-22 sm-pt-20 sm-offset-1">
+          <a href="{{ site.connexion_btn_footer.toPage.url }}"
+            class="a-button btn-icon">
+            <svg class="icon">
+              <use xlink:href="#icon-logout" />
+            </svg>Se deconnecter
+          </a>
+        </div>
+      {% else %}
+      <div class="sm-column-22 sm-pt-20 sm-offset-1">
+        <a href="{{ site.connexion_btn_footer.toPage.url }}"
+          class="a-button btn-icon">
+          <svg class="icon">
+            <use xlink:href="#icon-user" />
+          </svg>{{ site.connexion_btn_label ? site.connexion_btn_label|raw : "" }}
+        </a>
+      </div>
+      {% endif %}
+      <div class="sm-column-22 sm-offset-1 ml-30">
+        <a href="{{ site.contact_btn_footer.toPage.url }}"
+          class="a-button btn-icon">
+          <svg class="icon">
+            <use xlink:href="#icon-contact" />
+          </svg>{{ site.contact_btn_label ? site.contact_btn_label|raw : "" }}
+        </a>
+      </div>
+      <div class="sm-column-22 sm-pt-20 sm-offset-1">
+        <h4>
+          GLCE destination
+        </h4>
+      </div>
+    </div>
+    <div class="row align-start-center">
+      <div class="sm-column-22 sm-pt-20 sm-pb-20 offset-1">
+        <p>
+          {{ site.contact_address|raw }}<br /> {{ site.contact_zip|raw }} {{ site.contact_city|raw }}
+        </p>
+      </div>
+      <div class="sm-column-22 sm-pb-20 offset-1">
+        <p>
+          {{ site.phone_number|raw }}
+        </p>
+      </div>
+      <div class="sm-column-22 sm-pb-20 offset-1">
+        <p>
+          {{ site.email_address|raw }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-section">
+    <div class="row align-start-center">
+      <div class="column-5 lg-offset-1">
+        <p>
+          {{ site.credits_sentence|raw }}
+        </p>
+      </div>
+      <div class="column-2 lg-offset-12">
+        <a class="legals-link" href="{{ site.index.filterBy('template', 'legal') }}">
+          <p>
+            Mentions légales
+          </p>
+        </a>
+      </div>
+      <div class="column-2">
+        <a class="privacy-link" href="{{ site.index.filterBy('template', 'privacy') }}">
+          <p>
+            Confidentialité
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="mobile-bottom-section">
+    <div class="row align-start-center">
+      <div class="sm-column-22 sm-pb-10 sm-pt-20 sm-offset-1">
+        <a class="legals-link" href="{{ site.index.filterBy('template', 'legal').first }}">
+          <p>
+            Mentions légales
+          </p>
+        </a>
+      </div>
+      <div class="sm-column-22 sm-pb-10  sm-offset-1">
+        <a class="privacy-link" href="{{ site.index.filterBy('template', 'privacy').first }}">
+          <p>
+            Confidentialité
+          </p>
+        </a>
+      </div>
+      <div class="sm-column-22 sm-pb-20 sm-offset-1">
+        <p>
+          {{ site.credits_sentence|raw }}
+        </p>
+      </div>
+    </div>
+  </section>
+</footer>

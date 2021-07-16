@@ -1,0 +1,95 @@
+###########################################################################################################################
+
+title: "Défaut"
+icon: page
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: true
+    editor: true
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: true
+    editor: true
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listée"
+    text: "La page est publique pour tout le monde."
+  unlisted:
+    label: "Non listée"
+    text: "La page est en ligne et ne peut être consultée qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La page est en mode brouillon. Elle ne peut être consultée que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          contents:
+            width: 1/1
+            type: blocks
+            required: true
+            pretty: false
+            fieldsets:
+              text:
+                label: Text
+                type: group
+                fieldsets:
+                  - heading
+                  - text
+                  - list
+              media:
+                label: Media
+                type: group
+                fieldsets:
+                  - image
+                  - video
+            label: "Contenus"
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

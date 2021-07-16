@@ -1,0 +1,283 @@
+// ########## TYPOGRAPHIE ########### //
+
+html {
+  color: clr(primary);
+  font-family: $font-renogare;
+  font-weight: normal;
+  font-size: 62.5%;
+}
+
+.a-h1,
+h1 {
+  font-size: 3rem;
+  line-height: 1.33;
+}
+
+.module-clock {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.a-h2,
+h2 {
+  font-size: 2.6rem;
+  line-height: 1.19;
+}
+
+.a-h3,
+h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  // text-transform: uppercase;
+}
+
+.a-h4,
+h4 {
+  font-size: 1.6rem;
+  line-height: 1.19;
+  text-transform: uppercase;
+}
+
+.a-h4-subform {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.a-h4-light {
+  font-size: 1.6rem;
+  line-height: 1.19;
+  text-transform: none;
+}
+
+.a-p,
+p {
+  font-size: 1.4rem;
+  line-height: 1.43;
+  color: clr(black);
+  font-family: $font-helvetica;
+}
+
+blockquote {
+  font-size: 1.4rem;
+  line-height: 1.43;
+  color: clr(black);
+  font-family: $font-helvetica;
+  font-weight: 700;
+  padding-top: 1rem;
+}
+
+.a-menu {
+  font-size: 1.4rem;
+  line-height: 1.21;
+  text-transform: uppercase;
+  .icon {
+    width: 1.4rem;
+    height: 0.7rem;
+  }
+}
+
+.a-ul {
+  list-style: inside;
+  list-style-type: disc;
+  .a-li {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    font-family: $font-helvetica;
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 2.3rem;
+    font-weight: 700;
+    .a-sub-ul {
+      list-style: none;
+      .a-sub-li {
+        font-size: 1.4rem;
+        line-height: 1.43;
+        font-family: $font-helvetica;
+        position: relative;
+        padding-left: 2rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.a-ul-light {
+  list-style: outside;
+  list-style-type: disc;
+
+  .a-li-light {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    font-family: $font-helvetica;
+    position: relative;
+    margin: 1.3rem 0 1.3rem 4.3rem;
+  }
+}
+
+.a-hr,
+hr {
+  height: 1px;
+  border: 0;
+  color: clr(secondary);
+  background-color: clr(secondary);
+}
+
+.dot-primary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(primary);
+  border-radius: 50%;
+}
+.dot-secondary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(secondary);
+  border-radius: 50%;
+}
+.dot-tertiary {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(tertiary);
+  border-radius: 50%;
+}
+.dot-th-1 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-1);
+  border-radius: 50%;
+}
+.dot-th-2 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-2);
+  border-radius: 50%;
+}
+.dot-th-3 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-3);
+  border-radius: 50%;
+}
+.dot-th-4 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-4);
+  border-radius: 50%;
+}
+.dot-th-5 {
+  height: 10rem;
+  width: 10rem;
+  background-color: clr(th-5);
+  border-radius: 50%;
+}
+
+.clr-w {
+  color: white !important;
+}
+.clr-primary {
+  color: clr(primary) !important;
+}
+.clr-secondary {
+  color: clr(secondary) !important;
+}
+.clr-tertiary {
+  color: clr(tertiary) !important;
+}
+.clr-quaternary {
+  color: clr(quaternary) !important;
+}
+
+.th-1 {
+  color: clr(th-1) !important;
+}
+
+.th-2 {
+  color: clr(th-2) !important;
+}
+
+.th-3 {
+  color: clr(th-3) !important;
+}
+
+.th-4 {
+  color: clr(th-4) !important;
+}
+
+.th-5 {
+  color: clr(th-5) !important;
+}
+
+.f-bold {
+  font-weight: 700;
+}
+
+.no-upper {
+  text-transform: none;
+}
+
+.to-upper {
+  text-transform: uppercase;
+}
+
+.textarea-nl {
+  p:not(:last-child) {
+    padding-bottom: 20px;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.error-404 {
+  padding-bottom: 6rem;
+  .error-title {
+    padding: 6rem 0 0 0;
+    font-size: 44rem;
+    @media #{$sm-only} {
+      font-size: 10rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: clr(primary);
+    :hover {
+      color: clr(secondary);
+    }
+    span {
+      position: relative;
+      .back-result-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(100% ,-40%);
+        width: 5rem;
+        height: 5rem;
+        color: clr(primary);
+        .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(75%, 75%);
+          color: clr(primary);
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

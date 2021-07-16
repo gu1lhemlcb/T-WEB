@@ -1,0 +1,18 @@
+{% set image = block.image.toFile() %}
+{% if image %}
+    <figure>
+        {% if block.link.isNotEmpty %}
+            <a href="{{ block.link.toUrl }}">
+                <img src="{{ image.url }}" alt="{{ block.alt|default(image.alt) }}">
+            </a>
+        {% else %}
+            <img src="{{ image.url }}" alt="{{ block.alt|default(image.alt) }}">
+        {% endif %}
+
+        {% if (block.caption.isNotEmpty) %}
+            <figcaption>
+                {{ block.caption }}
+            </figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

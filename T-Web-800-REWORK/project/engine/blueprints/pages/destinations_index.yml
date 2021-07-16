@@ -1,0 +1,95 @@
+###########################################################################################################################
+
+title: Destinations - Index"
+icon: book
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: true
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: true
+    editor: true
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: true
+    editor: true
+    client: false
+  changeTitle:
+    admin: true
+    editor: true
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+status:
+  listed:
+    label: "Listé"
+    text: "La page de destination est public pour tout le monde."
+  unlisted:
+    label: "Non listé"
+    text: "La page de destination est en ligne et ne peut être consulté qu'avec l'URL directe."
+  draft:
+    label: "Brouillon"
+    text: "La page de destination est en mode brouillon. Il ne peut être consulté que par les administrateurs."
+
+###########################################################################################################################
+
+tabs:
+  categories:
+    icon: list-bullet
+    label: "Catégories de destinations"
+    columns:
+      -
+        width: 2/3
+        sections:
+          published:
+            type: pages
+            create: destinations_category
+            template: destinations_category
+            status: published
+            sortable: true
+            layout: list
+            limit: 20
+            image: false
+            headline: "Catégories publiées"
+            empty: "Encore aucune catégorie"
+      -
+        width: 1/3
+        sections:
+          draft:
+            type: pages
+            create: destinations_category
+            template: destinations_category
+            status: draft
+            sortable: false
+            layout: list
+            limit: 20
+            image: false
+            headline: "Catégories en brouillon"
+            empty: "Encore aucune catégorie"
+
+###########################################################################################################################

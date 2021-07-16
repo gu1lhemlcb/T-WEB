@@ -1,0 +1,135 @@
+###########################################################################################################################
+
+columns:
+  -
+    width: 1/1
+    fields:
+      contact_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Indestinations de contact"
+      contact_address:
+        width: 1/1
+        type: textarea
+        required: true
+        maxlength: 300
+        buttons: false
+        size: small
+        label: "Adresse postale"
+      contact_zip:
+        width: 1/3
+        type: text
+        required: true
+        maxlength: 100
+        label: "Code postal"
+      contact_city:
+        width: 1/3
+        type: text
+        required: true
+        maxlength: 100
+        label: "Ville"
+      contact_country:
+        width: 1/3
+        type: text
+        required: true
+        maxlength: 100
+        label: "Pays"
+      email_address:
+        width: 1/2
+        type: email
+        required: true
+        maxlength: 100
+        label: "Email"
+      phone_number:
+        width: 1/2
+        type: text
+        required: true
+        maxlength: 100
+        label: "Téléphone"
+      contact_latitude:
+        width: 1/2
+        type: text
+        required: true
+        translate: false
+        maxlength: 100
+        label: "Latitude"
+      contact_longitude:
+        width: 1/2
+        type: text
+        required: true
+        translate: false
+        maxlength: 100
+        label: "Longitude"
+      contact_gmaps:
+        width: 1/1
+        type: url
+        required: false
+        maxlength: 200
+        placeholder: false
+        icon: false
+        label: "Google Maps"
+      credits_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Crédits"
+      credits_sentence:
+        width: 1/1
+        type: textarea
+        required: true
+        translate: false
+        maxlength: 100
+        label: "Phrase de crédits"
+      footer_credits:
+        width: 1/1
+        type: structure
+        required: true
+        translate: false
+        label: "Crédits"
+        empty: "Aucun crédit"
+        sortable: true
+        min: 0
+        max: 10
+        columns:
+          heading:
+            width: 1/1
+            align: left
+        fields:
+          heading:
+            width: 1/1
+            type: text
+            required: true
+            translate: false
+            label: "Nom"
+            maxlength: 200
+          role:
+            width: 1/1
+            type: text
+            required: true
+            translate: false
+            label: "Rôle"
+          web:
+            width: 1/1
+            type: url
+            required: true
+            translate: false
+            label: "Site web"
+            placeholder: false
+            icon: false
+          logo:
+            width: 1/1
+            type: files
+            required: true
+            translate: false
+            label: "Image"
+            empty: "Pas d'image"
+            query: site.images.filterBy('template', 'image')
+            uploads:
+              parent: site
+              template: image
+            multiple: false
+            layout: list
+
+
+###########################################################################################################################

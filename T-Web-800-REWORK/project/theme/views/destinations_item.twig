@@ -1,0 +1,112 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/views/destinations-item
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+{% extends '@snippets/layouts/default.twig' %}
+
+{% block page %}
+<main>
+  <section class="Destinations-hero {{ page.parent.hero_theme }}"
+    style="background-image:url({{ page.parent.hero_image.toFile.url }})">
+    <div class="row destinations-hero--contents">
+      <div class="sm-column-22 sm-offset-1 lg-column-23 lg-offset-1 pt-60">
+        <h4>
+          <a style="color: white" href="{{ page.parent.url }}">
+            {{ page.parent.parent.title }}
+          </a> / <a class="{{ page.parent.hero_theme }}"
+            href="">
+            {{ page.title }}
+          </a>
+        </h4>
+        <h1 class="pt-60">
+          {{ page.title }}
+        </h1>
+      </div>
+      <div class="sm-column-22 sm-offset-1 lg-column-5 lg-offset-1 pt-15 pb-60">
+        <p>
+          {{ page.short_description|raw ? page.short_description|raw ? : '' }}
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ###### SUB destinations START ###### -->
+  <section class="sub-destinations sticky-container">
+    <div class="row align-start-start">
+      <div class="sm-column-24 sm-offset-0 lg-column-14 lg-offset-0 wrapper" >
+        <div class="row inner">
+          {% if page.contents_builder_left.toBuilderBlocks %}
+            {% for section in page.contents_builder_left.toBuilderBlocks %}
+              {% include '@snippets/includes/builder/' ~ section._key ~ '.twig' %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% if page.contents_builder_right.toBuilderBlocks|default(0) %}
+      <div class="sm-column-24 sm-offset-0 lg-column-10 lg-offset-0 sidebar" id="sidebar">
+        <div class="right-column {{ page.parent.hero_theme }} sidebar-inner">
+          <div class="row">
+            <div class="sub-destinations-contents-right pt-60 align-center-start">
+              <div class="column-22 lg-offset-2">
+                <h4 class="clr-primary">
+                  En bref
+                </h4>
+              </div>
+
+              {% if page.contents_builder_right.toBuilderBlocks %}
+                {% for section in page.contents_builder_right.toBuilderBlocks %}
+                  {% include '@snippets/includes/builder/' ~ section._key ~ '.twig' %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  <!-- ###### SUB destinations END ###### -->
+
+  <section class="section-pages">
+    <div class="row align-center-center pb-30">
+      <h4>
+        Nos autres destinations <span class="{{ page.parent.hero_theme }}">{{
+            page.parent.title
+          }}</span>
+      </h4>
+    </div>
+    <div class="row align-center-center">
+      {% for destination in page.parent.children().not(page.uri) %}
+        <div class="sm-column-22 mb-30 lg-column-5 sub-destination {{
+          page.parent.hero_theme
+          }} lg-ml-20">
+          <div class=Destinations-number">
+            <h4>
+              0{{ loop.index }}
+            </h4>
+          </div>
+          <div class="row form-contents">
+            <div class="column-20">
+              <h3>
+                {{ destination.title }}
+              </h3>
+            </div>
+            <div class="column-20">
+              <p class="clr-w">
+                {{ destination.short_description|raw
+                  ? destination.short_description|raw
+                  : '' }}
+              </p>
+            </div>
+            <div class="column-24">
+              <a href="{{ destination.url }}"
+                class="a-button transparent-destinations-2">
+                En savoir plus
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+</main>
+{% endblock %}

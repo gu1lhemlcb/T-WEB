@@ -1,0 +1,81 @@
+###########################################################################################################################
+
+title: "Se connecter"
+icon: page
+num: false
+
+###########################################################################################################################
+
+options:
+  read:
+    admin: true
+    editor: true
+    client: false
+  create:
+    admin: true
+    editor: false
+    client: false
+  update:
+    admin: true
+    editor: true
+    client: false
+  delete:
+    admin: false
+    editor: false
+    client: false
+  duplicate:
+    admin: false
+    editor: false
+    client: false
+  changeSlug:
+    admin: false
+    editor: false
+    client: false
+  changeTitle:
+    admin: false
+    editor: false
+    client: false
+  changeStatus:
+    admin: false
+    editor: false
+    client: false
+  changeTemplate:
+    admin: false
+    editor: false
+    client: false
+
+###########################################################################################################################
+
+tabs:
+  model:
+    label: "Modèle de la page"
+    icon: template
+    columns:
+      -
+        width: 1/1
+        fields:
+          headline:
+            width: 1/1
+            type: headline
+            label: "Hero"
+          hero_title:
+            width: 1/1
+            type: text
+            label: Hero (titre)
+          hero_description:
+            width: 1/1
+            type: text
+            label: Hero (description)
+          hero_contents:
+            width: 1/1
+            type: text
+            label: Hero (contenu)
+          redirect:
+            label: Redirection
+            type:  pages
+  seo:
+    extends: utils/page/seo
+    label: "Référencement"
+    icon: search
+
+###########################################################################################################################

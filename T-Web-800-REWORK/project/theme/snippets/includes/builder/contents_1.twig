@@ -1,0 +1,21 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/builder/contents_1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+
+{% set contents = section.contents.toBlocks|default('<p>Aucun contenu.</p>') %}
+
+<div class="column-22 builder-destination lg-offset-2" style="position:relative">
+  <h4 class="pb-10 clr-primary">
+    {{ section.block_title ? section.block_title|raw : '' }}
+  </h4>
+  {% if section.contents_icon|default(0) %}
+    <div class="sub-destinations-icon">
+      <svg class="icon">
+        <use xlink:href="#icon-{{ section.contents_icon }}" />
+      </svg>
+    </div>
+  {% endif %}
+  <div>
+    {{ contents|raw }}
+  </div>
+</div>

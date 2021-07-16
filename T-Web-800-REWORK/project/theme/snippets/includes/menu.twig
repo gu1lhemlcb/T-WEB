@@ -1,0 +1,274 @@
+{# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+►►► theme/snippets/includes/menu
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
+
+{% set user = kirby.user() %}
+<header
+	class="mobile-header">
+	{# <div id="overlay"></div> #}
+	<div class="container align-items-center">
+		<div class="row align-start-center">
+			<div class="column-4 offset-1 a-header">
+				<input type="checkbox" name="main-nav" id="main-nav" class="burger-check">
+				<label for="main-nav" class="burger menu">
+					<span></span>
+				</label>
+			</div>
+			<div class="column-12 offset-1">
+				<a href="{{ site.url }}">
+					<div class="menu-logo"></div>
+				</a>
+			</div>
+			<div class="column-24 mobile-menu-items ">
+				{% if site.header_menu.toStructure|default(0) %}
+					<div class="nav">
+						<ul>
+							{% for item in site.header_menu.toStructure %}
+								{% if item.choice == 'intern' %}
+									{% set isCurrent = page == item.intern.toPage or page.isDescendantOf(item.intern.toPage) or page.isChildOf(item.intern.toPage) %}
+									<li>
+										<a class="a-menu {{ isCurrent ? ' current' }} " href="{{ item.intern.toPage.url|default(0) }}" target="{{ item.intern_target }}" title="{{ item.title }}">
+											{{ item.title }}
+										</a>
+									</li>
+								{% endif %}
+								{% if item.choice == 'extern' %}
+									<li>
+										<a class="a-menu" href="{{ item.extern }}" target="{{ item.extern_target }}" title="{{ item.title }}">
+											{{ item.title }}
+										</a>
+									</li>
+								{% endif %}
+								{% if item.choice == 'submenu' %}
+									{% set submenu = item.submenu.toStructure|default(0) %}
+									{% if submenu|default(0) %}
+										<li class="submenu  ">
+											{% if item.submenu_intern.toPage %}
+												<a class="a-menu" href="{{ item.submenu_intern.toPage.url|default(0) ? item.submenu_intern.toPage.url : site.url }} {{ submenu|filter(sub_item => page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage)) is not empty ? ' current' }}">
+													{{ item.title }}
+													<svg class="a-menu-paren-icon icon">
+														<use xlink:href="#icon-chevron-bottom"/>
+													</svg>
+												</a>
+											{% else %}
+												<a class="a-menu {{ item.submenu_intern.toPage.url|default(0) ? item.submenu_intern.toPage.url : site.url }} {{ submenu|filter(sub_item => page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage)) is not empty ? ' current' }}">
+													{{ item.title }}
+													<svg class="a-menu-paren-icon icon">
+														<use xlink:href="#icon-chevron-bottom"/>
+													</svg>
+													<svg class="a-menu-paren-icon-active icon">
+														<use xlink:href="#icon-chevron-top"/>
+													</svg>
+												</a>
+											{% endif %}
+											<ul
+												class="no-bullet">
+												{# <div class="submenu-overlay"></div> #}
+												{% for sub_item in submenu %}
+													{% if sub_item.choice == 'intern' %}
+														{% set isCurrent = page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage) %}
+														<li class="{{ sub_item.intern.toPage.hero_theme }} has-submenu">
+															<div class="submenu-title">
+																<a class="a-menu {{ isCurrent ? ' current' }} clr-w" href="{{ sub_item.intern.toPage.url|default(0) }}" target="{{ sub_item.intern_target }}" title="{{ sub_item.title }}">
+																	{{ sub_item.title }}
+																</a>
+																<button class="submenu-icon">
+																	<svg class="icon">
+																		<use xlink:href="#icon-arrow-bottom"/>
+																	</svg>
+																</button>
+															</div>
+															<ul class="sub-submenu-ul">
+																{% for sub_sub_item in sub_item.intern.toPage.children() %}
+																	<li class="sub-submenu-li">
+																		<div class="row">
+																			<a class="a-submenu no-upper align-center-center" href="{{ sub_sub_item.url }}">
+																				<div class="column-22 lg-offset-1 border-b">
+																					<span class="a-submenu-span">{{ sub_sub_item.title }}</span>
+																					<div class="sub-submenu-icon">
+																						<svg class="icon">
+																							<use xlink:href="#icon-fleche-droite"/>
+																						</svg>
+																					</div>
+																				</div>
+																			</a>
+																		</div>
+																	</li>
+																{% endfor %}
+															</ul>
+														</li>
+													{% endif %}
+													{% if sub_item.choice == 'extern' %}
+														<li>
+															<a class="a-menu" href="{{ sub_item.extern }}" target="{{ sub_item.extern_target }}" title="{{ sub_item.title }}">
+																{{ sub_item.title }}
+															</a>
+														</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</li>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
+			{% set user = kirby.user() %}
+			{% if user %}
+				<div class="column-4 offset-1">
+					{% if user.session_in.toStructure.toArray %}
+						<a href="{{ site.children().template('modules_index').first().url }}" class="a-button btn-account-icon">
+							<svg class="icon">
+								<use xlink:href="#icon-user"/>
+							</svg>
+						</a>
+					{% endif %}
+				</div>
+			{% else %}
+				<div class="column-4 ml-20">
+					<a href="{{ site.connexion_btn.toPage.url }}" class="a-button btn-icon">
+						<svg class="icon">
+							<use xlink:href="#icon-log-in"/>
+						</svg>
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</header>
+
+<header class="desktop-header">
+	<div id="overlay"></div>
+	<div class="container align-items-center">
+		<div class="row align-start-center">
+			<div class="column-4 lg-offset-1">
+				<a href="{{ site.url }}">
+					<div class="menu-logo"></div>
+				</a>
+			</div>
+			<div class="menu-items">
+				{% if site.header_menu.toStructure|default(0) %}
+					<div class="nav">
+						<ul>
+							{% for item in site.header_menu.toStructure %}
+								{% if item.choice == 'intern' %}
+									{% set isCurrent = page == item.intern.toPage or page.isDescendantOf(item.intern.toPage) or page.isChildOf(item.intern.toPage) %}
+									<li>
+										<a class="a-menu {{ isCurrent ? ' current' }} " href="{{ item.intern.toPage.url|default(0) }}" target="{{ item.intern_target }}" title="{{ item.title }}">
+											{{ item.title }}
+										</a>
+									</li>
+								{% endif %}
+								{% if item.choice == 'extern' %}
+									<li>
+										<a class="a-menu" href="{{ item.extern }}" target="{{ item.extern_target }}" title="{{ item.title }}">
+											{{ item.title }}
+										</a>
+									</li>
+								{% endif %}
+								{% if item.choice == 'submenu' %}
+									{% set submenu = item.submenu.toStructure|default(0) %}
+									{% if submenu|default(0) %}
+										<li class="submenu  ">
+											{% if item.submenu_intern.toPage %}
+												<a class="a-menu" href="{{ item.submenu_intern.toPage.url|default(0) ? item.submenu_intern.toPage.url : site.url }} {{ submenu|filter(sub_item => page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage)) is not empty ? ' current' }}">
+													{{ item.title }}
+													<svg class="a-menu-paren-icon icon">
+														<use xlink:href="#icon-chevron-bottom"/>
+													</svg>
+												</a>
+											{% else %}
+												<a class="a-menu {{ item.submenu_intern.toPage.url|default(0) ? item.submenu_intern.toPage.url : site.url }} {{ submenu|filter(sub_item => page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage)) is not empty ? ' current' }}">
+													{{ item.title }}
+													<svg class="a-menu-paren-icon icon">
+														<use xlink:href="#icon-chevron-bottom"/>
+													</svg>
+													<svg class="a-menu-paren-icon-active icon">
+														<use xlink:href="#icon-chevron-top"/>
+													</svg>
+												</a>
+											{% endif %}
+											<ul class="no-bullet">
+												<div class="submenu-overlay"></div>
+												{% for sub_item in submenu %}
+													{% if sub_item.choice == 'intern' %}
+														{% set isCurrent = page == sub_item.intern.toPage or page.isDescendantOf(sub_item.intern.toPage) or page.isChildOf(sub_item.intern.toPage) %}
+														<li class="{{ sub_item.intern.toPage.hero_theme }} has-submenu">
+															<div class="submenu-title">
+																<a class="a-menu {{ isCurrent ? ' current' }} clr-w" href="{{ sub_item.intern.toPage.url|default(0) }}" target="{{ sub_item.intern_target }}" title="{{ sub_item.title }}">
+																	{{ sub_item.title }}
+																</a>
+																<button class="submenu-icon">
+																	<svg class="icon">
+																		<use xlink:href="#icon-arrow-bottom"/>
+																	</svg>
+																</button>
+															</div>
+															<ul class="sub-submenu-ul">
+																{% for sub_sub_item in sub_item.intern.toPage.children() %}
+																	<li class="sub-submenu-li">
+																		<div class="row">
+																			<a class="a-submenu no-upper align-center-center" href="{{ sub_sub_item.url }}">
+																				<div class="column-22 lg-offset-1 border-b">
+																					<span class="a-submenu-span">{{ sub_sub_item.title }}</span>
+																					<div class="sub-submenu-icon">
+																						<svg class="icon">
+																							<use xlink:href="#icon-fleche-droite"/>
+																						</svg>
+																					</div>
+																				</div>
+																			</a>
+																		</div>
+																	</li>
+																{% endfor %}
+															</ul>
+														</li>
+													{% endif %}
+													{% if sub_item.choice == 'extern' %}
+														<li>
+															<a class="a-menu" href="{{ sub_item.extern }}" target="{{ sub_item.extern_target }}" title="{{ sub_item.title }}">
+																{{ sub_item.title }}
+															</a>
+														</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</li>
+									{% endif %}
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			</div>
+			{% if user %}
+				<div class="column-4 offset-7 ml-20">
+					<a href="{{ site.connexion_btn.toPage.url }}" class="a-button btn-icon">
+						<svg class="icon">
+							<use xlink:href="#icon-logout"/>
+						</svg>Se déconnecter
+					</a>
+				</div>
+				<div class="column-1 ml-20">
+					{% if user.session_in.toStructure.toArray %}
+						<a href="{{ site.children().template('modules_index').first().url }}" class="a-button btn-account-icon">
+							<svg class="icon">
+								<use xlink:href="#icon-user"/>
+							</svg>
+						</a>
+					{% endif %}
+				</div>
+			{% else %}
+				<div class="column-4 offset-7 ml-20">
+					<a href="{{ site.connexion_btn.toPage.url }}" class="a-button btn-icon">
+						<svg class="icon">
+							<use xlink:href="#icon-user"/>
+						</svg>Se connecter
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</header>

@@ -1,0 +1,380 @@
+f###########################################################################################################################
+
+columns:
+  -
+    width: 1/1
+    fields:
+      menus_headline:
+        width: 1/1
+        type: headline
+        numbered: false
+        label: "Menus"
+      header_menu:
+        width: 1/1
+        type: structure
+        required: true
+        translate: false
+        label: "Éléments du menu"
+        empty: "Aucun élément"
+        sortable: true
+        min: 0
+        max: 10
+        columns:
+          title:
+            width: 3/4
+            align: left
+          choice:
+            width: 1/4
+            align: right
+        fields:
+          title:
+            width: 1/1
+            type: text
+            required: false
+            translate: false
+            label: "Label"
+            minlength: 1
+            maxlength: 50
+          choice:
+            width: 1/1
+            type: radio
+            required: false
+            translate: false
+            label: "Type"
+            options:
+              -
+                value: "intern"
+                text: "Lien interne"
+              -
+                value: "extern"
+                text: "Lien externe"
+              -
+                value: "submenu"
+                text: "Sous-menu"
+          intern_title:
+            width: 1/2
+            type: text
+            required: false
+            translate: false
+            label: "Titre"
+            maxlength: 50
+            when:
+              choice: intern
+          intern_target:
+            width: 1/2
+            type: select
+            label: "Cible"
+            required: false
+            translate: false
+            default: _self
+            options:
+              -
+                value: "_self"
+                text: "Dans le même onglet"
+              -
+                value: "_blank"
+                text: "Dans un nouvel onglet"
+            when:
+              choice: intern
+          extern_title:
+            width: 1/2
+            type: text
+            required: false
+            translate: false
+            label: "Titre"
+            maxlength: 50
+            when:
+              choice: extern
+          extern_target:
+            width: 1/2
+            type: select
+            label: "Cible"
+            required: false
+            translate: false
+            default: _blank
+            options:
+              -
+                value: "_self"
+                text: "Dans le même onglet"
+              -
+                value: "_blank"
+                text: "Dans un nouvel onglet"
+            when:
+              choice: extern
+          intern:
+            width: 1/1
+            type: pages
+            required: false
+            translate: false
+            label: "Lien interne"
+            empty: "Encore aucun lien"
+            multiple: false
+            subpages: true
+            search: true
+            layout: list
+            image: false
+            limit: 10
+            when:
+              choice: intern
+          extern:
+            width: 1/1
+            type: url
+            required: false
+            translate: false
+            label: "Lien externe"
+            maxlength: 300
+            placeholder: false
+            icon: false
+            when:
+              choice: extern
+          submenu:
+            width: 1/1
+            type: structure
+            required: false
+            translate: false
+            label: "Éléments du menu"
+            empty: "Aucun élément"
+            sortable: true
+            min: 0
+            max: 10
+            when:
+              choice: submenu
+            columns:
+              title:
+                width: 3/4
+                align: left
+              choice:
+                width: 1/4
+                align: right
+            fields:
+              title:
+                width: 1/1
+                type: text
+                required: false
+                translate: false
+                label: "Label"
+                maxlength: 50
+              choice:
+                width: 1/1
+                type: radio
+                required: false
+                translate: false
+                label: "Type"
+                options:
+                  -
+                    value: "intern"
+                    text: "Lien interne"
+                  -
+                    value: "extern"
+                    text: "Lien externe"
+                  -
+                    value: "anchor"
+                    text: "Ancre"
+              intern_title:
+                width: 1/2
+                type: text
+                required: false
+                translate: false
+                label: "Titre"
+                maxlength: 50
+                when:
+                  choice: intern
+              intern_target:
+                width: 1/2
+                type: select
+                label: "Cible"
+                required: false
+                translate: false
+                default: _self
+                options:
+                  -
+                    value: "_self"
+                    text: "Dans le même onglet"
+                  -
+                    value: "_blank"
+                    text: "Dans un nouvel onglet"
+                when:
+                  choice: intern
+              extern_title:
+                width: 1/2
+                type: text
+                required: false
+                translate: false
+                label: "Attribut 'title'"
+                maxlength: 50
+                when:
+                  choice: extern
+              extern_target:
+                width: 1/2
+                type: select
+                label: "Attribut 'target'"
+                required: false
+                translate: false
+                default: _blank
+                options:
+                  -
+                    value: "_self"
+                    text: "Dans le même onglet"
+                  -
+                    value: "_blank"
+                    text: "Dans un nouvel onglet"
+                when:
+                  choice: extern
+              anchor_title:
+                width: 1/2
+                type: text
+                required: false
+                translate: false
+                label: "Titre"
+                maxlength: 50
+                when:
+                  choice: anchor
+              anchor_target:
+                width: 1/2
+                type: select
+                label: "Attribut 'target'"
+                required: false
+                translate: false
+                default: _blank
+                options:
+                  -
+                    value: "_self"
+                    text: "Dans le même onglet"
+                when:
+                  choice: anchor
+              intern:
+                width: 1/1
+                type: pages
+                required: false
+                translate: false
+                label: "Lien interne"
+                empty: "Encore aucun lien"
+                multiple: false
+                subpages: true
+                search: true
+                layout: list
+                image: false
+                limit: 10
+                when:
+                  choice: intern
+              extern:
+                width: 1/1
+                type: url
+                required: false
+                translate: false
+                label: "Lien externe"
+                maxlength: 300
+                placeholder: false
+                icon: false
+                when:
+                  choice: extern
+              anchor_link:
+                width: 1/2
+                type: pages
+                required: false
+                translate: false
+                label: "Lien interne"
+                empty: "Encore aucun lien"
+                multiple: false
+                subpages: true
+                search: true
+                layout: list
+                image: false
+                limit: 10
+                when:
+                  choice: anchor
+              anchor:
+                width: 1/2
+                type: text
+                label: Ancre
+                default: "#votreancre"
+                placeholder: false
+                required: false
+                translate: false
+                when:
+                  choice: anchor
+          submenu_intern:
+            width: 1/1
+            type: pages
+            when:
+              choice: submenu
+            required: false
+            multiple: false
+            layout: list
+            limit: 20
+            image: false
+            label: "Page"
+            empty: "Aucune page selectionnée"
+      quotation_btn:
+        width: 1/2
+        type: pages
+        required: false
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+        limit: 20
+        link: true
+        image: false
+        label: "Demande de devis (bouton)"
+        empty: "Encore aucune page"
+      connexion_btn:
+        width: 1/2
+        type: pages
+        required: false
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+        limit: 20
+        link: true
+        image: false
+        label: "Se connecter (bouton)"
+        empty: "Encore aucune page"
+      footer:
+        width: 1/1
+        type: headline
+        label: Pied de page
+      connexion_btn_label:
+        width: 1/2
+        type: text
+        label: Label du bouton (connexion)
+      contact_btn_label:
+        width: 1/2
+        type: text
+        label: Label du bouton (contact)
+      connexion_btn_footer:
+        width: 1/2
+        type: pages
+        required: false
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+        limit: 20
+        link: true
+        image: false
+        label: "Se connecter (bouton)"
+        empty: "Encore aucune page"
+      contact_btn_footer:
+        width: 1/2
+        type: pages
+        required: false
+        multiple: false
+        subpages: true
+        search: true
+        layout: list
+        limit: 20
+        link: true
+        image: false
+        label: "Contact (bouton)"
+        empty: "Encore aucune page"
+          # page:
+          #   width: 1/1
+          #   type: url
+          #   icon: false
+          #   maxlength: 200
+          #   placeholder: false
+          #   label: 'URL'
+
+###########################################################################################################################

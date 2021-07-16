@@ -1,0 +1,47 @@
+label: 'Bloc bouton'
+name: 'Bloc bouton'
+fields:
+  block_title:
+    width: 1/1
+    type: text
+    label: Titre
+  choice:
+    width: 1/1
+    type: select
+    label: Lien interne/Externe
+    options:
+      - value: intern
+        text: "Lien interne"
+      - value: extern
+        text: "Lien externe"
+  intern:
+    width: 1/1
+    type: pages
+    required: false
+    translate: false
+    label: "Lien interne"
+    empty: "Encore aucun lien"
+    multiple: false
+    subpages: true
+    search: true
+    layout: list
+    image: false
+    limit: 10
+    when:
+      choice: intern
+  extern:
+    width: 1/1
+    type: url
+    required: false
+    translate: false
+    label: "Lien externe"
+    maxlength: 300
+    placeholder: false
+    icon: false
+    when:
+      choice: extern
+  block_button_label:
+    width: 1/1
+    type: text
+    required: false
+    label: Label
