@@ -94,7 +94,7 @@ class AuthController {
                         { expiresIn: 36000 },
                         (err, token) => {
                             if (err) throw err;
-                            res.json({
+                            res.send({
                                 token,
                                 user
                             });

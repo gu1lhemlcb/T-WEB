@@ -13,7 +13,9 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
 
     <!-- footer -->
+    <a routerLink="/find-flights" routerLinkActive="active">ELELELELELELE</a>
     <app-footer></app-footer>
+
   `,
   styles: []
 })
