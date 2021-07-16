@@ -305,21 +305,8 @@ columns:
             image: false
             label: "Page"
             empty: "Aucune page selectionnée"
-      quotation_btn:
-        width: 1/2
-        type: pages
-        required: false
-        multiple: false
-        subpages: true
-        search: true
-        layout: list
-        limit: 20
-        link: true
-        image: false
-        label: "Demande de devis (bouton)"
-        empty: "Encore aucune page"
       connexion_btn:
-        width: 1/2
+        width: 1/1
         type: pages
         required: false
         multiple: false

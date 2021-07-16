@@ -1,0 +1,313 @@
+.modules-hero,
+.modules-item-hero {
+  position: relative;
+  background-color: clr(primary);
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+    :hover {
+      color: clr(secondary);
+    }
+    .back-module-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 85%);
+      width: 5rem;
+      height: 5rem;
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(150%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.left-contents-head {
+  border-bottom: 1px solid clr(secondary);
+  .modules-informations-container {
+    position: relative;
+    padding: 4rem 0 2rem 0;
+    &.border {
+      &:not(:last-child) {
+        border-bottom: 1px solid clr(tertiary);
+      }
+    }
+    .modules-informations {
+      padding-left: 6rem;
+
+      .modules-informations-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 65%);
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid clr(secondary);
+        background-color: white;
+        border-radius: 50%;
+        color: clr(primary);
+        .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(75%, 75%);
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.left-content-advancement {
+  .modules-list-section {
+    .modules-name,
+    .modules-name-disabled {
+      @media #{$sm-only} {
+        padding-top: 2rem;
+      }
+      position: relative;
+      .modules-advancement-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-125%, 20%);
+        height: 3.2rem;
+        width: 3.2rem;
+        border: 1px solid clr(primary);
+        background-color: clr(primary);
+        border-radius: 50%;
+        color: clr(white);
+
+        &.-light {
+          border: 1px solid clr(primary);
+          background-color: white;
+          color: clr(primary);
+        }
+        &.-disabled {
+          border: 1px solid clr(tertiary);
+          background-color: clr(tertiary);
+        }
+        .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(48%, 40%);
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 101%);
+          width: 2px;
+          height: 9rem;
+          border-left: solid 1px clr(primary);
+          @media #{$sm-only} {
+            height: 16.5rem;
+          }
+        }
+      }
+    }
+    a {
+    &.validated-module {
+        text-decoration: none;
+        color: clr(primary);
+      }
+    }
+    .modules-name-disabled {
+      .modules-advancement-icon {
+        border: 1px solid clr(tertiary);
+        background-color: clr(tertiary);
+        &::after {
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.right-contents-head {
+  .modules-informations-container {
+    position: relative;
+    padding: 4rem 0 2rem 0;
+    &.border {
+      &:not(:last-child) {
+        border-bottom: 1px solid clr(tertiary);
+      }
+    }
+    .modules-informations {
+      padding-left: 6rem;
+
+      .modules-informations-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 65%);
+        height: 5rem;
+        width: 5rem;
+        border: 1px solid clr(secondary);
+        background-color: white;
+        border-radius: 50%;
+        color: clr(primary);
+        .icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(75%, 75%);
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.slick-next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(120%, 10%);
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid clr(primary);
+  border-radius: 50%;
+  z-index: 0;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    background-color: clr(primary);
+    color: white;
+    .icon {
+      color: clr(white);
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(75%, 70%);
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.slick-prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-120%, 10%);
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid clr(tertiary);
+  background-color: clr(tertiary);
+  color: white;
+  border-radius: 50%;
+  z-index: 0;
+  &:hover:not([disabled]),
+  &:focus:not([disabled]) {
+    background-color: clr(white);
+    border-color: clr(primary);
+    color: clr(primary);
+    .icon {
+      color: clr(primary);
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(75%, 70%);
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.modules-informations-container {
+  position: relative;
+  padding: 4rem 0;
+  &.border:not(:last-child) {
+    border-bottom: 1px solid clr(tertiary);
+  }
+  .modules-informations {
+    padding-left: 6rem;
+
+    .modules-informations-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0%, 85%);
+      width: 5rem;
+      height: 5rem;
+      border: 1px solid clr(secondary);
+      border-radius: 50%;
+      padding: 1.5rem 1.5rem;
+      color: clr(primary);
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(75%, 70%);
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: clr(primary);
+      :hover {
+        color: clr(secondary);
+      }
+      .back-module-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 85%);
+        width: 5rem;
+        height: 5rem;
+        .icon {
+          &.primary {
+            color: clr(primary) !important;
+          }
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(130%, -25%);
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  /* Tooltip text */
+  .tooltip-wait .tooltiptext {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(100%, 0%);
+    visibility: hidden;
+    width: 25rem;
+    background-color: rgba(clr(alert), 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 3rem;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip-wait:hover .tooltiptext {
+    visibility: visible;
+  }
+}

@@ -110,8 +110,8 @@
 				</div>
 				<div class="sm-column-24 lg-column-11 lg-offset-1">
 					<div class="engagements-img" style="background-image: url('{{
-												            page.engagements_img.toFile.url
-												            }}');"></div>
+																		            page.engagements_img.toFile.url
+																		            }}');"></div>
 				</div>
 			</div>
 		</section>
@@ -130,6 +130,16 @@
 							</div>
 						</h2>
 					</blockquote>
+				</div>
+			</div>
+		</section>
+
+		<section class="map-section">
+			<div class="row">
+				<div class="column-22 offset-1">
+					{% if site.contact_latitude and (site.contact_longitude|raw) %}
+						<div id="map-contact"></div>
+					{% endif %}
 				</div>
 			</div>
 		</section>

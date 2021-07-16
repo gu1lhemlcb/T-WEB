@@ -5,7 +5,7 @@ export const subMenu = function () {
   const mobileMenu = document.querySelector('.mobile-menu-items')
 
   burgerMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('formation-is-open')
+    mobileMenu.classList.toggle('destination-is-open')
   })
 
   document.querySelector('.submenu').addEventListener('mouseenter', () => {
@@ -22,23 +22,23 @@ export const subMenu = function () {
     document.querySelectorAll('.has-submenu').forEach((item) => {
       if (item.classList.contains('is-open')) {
         item.classList.remove('is-open')
-        item.querySelector('.sub-submenu-ul').style.height = '0px'
+        // item.querySelector('.sub-submenu-ul').style.height = '0px'
       }
     })
   })
 
-  submenus.forEach((submenu) => {
-    const submenuEl = submenu.querySelector('.sub-submenu-ul')
-    const heightSubmenu = submenuEl.scrollHeight
+  // submenus.forEach((submenu) => {
+  //   // const submenuEl = submenu.querySelector('.sub-submenu-ul')
+  //   // const heightSubmenu = submenuEl.scrollHeight
 
-    submenu.querySelector('button').addEventListener('click', () => {
-      if (submenu.classList.contains('is-open')) {
-        submenu.classList.remove('is-open')
-        submenuEl.style.height = '0px'
-      } else {
-        submenu.classList.toggle('is-open')
-        submenuEl.style.height = heightSubmenu + 'px'
-      }
-    })
-  })
+  //   submenu.querySelector('button').addEventListener('click', () => {
+  //     if (submenu.classList.contains('is-open')) {
+  //       submenu.classList.remove('is-open')
+  //       // submenuEl.style.height = '0px'
+  //     } else {
+  //       submenu.classList.toggle('is-open')
+  //       // submenuEl.style.height = heightSubmenu + 'px'
+  //     }
+  //   })
+  // })
 }

@@ -16,5 +16,5 @@ services:
       - WEB_DOCUMENT_ROOT=/var/html/www/public
       - WEB_DOCUMENT_INDEX=index.php
     extra_hosts:
-      - "EpiTravel.vm:127.0.0.1"
-      - "www.EpiTravel.vm:127.0.0.1"
+      - "epitravel.vm:127.0.0.1"
+      - "www.epitravel.vm:127.0.0.1"

@@ -1,6 +1,6 @@
 # https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-apache-dev.html
 FROM webdevops/php-apache-dev:7.4
-LABEL maintainer="Contact Troa <contact@troa.fr>"
+LABEL maintainer="Arnaud Michel <arnaud@troa.fr>"
 
 # ###########################################################################################
 

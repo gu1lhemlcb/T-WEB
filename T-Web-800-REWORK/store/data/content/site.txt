@@ -84,10 +84,6 @@ Header-menu:
 
 ----
 
-Quotation-btn: 
-
-----
-
 Connexion-btn:
 
 - se-connecter
@@ -189,30 +185,6 @@ Forms-contact-cc-to-email:
 
 ----
 
-Forms-quotation-from-email: noreply@troa.fr
-
-----
-
-Forms-quotation-to-email: arnaud.michel@epitech.eu
-
-----
-
-Forms-quotatoin-cc-to-email:
-
-- 
-  cc_email_list: arnaud.michel@epitech.eu
-- 
-  cc_email_list: contact@troa.fr
-
-----
-
-Forms-resultats-cc-to-email:
-
-- 
-  cc_email_list: contact@troa.fr
-
-----
-
 Recaptcha-site: 6Lf7de0aAAAAAIt5VgeQV_SijIXv0UX-z7-sK4ms
 
 ----
@@ -255,27 +227,55 @@ Development-ips:
 
 ----
 
-If-session-empty: Vous êtes inscrit à aucune session.
+If-session-empty: You are not registered for any session.
 
 ----
 
-If-not-connected: Vous n'avez pas les droits d'accès à cette page.
+If-not-connected: You do not have access rights to this page.
 
 ----
 
-If-no-name: Le formateur n'a pas renseigné la totalité de votre compte utilisateur.
+If-no-name: The trainer has not filled out your entire user account.
 
 ----
 
-If-more-one-session: Vous êtes inscrit à plusieurs sessions de destinations, veuillez contacter votre formateur.
+If-more-one-session: If you are registered for multiple destination sessions, please contact your trainer.
 
 ----
 
-If-qcm-done: Vous avez déjà effectué l'examen.
+If-qcm-done: You have already taken the test.
 
 ----
 
-If-qcm-not-done: Vous n'avez pas encore effectué l'examen.
+If-qcm-not-done: You have not yet taken the test.
+
+----
+
+Quotation-btn: 
+
+----
+
+Forms-quotation-from-email: noreply@troa.fr
+
+----
+
+Forms-quotation-to-email: arnaud.michel@epitech.eu
+
+----
+
+Forms-quotatoin-cc-to-email:
+
+- 
+  cc_email_list: arnaud.michel@epitech.eu
+- 
+  cc_email_list: contact@troa.fr
+
+----
+
+Forms-resultats-cc-to-email:
+
+- 
+  cc_email_list: contact@troa.fr
 
 ----
 

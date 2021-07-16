@@ -78,66 +78,6 @@ columns:
             placeholder: false
             icon: false
             label: "Email de copie"
-      forms_quotation_headline:
-        width: 1/1
-        type: headline
-        numbered: false
-        label: "Formulaires de demande de devis"
-      forms_quotation_from_email:
-        width: 1/2
-        type: email
-        required: true
-        translate: false
-        maxlength: 100
-        placeholder: false
-        icon: false
-        label: "Adresse e-mail de l'expéditeur"
-      forms_quotation_to_email:
-        width: 1/2
-        type: email
-        required: true
-        translate: false
-        maxlength: 100
-        placeholder: false
-        icon: false
-        label: "Adresse e-mail du destinataire"
-      forms_quotatoin_cc_to_email:
-        width: 1/1
-        type: structure
-        translate: false
-        label: Liste des emails de copie
-        empty: "Aucun contenu"
-        sortable: true
-        columns:
-          cc_email_list:
-            width: 1/1
-            align: left
-        fields:
-          cc_email_list:
-            width: 1/1
-            type: email
-            required: true
-            translate: false
-            maxlength: 100
-            placeholder: false
-            icon: false
-            label: "Email de copie"
-      forms_resultats_headline:
-        width: 1/1
-        type: headline
-        numbered: false
-        label: "Résultats QCM"
-      forms_resultats_cc_to_email:
-        width: 1/1
-        type: structure
-        translate: false
-        label: Liste des emails de copie
-        empty: "Aucun contenu"
-        sortable: true
-        columns:
-          cc_email_list:
-            width: 1/1
-            align: left
         fields:
           cc_email_list:
             width: 1/1

@@ -4,62 +4,81 @@
 {% extends '@snippets/layouts/default.twig' %}
 
 {% block page %}
-<main>
-  <!-- ###### TOP START ###### -->
-  <section class="connexion-hero">
-    <div class="row align-start-start">
-      <div class="sm-column-22 sm-offset-1 lg-column-14 pt-60 pb-60 lg-offset-1">
-        <h4>
-          {{ page.hero_title }}
-        </h4>
-      </div>
-    </div>
-    <div class="row align-start-start pb-90">
-      <div class="sm-column-22 sm-offset-1 lg-column-22 lg-offset-1">
-        <h1>
-          {{ page.hero_description }}
-        </h1>
-      </div>
-      <div class="sm-column-22 sm-offset-1 lg-column-22 lg-offset-1 pt-15">
-        <p class="clr-w">{{ page.hero_contents }}</p>
-      </div>
-    </div>
-  </section>
-  <!-- ###### TOP END ###### -->
-  <section class="connexion-form pb-60 pt-60">
-    <div class="row">
-      <div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-3">
-        <h4>Connexion</h4>
-        <form method="POST" action="{{ page.url }}" accept-charset="UTF-8" class="pt-15 pb-30">
-          <div class="row">
-            <div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
-              <input type="hidden" name="form_type" value="signin_form" />
-              <input type="hidden" name="csrf" value="<?= csrf() ?>">
-              <label for="email">Identifiant</label>
-              <input id="email"
-                class="a-input-text"
-                type="text"
-                name="email"
-                esc.get.'email'
-                placeholder="nomprénom@glce.fr">
-            </div>
-            <div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
-              <label for="password">
-                Mot de passe
-              </label>
-              <input id="password"
-                type="password"
-                class="a-input-text"
-                name="password"
-                placeholder="Mot de passe"></input>
-            </div>
-            <div class="sm-column-24 lg-column-10 lg-offset-0  align-end-center pt-10">
-              <input type="submit" name="login" class="a-button primary" value="Se connecter" />
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
-{% endblock %}
+	<main>
+		<!-- ###### TOP START ###### -->
+		<section class="connexion-hero">
+			<div class="row align-start-start">
+				<div class="sm-column-22 sm-offset-1 lg-column-14 pt-60 pb-60 lg-offset-1">
+					<h4>
+						{{ page.hero_title }}
+					</h4>
+				</div>
+			</div>
+			<div class="row align-start-start pb-90">
+				<div class="sm-column-22 sm-offset-1 lg-column-22 lg-offset-1">
+					<h1>
+						{{ page.hero_description }}
+					</h1>
+				</div>
+				<div class="sm-column-22 sm-offset-1 lg-column-22 lg-offset-1 pt-15">
+					<p class="clr-w">{{ page.hero_contents }}</p>
+				</div>
+			</div>
+		</section>
+		<!-- ###### TOP END ###### -->
+		<section class="connexion-form pb-60 pt-60">
+			<div class="row">
+				<div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-2">
+					<h4>Sign In</h4>
+					<form method="POST" action="{{ page.url }}" accept-charset="UTF-8" class="pt-15 pb-30">
+						<div class="row">
+							<div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
+								<input type="hidden" name="form_type" value="signin_form"/>
+								<input type="hidden" name="csrf" value="<?= csrf() ?>">
+								<label for="email">Identifiant</label>
+								<input id="email" class="a-input-text" type="text" name="email" esc.get.'email' placeholder="nomprénom@glce.fr">
+							</div>
+							<div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
+								<label for="password">
+									Mot de passe
+								</label>
+								<input id="password" type="password" class="a-input-text" name="password" placeholder="Mot de passe"></input>
+						</div>
+						<div class="sm-column-24 lg-column-10 lg-offset-0  align-end-center pt-10">
+							<input type="submit" name="login" class="a-button primary" value="Se connecter"/>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="sm-column-22 sm-offset-1 lg-column-10 lg-offset-1">
+				<h4>Sign Up</h4>
+				<form method="POST" action="{{ page.url }}" accept-charset="UTF-8" class="pt-15 pb-30">
+					<input type="hidden" name="form_type" value="signup_form"/>
+					<input type="hidden" name="csrf" value="<?= csrf() ?>">
+					<div class="row">
+						<div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
+							<label for="firstname">Firstname</label>
+							<input id="firstname" class="a-input-text" type="text" name="firstname" placeholder="Firstname">
+						</div>
+						<div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
+							<label for="lastname">Lastname</label>
+							<input id="lastname" class="a-input-text" type="text" name="lastname" placeholder="Lastname">
+						</div>
+						<div class="sm-column-24 lg-column-11 lg-offset-0 pt-15">
+							<label for="email">Email</label>
+							<input id="email" class="a-input-text" type="text" name="email" esc.get.'email' placeholder="nomprénom@glce.fr">
+						</div>
+						<div class="sm-column-24 lg-column-11 lg-offset-2 pt-15">
+							<label for="password">
+								Mot de passe
+							</label>
+							<input id="password" type="password" class="a-input-text" name="password" placeholder="Mot de passe"></input>
+					</div>
+					<div class="sm-column-24 lg-column-10 lg-offset-0  align-end-center pt-10">
+						<input type="submit" name="login" class="a-button primary" value="Se connecter"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section></main>{% endblock %}

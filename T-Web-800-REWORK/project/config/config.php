@@ -118,66 +118,66 @@ return [
         ],
     ],
     'hooks' => [
-        'page.update:after' => function ($newPage, $oldPage) {
-            if ($oldPage->template()->name() === 'sessions_item') {
-                foreach ($newPage->users_session()->toUsers() as $user) {
-                    $isSetSession = false;
-                    foreach ($user->session_in()->toStructure() as $session) {
-                        if ($session->formation_title()) {
-                            $isSetSession = true;
-                        }
-                    }
-                    if (!$isSetSession) {
-                        $thisSessionStructure = $user
-                            ->session_in()
-                            ->toStructure();
-                        $count = $thisSessionStructure->count();
+        // 'page.update:after' => function ($newPage, $oldPage) {
+        //     if ($oldPage->template()->name() === 'sessions_item') {
+        //         foreach ($newPage->users_session()->toUsers() as $user) {
+        //             $isSetSession = false;
+        //             foreach ($user->session_in()->toStructure() as $session) {
+        //                 if ($session->formation_title()) {
+        //                     $isSetSession = true;
+        //                 }
+        //             }
+        //             if (!$isSetSession) {
+        //                 $thisSessionStructure = $user
+        //                     ->session_in()
+        //                     ->toStructure();
+        //                 $count = $thisSessionStructure->count();
 
-                        $modulesCount = 0;
-                        $qcmCount = 0;
+        //                 $modulesCount = 0;
+        //                 $qcmCount = 0;
 
-                        foreach ($newPage->formation_name()->toPage()->children()->template("modules_item") as $module) {
-                            $so_modules = new Kirby\Cms\StructureObject([
-                                'id' => $modulesCount,
-                                'content' => [
-                                    'modules_title' => $module->uri(),
-                                    'module_timer' => $module->content()->duration()->value(),
-                                ],
-                            ]);
-                            $modulesCount++;
-                            $modules[] = $so_modules;
-                        };
-                        foreach ($newPage->formation_name()->toPage()->children()->template("qcm_item") as $qcm) {
-                            $so_qcm = new Kirby\Cms\StructureObject([
-                                'id' => $qcmCount,
-                                'content' => [
-                                    'qcm_title' => $qcm->uri(),
-                                ],
-                            ]);
-                            $qcmCount++;
-                            $qcms[] = $so_qcm;
-                        };
-                        $modulesStructure = new Kirby\Cms\Structure($modules);
-                        $qcmStructure = new Kirby\Cms\Structure($qcms);
-                        $so = new Kirby\Cms\StructureObject([
-                            'id' => $count,
-                            'content' => [
-                                'session_title' => $newPage->uri(),
-                                'formation_title' => $newPage->formation_name()->value(),
-                                'qcm_index' => $qcmStructure->toArray(),
-                                'modules_progress' => $modulesStructure->toArray(),
-                            ],
-                        ]);
-                        $thisSessionStructure->add($so);
-                        $user->update([
-                            'session_in' => Data::encode(
-                                $thisSessionStructure->toArray(),
-                                'yaml'
-                            ),
-                        ]);
-                    }
-                }
-            }
-        },
+        //                 foreach ($newPage->formation_name()->toPage()->children()->template("modules_item") as $module) {
+        //                     $so_modules = new Kirby\Cms\StructureObject([
+        //                         'id' => $modulesCount,
+        //                         'content' => [
+        //                             'modules_title' => $module->uri(),
+        //                             'module_timer' => $module->content()->duration()->value(),
+        //                         ],
+        //                     ]);
+        //                     $modulesCount++;
+        //                     $modules[] = $so_modules;
+        //                 };
+        //                 foreach ($newPage->formation_name()->toPage()->children()->template("qcm_item") as $qcm) {
+        //                     $so_qcm = new Kirby\Cms\StructureObject([
+        //                         'id' => $qcmCount,
+        //                         'content' => [
+        //                             'qcm_title' => $qcm->uri(),
+        //                         ],
+        //                     ]);
+        //                     $qcmCount++;
+        //                     $qcms[] = $so_qcm;
+        //                 };
+        //                 $modulesStructure = new Kirby\Cms\Structure($modules);
+        //                 $qcmStructure = new Kirby\Cms\Structure($qcms);
+        //                 $so = new Kirby\Cms\StructureObject([
+        //                     'id' => $count,
+        //                     'content' => [
+        //                         'session_title' => $newPage->uri(),
+        //                         'formation_title' => $newPage->formation_name()->value(),
+        //                         'qcm_index' => $qcmStructure->toArray(),
+        //                         'modules_progress' => $modulesStructure->toArray(),
+        //                     ],
+        //                 ]);
+        //                 $thisSessionStructure->add($so);
+        //                 $user->update([
+        //                     'session_in' => Data::encode(
+        //                         $thisSessionStructure->toArray(),
+        //                         'yaml'
+        //                     ),
+        //                 ]);
+        //             }
+        //         }
+        //     }
+        // },
     ],
 ];
