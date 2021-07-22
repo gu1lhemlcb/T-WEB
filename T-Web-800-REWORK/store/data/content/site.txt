@@ -134,11 +134,11 @@ Phone-number: 04 00 01 04 20
 
 ----
 
-Contact-latitude: 43.607997
+Latitude: 43.608077
 
 ----
 
-Contact-longitude: 3.886231
+Longitude: 3.886282
 
 ----
 
@@ -185,11 +185,11 @@ Forms-contact-cc-to-email:
 
 ----
 
-Recaptcha-site: 6Lf7de0aAAAAAIt5VgeQV_SijIXv0UX-z7-sK4ms
+Recaptcha-site: 
 
 ----
 
-Recaptcha-secret: 6Lf7de0aAAAAAPSdiGB_68p_b8Lc4YIY34h3pVAJ
+Recaptcha-secret: 
 
 ----
 
@@ -248,6 +248,14 @@ If-qcm-done: You have already taken the test.
 ----
 
 If-qcm-not-done: You have not yet taken the test.
+
+----
+
+Contact-latitude: 43.607997
+
+----
+
+Contact-longitude: 3.886231
 
 ----
 

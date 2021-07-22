@@ -47,14 +47,14 @@ columns:
         required: true
         maxlength: 100
         label: "Téléphone"
-      contact_latitude:
+      latitude:
         width: 1/2
         type: text
         required: true
         translate: false
         maxlength: 100
         label: "Latitude"
-      contact_longitude:
+      longitude:
         width: 1/2
         type: text
         required: true

@@ -8,7 +8,7 @@ const Maps = {
     return new ol.layer.Tile({
       source: new ol.source.XYZ({
         attributions: '',
-        url: 'https://api.mapbox.com/styles/arnaud-michel/ckr6i045b0rq717o1l4xl6qq3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJuYXVkLW1pY2hlbCIsImEiOiJja3I2aTFuZXczY2xsMm5xaDRnYXRzNmFlIn0._-1wFrDJqQ89bhSfAbr_0Q'
+        url: 'https://api.mapbox.com/styles/v1/arnaud-michel/ckr6i045b0rq717o1l4xl6qq3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJuYXVkLW1pY2hlbCIsImEiOiJja3I2aTFuZXczY2xsMm5xaDRnYXRzNmFlIn0._-1wFrDJqQ89bhSfAbr_0Q'
       })
     })
   },

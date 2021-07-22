@@ -10,6 +10,17 @@
 		{% block page endblock %}
 		{% include '@snippets/includes/footer.twig' %}
 
+		{% if site.latitude|default(0) and site.longitude|raw %}
+			<script type="text/javascript" src="https://openlayers.org/en/latest/build/ol.js"></script>
+			<script src="https://unpkg.com/ol-popup@4.0.0"></script>
+			<script type="text/javascript">
+				var mapCoordinates = {
+					"latitude": "{{ site.latitude matches '/^[-+]?[0-9]*\\.?[0-9]+$/' ? site.latitude : 0 }}",
+					"longitude": "{{ site.longitude matches '/^[-+]?[0-9]*\\.?[0-9]+$/' ? site.longitude : 0 }}"
+				}
+			</script>
+		{% endif %}
+
 		{{ isDebug() ? js('assets/main.js') : fpJS('assets/main.js') }}
 
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

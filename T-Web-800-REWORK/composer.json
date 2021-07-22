@@ -1,16 +1,11 @@
 {
-  "name": "troadigital/EpiTravel",
-  "description": "Kirby starter for Troa",
+  "name": "troadigital/epitravel",
+  "description": "Kirby starter for Arnaud",
   "type": "project",
   "authors": [
     {
-      "name": "Cyrielle Vuillemin",
-      "email": "cyrielle@troa.fr",
-      "homepage": "https://troa.fr"
-    },
-    {
-      "name": "Romain Breton",
-      "email": "romain@troa.fr",
+      "name": "Arnaud Michel",
+      "email": "arnaud@troa.fr",
       "homepage": "https://troa.fr"
     }
   ],

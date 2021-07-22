@@ -4,7 +4,7 @@
   "description": "Projet Web réalisé par Guilhem Lacombe, Julie Nanta, Nathan Ragonnet et Arnaud Michel",
   "main": "dist/app.js",
   "scripts": {
-    "start": "concurrently \"nodemon\" \"cd client && npm run start\"",
+    "start": "concurrently \"nodemon\" \"cd T-Web-800-REWORK && npm run start\"",
     "dev": "nodemon",
     "test": "jasmine-ts --config=./jasmine.json"
   },

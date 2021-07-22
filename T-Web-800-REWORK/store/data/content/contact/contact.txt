@@ -6,11 +6,11 @@ Hero-title: Contact
 
 ----
 
-Hero-description: Si vous avez besoin de plus d’indestinations, n’hésitez pas à nous contacter
+Hero-description: Si vous avez besoin de plus d’informations, n’hésitez pas à nous contacter
 
 ----
 
-Legal-description: Les données collectées sont destinées à l’usage de la société GLCE GROUPE, responsable du traitement. Les champs précédés d’un astérisque sont obligatoires. Les indestinations que vous nous transmettez par le biais de ce formulaire sont nécessaires au traitement et à la gestion des relations commerciales entre GLCE GROUPE et l’utilisateur. Ce formulaire permet à notre Service client de vous apporter une réponse. Conformément à la Loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d’un droit d’accès, de rectification, d’opposition et de suppression des données qui vous concernent (voir notre politique de protection de données personnelles : http://www.glceformation.com/protection-donnees). Pour l’exercer, l’utilisateur peut écrire à GLCE GROUPE, Service Juridique, 23 rue Romani, 34170 Castelnau-le-Lez ou via ce formulaire. GLCE GROUPE informe l’utilisateur qu’il peut définir, de son vivant, des directives relatives à la conservation, à l’effacement et à la communication de ses données personnelles après son décès. Pour en savoir plus, voir notre politique de protection de données personnelles : http://www.glceformation.com/protection-donnees.
+Legal-description: Les données collectées sont destinées à l’usage de la société EpiTRAVEL, responsable du traitement. Les champs précédés d’un astérisque sont obligatoires. Les indestinations que vous nous transmettez par le biais de ce formulaire sont nécessaires au traitement et à la gestion des relations commerciales entre EpiTRAVEL et l’utilisateur. Ce formulaire permet à notre Service client de vous apporter une réponse. Conformément à la Loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d’un droit d’accès, de rectification, d’opposition et de suppression des données qui vous concernent. Pour l’exercer, l’utilisateur peut écrire à EpiTRAVEL, Service Juridique 3 place Paul Bec, Montpellier, 34000. EpiTRAVEL informe l’utilisateur qu’il peut définir, de son vivant, des directives relatives à la conservation, à l’effacement et à la communication de ses données personnelles après son décès.
 
 ----
 

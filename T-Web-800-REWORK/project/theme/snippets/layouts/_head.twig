@@ -2,99 +2,90 @@
 ►►► theme/snippets/layouts/_head
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ #}
 <head>
-  <meta charset="utf-8" />
-  <meta name="language" content="fr-FR" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=5" />
-  {# Title #}
-  {% if page.seo_title|default(0) %}
-    {% if page.seo_suffix.toBool|default(0) %}
-      <title>
-        {{ page.seo_title ~ ' ' ~ site.seo_separator ~ ' ' ~ site.title }}
-      </title>
-    {% else %}
-      <title>
-        {{ page.seo_title }}
-      </title>
-    {% endif %}
-  {% else %}
-    {% if page.seo_suffix.toBool|default(0) %}
-      <title>
-        {{ page.title ~ ' ' ~ site.seo_separator ~ ' ' ~ site.title }}
-      </title>
-    {% else %}
-      <title>
-        {{ page.title }}
-      </title>
-    {% endif %}
-  {% endif %}
-  {# Robots #}
-  {% if page.seo_indexing|default(0) %}
-    <meta name="robots" content="{{ page.seo_indexing }}" />
-  {% else %}
-    {% if page.template == 'error' or page.template == 'maintenance' or page.template == 'destinations_index' or page.template == 'modules_index' or page.template == 'modules_item' or page.template == 'sessions_index' %}
-      <meta name="robots" content="noindex, nofollow" />
-    {% else %}
-      <meta name="robots" content="{{ site.seo_indexing }}" />
-    {% endif %}
-  {% endif %}
-  {# Meta description #}
-  {% if page.seo_description|default(0) %}
-    <meta name="description" content="{{ page.seo_description }}" />
-  {% endif %}
-  {# Open graph #}
-  {% if page.seo_og.toBool|default(0) %}
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ page.url }}" />
-    <meta property="og:site_name" content="{{ site.title }}" />
-    {% if page.seo_og_title|default(0) %}
-      <meta property="og:title" content="{{ page.seo_og_title }}" />
-    {% endif %}
-    {% if page.seo_og_description|default(0) %}
-      <meta property="og:description" content="{{ page.seo_og_description }}" />
-    {% endif %}
-    {% if page.seo_og_image|default(0) %}
-      <meta property="og:image" content="{{ page.seo_og_image.toFile.url }}" />
-      <meta property="og:image:secure_url"
-        content="{{ page.seo_og_image.toFile.url }}" />
-    {% endif %}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ page.seo_og_title }}" />
-    <meta name="twitter:description" content="{{ page.seo_og_description }}" />
-    <meta name="twitter:site" content="@seomixfr" />
-    {% if page.seo_og_image|default(0) %}
-      <meta name="twitter:image" content="{{ page.seo_og_image.toFile.url }}" />
-    {% endif %}
-  {% endif %}
-  <link rel="apple-touch-icon"
-    sizes="180x180"
-    href="/assets/favicon/apple-touch-icon.png" />
-  <link rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="/assets/favicon/favicon-32x32.png" />
-  <link rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="/assets/favicon/favicon-16x16.png" />
-  <link rel="icon" href="/assets/favicon/favicon.ico" />
-  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-  <link rel="mask-icon"
-    href="/assets/favicon/safari-pinned-tab.svg"
-    color="#000000" />
-  {# <meta name="msapplication-TileColor" content="#000000"/>
-    {# <meta name="theme-color" content="#000000"/> #}
-  {# <link rel="stylesheet"
-    href="https://unpkg.com/swiper/swiper-bundle.min.css" /> #}
+	<meta charset="utf-8"/>
+	<meta name="language" content="fr-FR"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1"/>
+	<meta
+	name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
+	{# Title #}
+	{% if page.seo_title|default(0) %}
+		{% if page.seo_suffix.toBool|default(0) %}
+			<title>
+				{{ page.seo_title ~ ' ' ~ site.seo_separator ~ ' ' ~ site.title }}
+			</title>
+		{% else %}
+			<title>
+				{{ page.seo_title }}
+			</title>
+		{% endif %}
+	{% else %}
+		{% if page.seo_suffix.toBool|default(0) %}
+			<title>
+				{{ page.title ~ ' ' ~ site.seo_separator ~ ' ' ~ site.title }}
+			</title>
+		{% else %}
+			<title>
+				{{ page.title }}
+			</title>
+		{% endif %}
+	{% endif %}
+	{# Robots #}
+	{% if page.seo_indexing|default(0) %}
+		<meta name="robots" content="{{ page.seo_indexing }}"/>
+	{% else %}
+		{% if page.template == 'error' or page.template == 'maintenance' or page.template == 'destinations_index' or page.template == 'modules_index' or page.template == 'modules_item' or page.template == 'sessions_index' %}
+			<meta name="robots" content="noindex, nofollow"/>
+		{% else %}
+			<meta name="robots" content="{{ site.seo_indexing }}"/>
+		{% endif %}
+	{% endif %}
+	{# Meta description #}
+	{% if page.seo_description|default(0) %}
+		<meta name="description" content="{{ page.seo_description }}"/>
+	{% endif %}
+	{# Open graph #}
+	{% if page.seo_og.toBool|default(0) %}
+		<meta property="og:locale" content="fr_FR"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="{{ page.url }}"/>
+		<meta property="og:site_name" content="{{ site.title }}"/>
+		{% if page.seo_og_title|default(0) %}
+			<meta property="og:title" content="{{ page.seo_og_title }}"/>
+		{% endif %}
+		{% if page.seo_og_description|default(0) %}
+			<meta property="og:description" content="{{ page.seo_og_description }}"/>
+		{% endif %}
+		{% if page.seo_og_image|default(0) %}
+			<meta property="og:image" content="{{ page.seo_og_image.toFile.url }}"/>
+			<meta property="og:image:secure_url" content="{{ page.seo_og_image.toFile.url }}"/>
+		{% endif %}
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:title" content="{{ page.seo_og_title }}"/>
+		<meta name="twitter:description" content="{{ page.seo_og_description }}"/>
+		<meta name="twitter:site" content="@seomixfr"/>
+		{% if page.seo_og_image|default(0) %}
+			<meta name="twitter:image" content="{{ page.seo_og_image.toFile.url }}"/>
+		{% endif %}
+	{% endif %}
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png"/>
+	<link rel="icon" href="/assets/favicon/favicon.ico"/>
+	<link rel="manifest" href="/assets/favicon/site.webmanifest"/>
+	<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#000000"/>
+	{# <meta name="msapplication-TileColor" content="#000000"/>
+	    {# <meta name="theme-color" content="#000000"/> #}
+	{# <link rel="stylesheet"
+	    href="https://unpkg.com/swiper/swiper-bundle.min.css" /> #}
 
-  {# SLICK CSS #}
-  <link rel="stylesheet"
-    type="text/css"
-    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  {# <link rel="stylesheet" type="text/css" href="slick/slick.css" /> #}
+	{# SLICK CSS #}
+	<link
+	rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> {# <link rel="stylesheet" type="text/css" href="slick/slick.css" /> #}
+	{% if page.template == 'home' %}
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css">
+		<link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css">
+	{% endif %}
 
-  {{ isDebug() ? css('assets/site.css') : fpCSS('assets/site.css') }}
-  {# Google Analytics #}
+	{{ isDebug() ? css('assets/site.css') : fpCSS('assets/site.css') }}
+	{# Google Analytics #}
 </head>
