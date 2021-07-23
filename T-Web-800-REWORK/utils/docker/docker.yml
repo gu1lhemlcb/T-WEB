@@ -8,7 +8,7 @@ services:
       dockerfile: utils/docker/Dockerfile
     ports:
       - 80:80
-      - 3000:3000
+      - 3030:3030
     volumes:
       - ../../:/var/html/www/
       - ./vhost.conf:/opt/docker/etc/httpd/vhost.conf
@@ -18,3 +18,9 @@ services:
     extra_hosts:
       - "epitravel.vm:127.0.0.1"
       - "www.epitravel.vm:127.0.0.1"
+    networks:
+      - default
+networks:
+  default:
+    external: true
+    name: back_default

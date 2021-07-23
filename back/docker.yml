@@ -1,0 +1,58 @@
+version: "3.6"
+
+services:
+  back:
+    container_name: epi-travel
+    build: .
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - "mongodb"
+    networks:
+      - default
+  mongodb:
+    image: mongo
+    container_name: db
+    restart: always
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - default
+  front:
+    container_name: "EpiTravel"
+    build:
+      context: ../T-Web-800-REWORK
+      dockerfile: utils/docker/Dockerfile
+    expose:
+      - 3030
+    ports:
+      - 80:80
+      - 3030:3030
+    volumes:
+      - ../T-Web-800-REWORK:/var/html/www/
+      - ../T-Web-800-REWORK/utils/docker/vhost.conf:/opt/docker/etc/httpd/vhost.conf
+    environment:
+      - WEB_DOCUMENT_ROOT=/var/html/www/public
+      - WEB_DOCUMENT_INDEX=index.php
+    extra_hosts:
+      - "epitravel.vm:127.0.0.1"
+      - "www.epitravel.vm:127.0.0.1"
+    networks:
+      - default
+networks:
+  default:
+    external: true
+    name: back_default
+
+volumes:
+  mongodb:

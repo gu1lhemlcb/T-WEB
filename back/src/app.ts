@@ -22,6 +22,6 @@ export class Server {
 
 const server = new Server();
 server.startServer();
-((port = process.env.PORT || 4040) => {
+((port = process.env.PORT || 3000) => {
     server.app.listen(port, () => console.log(`> Listening on port ${port}`));
 })();
